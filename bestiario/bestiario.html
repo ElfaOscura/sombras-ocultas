@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--@include ../src/partials/head.html-->
+    <title>Bestiario y curiosidades | Sombras Ocultas</title>
+    <meta name="description" content="El mosaico de vida de Uduné: elfos Lailshir, humanos y magos, tigriads, la Manada de la Bruma, duendecillos y los seres de la oscuridad de Adevel." />
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!--@include ../src/partials/nav.html-->
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!--@include ../src/partials/header.html-->
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           IMÁGENES de esta página (public/images/bestiario/):
+             cabecera.webp (panorámica 21:9) · lailshir.webp (4:5) · humano.webp (4:5) · mago.webp (4:5) · tigriads.webp (4:5 o grande)
+             manada-de-la-bruma.webp (ilustración 4:5) · manada-de-la-bruma-fondo.webp (fondo opcional, horizontal) · duendecillos.webp · hibridos-de-la-sombra.webp
+             licantropos-y-vampiros.webp · orcos-y-troles.webp · tentados-y-caidos.webp (todas 4:5)
+           Mientras no existan, cada marco muestra el isotipo sobre fondo azul.
+           ==================================================================== -->
+
+      <!-- ====================== CABECERA ====================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <img data-cabecera-fondo src="/images/bestiario/cabecera.webp" alt="" class="absolute inset-0 size-full object-cover opacity-30" onerror="this.remove()" />
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/images/espectro.webp" alt="" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600">›</span>
+            <span class="text-azul-300">Bestiario</span>
+          </nav>
+
+          <div class="mt-6 flex items-center justify-center gap-4 md:gap-6">
+            <img data-cabecera-item src="/images/iconos/bestiario.webp" alt="" class="size-14 object-contain drop-shadow-[0_0_14px_rgb(96_165_250/0.6)] md:size-20" />
+            <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Bestiario y curiosidades</h1>
+          </div>
+          <p data-cabecera-item class="subtitulo mt-4 text-xs md:text-sm">El mosaico de vida: razas y variantes de Uduné</p>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================== ÍNDICE RÁPIDO ====================== -->
+      <div class="mx-auto max-w-5xl px-4 pt-16">
+        <nav aria-label="En esta página" class="flex flex-wrap justify-center gap-2" data-reveal>
+          <a href="#linaje" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Linaje de la luz</a>
+          <a href="#humanos" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Humanos y magos</a>
+          <a href="#grises" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Seres grises</a>
+          <a href="#tigriads" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Tigriads</a>
+          <a href="#manada" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Manada de la Bruma</a>
+          <a href="#oscuridad" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Seres de la oscuridad</a>
+          <a href="#curiosidad" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Curiosidad</a>
+        </nav>
+      </div>
+
+
+      <!-- ====================================================================
+           1 · LINAJE DE LA LUZ · LAILSHIR (full width · claro · imagen + texto)
+           ==================================================================== -->
+      <section id="linaje" class="relative mt-16 w-full scroll-mt-20 border-y border-plata-400/40 bg-panel-cyan text-noche-800" data-reveal>
+        <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14 md:py-24">
+          <figure class="relative mx-auto w-full max-w-sm md:max-w-none">
+            <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-noche-600/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_14px_40px_rgb(15_29_58/0.4)]">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img data-enfoque src="/images/bestiario/lailshir.webp" alt="Lailshir, el pueblo elfo" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20"></div>
+            </div>
+          </figure>
+
+          <div class="text-center md:text-left">
+            <p class="subtitulo text-xs text-noche-600">El linaje de la luz y los primeros guías</p>
+            <h2 class="font-titulo mt-3 text-4xl font-bold leading-tight text-noche-800 md:text-5xl">Lailshir (Elfos)</h2>
+            <p class="mt-6 leading-relaxed text-noche-700">
+              Maestros estelares y guías de la civilización. Nacieron de la <strong class="text-noche-800">luz pura de Ithil</strong> al
+              inicio del mundo.
+            </p>
+            <p class="mt-4 leading-relaxed text-noche-700">
+              Sus primeros miembros, los <strong class="text-noche-800">Primordiales</strong>, enseñaron a la humanidad ciencias, medicina y
+              la fe en Gedu.
+            </p>
+
+            <div class="mt-6 flex gap-3 rounded-xl border border-noche-600/30 bg-white/40 p-4 text-left">
+              <iconify-icon icon="lucide:trees" width="22" height="22" class="mt-0.5 shrink-0 text-azul-600"></iconify-icon>
+              <p class="text-sm leading-relaxed text-noche-700">
+                <strong class="text-noche-800">Lailshirem:</strong> los asentamientos y ciudades del pueblo elfo, caracterizados por su
+                armonía con la naturaleza y la preservación del saber antiguo.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           2 · HUMANOS Y MAGOS (panel oscuro · medallones)
+           ==================================================================== -->
+      <div id="humanos" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16">
+        <section class="panel px-6 py-14 md:px-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Raza</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Humanos y Magos</h2>
+            <p class="mx-auto mt-6 max-w-3xl leading-relaxed text-plata-300">
+              Ambos nacieron de la semilla de Gedu. Quienes conservan el rastro de Ithil desarrollaron magia.
+            </p>
+          </header>
+
+          <div class="mt-12 grid gap-12 md:grid-cols-3 md:gap-6 lg:gap-8">
+
+            <!-- ===== 1 · HUMANO · ESPACIO PARA LA IMAGEN: public/images/bestiario/humano.webp (4:5, ej. 800×1000) ===== -->
+            <article class="flex flex-col text-center">
+              <figure class="relative w-full">
+                <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                  <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                  <img data-enfoque src="/images/bestiario/humano.webp" alt="Humano" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                </div>
+              </figure>
+              <p class="subtitulo mt-6 text-[0.65rem] text-azul-300">Nacido de la semilla de Gedu</p>
+              <h3 class="font-titulo titulo-plata mt-2 text-3xl font-bold">Humano</h3>
+              <p class="mt-2 text-sm leading-relaxed text-plata-400">Al ser descendientes directos de la semilla de Gedu, comparten un origen común con los portadores de magia, aunque la gran mayoría carece de habilidades sobrenaturales innatas.</p>
+            </article>
+
+            <!-- ===== 2 · MAGO · ESPACIO PARA LA IMAGEN: public/images/bestiario/mago.webp (4:5) ===== -->
+            <article class="flex flex-col text-center">
+              <figure class="relative w-full">
+                <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                  <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                  <img data-enfoque src="/images/bestiario/mago.webp" alt="Mago" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                </div>
+              </figure>
+              <p class="subtitulo mt-6 text-[0.65rem] text-azul-300">Conserva el rastro de Ithil</p>
+              <h3 class="font-titulo titulo-plata mt-2 text-3xl font-bold">Mago</h3>
+              <p class="mt-2 text-sm leading-relaxed text-plata-400">Se definen por llevar en su sangre el rastro de la diosa Ithil, lo cual despierta en ellos un vínculo profundo con la naturaleza y el potencial mágico.</p>
+            </article>
+
+            <!-- ===== 3 · VARIANTES DEL MAGO (misma altura que las imágenes) ===== -->
+            <article class="flex flex-col text-center">
+              <p class="subtitulo mt-6 text-[0.65rem] text-azul-300">Las dos formas del mago</p>
+              <h3 class="font-titulo titulo-plata mt-2 text-3xl font-bold">Variantes</h3>
+              <div class="flex flex-col gap-4 md:aspect-[4/5]">
+                <div class="tarjeta flex flex-1 flex-col items-center justify-center px-5 py-6">
+                  <span class="medallon size-14"><iconify-icon icon="lucide:paw-print" width="26" height="26"></iconify-icon></span>
+                  <h4 class="font-subtitulo mt-4 text-xl text-plata-100">Monomorfos</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-plata-400">Pueden transformarse en un solo animal específico, que descubren tras el estudio y la conexión espiritual.</p>
+                </div>
+                <div class="tarjeta flex flex-1 flex-col items-center justify-center px-5 py-6">
+                  <span class="medallon size-14"><iconify-icon icon="lucide:shapes" width="26" height="26"></iconify-icon></span>
+                  <h4 class="font-subtitulo mt-4 text-xl text-plata-100">Polimorfos</h4>
+                  <p class="mt-2 text-sm leading-relaxed text-plata-400">Pueden adoptar varias formas animales.</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           3 · HIBRIDACIONES Y SERES GRISES (full width · degradado azul)
+           ==================================================================== -->
+      <section
+        id="grises"
+        class="relative w-full scroll-mt-20 border-y border-plata-400/25"
+        style="background: linear-gradient(180deg, var(--color-noche-950), var(--color-noche-700) 50%, var(--color-noche-950));"
+        data-reveal
+      >
+        <div class="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <header class="text-center">
+            <p class="subtitulo text-xs">Hibridaciones y seres grises</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Entre la luz y la sombra</h2>
+          </header>
+
+          <div class="mt-12 grid gap-8 md:grid-cols-2">
+            <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+              <div class="relative aspect-[16/10] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/bestiario/hibridos-de-la-sombra.webp" alt="Híbridos de la Sombra" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="px-6 pb-7 pt-5">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Hibridación</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Híbridos de la Sombra</h3>
+                <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                  Seres surgidos de la unión o mezcla de criaturas oscuras que escaparon a la influencia de Adevel. Buscan un camino
+                  propio, alejado de la maldad original.
+                </p>
+              </div>
+            </article>
+
+            <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+              <div class="relative aspect-[16/10] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/bestiario/duendecillos.webp" alt="Duendecillos" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="px-6 pb-7 pt-5">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Entidades de comportamiento</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Duendecillos</h3>
+                <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                  Entidades de naturaleza neutral, parecidas a poltergeists. Reflejan el trato que reciben: si se les respeta,
+                  protegen; si se les ofende, su conducta se vuelve errática y maliciosa.
+                </p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           4 · TIGRIADS (panel oscuro · ficha + texto)
+           ==================================================================== -->
+      <div id="tigriads" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+
+          <div class="grid gap-10 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-12">
+            <aside class="mx-auto w-full max-w-sm md:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/bestiario/tigriads.webp" alt="Tigriads" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+
+              <dl class="mt-5 divide-y divide-plata-400/15 rounded-xl border border-plata-400/25 bg-noche-950/60 text-sm">
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Categoría</dt><dd class="text-right text-plata-100">Raza única</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Naturaleza</dt><dd class="text-right text-plata-100">Felinos humanoides</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rasgos</dt><dd class="text-right text-plata-100">Pantera y león</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Formas</dt><dd class="text-right text-plata-100">Animal completa o semihumana</dd></div>
+              </dl>
+            </aside>
+
+            <div>
+              <p class="subtitulo text-xs">El vínculo salvaje</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Los Tigriads</h2>
+
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">Naturaleza</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Felinos humanoides con rasgos de pantera y de león. Pueden adoptar forma animal completa o una forma semihumana.
+              </p>
+
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">Nunca del todo humanos</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Jamás pueden parecer totalmente humanos: siempre conservan el pelaje, el rostro felino y la elegancia de los grandes
+                depredadores.
+              </p>
+
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">Frente a los monomorfos</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                A diferencia de los monomorfos, su vínculo con la forma animal es inquebrantable.
+              </p>
+
+              <div class="mt-8 flex flex-wrap gap-2">
+                <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Pantera</span>
+                <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">León</span>
+                <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Vínculo inquebrantable</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           5 · MANADA DE LA BRUMA (full width · imagen de fondo + overlay)
+           ==================================================================== -->
+      <section
+        id="manada"
+        class="relative w-full scroll-mt-20 overflow-hidden border-y border-plata-400/25"
+        style="background: radial-gradient(ellipse 70% 90% at 50% 50%, rgb(31 58 110 / 0.6), var(--color-noche-950));"
+        data-reveal
+      >
+        <!-- Fondo opcional (horizontal): public/images/bestiario/manada-de-la-bruma-fondo.webp -->
+        <img src="/images/bestiario/manada-de-la-bruma-fondo.webp" alt="" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+        <div class="absolute inset-0 bg-linear-to-b from-noche-950/85 via-noche-950/70 to-noche-950/95"></div>
+
+        <div class="relative mx-auto max-w-5xl px-4 py-20 md:py-28">
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
+            <!-- ESPACIO PARA LA ILUSTRACIÓN: public/images/bestiario/manada-de-la-bruma.webp (4:5, ej. 800×1000) -->
+            <figure class="relative mx-auto w-full max-w-sm md:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_60px_rgb(37_99_235/0.35)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/bestiario/manada-de-la-bruma.webp" alt="La Manada de la Bruma, lobos de vapor y sombra" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+              <span class="esquina -left-3 -top-3 hidden sm:block"></span>
+              <span class="esquina -bottom-3 -right-3 hidden rotate-180 sm:block"></span>
+            </figure>
+
+            <div class="text-center md:text-left">
+              <p class="subtitulo text-xs">Los acechadores del Bosque Solitario</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">La Manada de la Bruma</h2>
+              <div class="mt-5 flex flex-wrap justify-center gap-2 md:justify-start">
+                <span class="inline-flex items-center gap-2 rounded-full border border-azul-300/40 bg-noche-950/60 px-3 py-1 text-xs text-azul-300"><iconify-icon icon="lucide:map-pin" width="14" height="14"></iconify-icon>Bosque Solitario</span>
+                <span class="inline-flex items-center gap-2 rounded-full border border-azul-300/40 bg-noche-950/60 px-3 py-1 text-xs text-azul-300">Criatura mística</span>
+              </div>
+
+              <p class="mt-6 leading-relaxed text-plata-200">
+                Habitan el denso y húmedo <strong class="text-white">Bosque Solitario</strong>, la franja brumosa que separa los reinos de
+                Archinón y Sharnath. Son entidades que difuminan la frontera entre la fauna física y las corrientes de vapor de la selva
+                subtropical.
+              </p>
+              <p class="mt-4 leading-relaxed text-plata-200">
+                Al caer el crepúsculo descienden por los desfiladeros a ras de suelo, como una estela de polvo oscuro y vapor denso. Al
+                detenerse, el vapor se condensa en la silueta de lobos de pelaje negro absoluto, con ojos que brillan como brasas.
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-3">
+            <div class="rounded-xl border border-plata-400/25 bg-noche-950/70 p-6 text-center backdrop-blur-md">
+              <iconify-icon icon="lucide:scan-eye" width="28" height="28" class="text-azul-300"></iconify-icon>
+              <h3 class="font-subtitulo mt-3 text-lg text-plata-100">Olfato sobrenatural</h3>
+              <p class="mt-2 text-sm leading-relaxed text-plata-300">Perciben el miedo y las alteraciones del ritmo cardíaco.</p>
+            </div>
+            <div class="rounded-xl border border-plata-400/25 bg-noche-950/70 p-6 text-center backdrop-blur-md">
+              <iconify-icon icon="lucide:footprints" width="28" height="28" class="text-azul-300"></iconify-icon>
+              <h3 class="font-subtitulo mt-3 text-lg text-plata-100">Si entras en pánico</h3>
+              <p class="mt-2 text-sm leading-relaxed text-plata-300">La manada te persigue sin descanso por el laberinto de niebla.</p>
+            </div>
+            <div class="rounded-xl border border-plata-400/25 bg-noche-950/70 p-6 text-center backdrop-blur-md">
+              <iconify-icon icon="lucide:shield-check" width="28" height="28" class="text-azul-300"></iconify-icon>
+              <h3 class="font-subtitulo mt-3 text-lg text-plata-100">Si mantienes la calma</h3>
+              <p class="mt-2 text-sm leading-relaxed text-plata-300">Si los ignoras con compostura, te observan en silencio desde los márgenes y te dejan partir.</p>
+            </div>
+          </div>
+
+          <p class="font-subtitulo mx-auto mt-10 max-w-2xl text-center text-lg italic leading-snug text-plata-100">
+            Reflejan la tensión entre la luz de los reinos y el temor a lo desconocido.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           6 · CITA DE APERTURA (full width · oscuro)
+           ==================================================================== -->
+      <section class="relative w-full border-b border-plata-400/25 bg-noche-950" data-reveal>
+        <div class="mx-auto max-w-4xl px-4 py-20 text-center md:py-28">
+          <iconify-icon icon="lucide:quote" width="36" height="36" class="text-azul-400/70"></iconify-icon>
+          <blockquote class="font-subtitulo titulo-plata mt-6 text-2xl leading-snug md:text-4xl">
+            No toda sombra nace de la ausencia de luz; algunas nacen del orgullo de quienes un día brillaron junto a los dioses.
+          </blockquote>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           7 · SERES DE LA OSCURIDAD (panel oscuro · tarjetas + modales)
+           ==================================================================== -->
+      <div id="oscuridad" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16">
+        <section class="panel px-6 py-14 md:px-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Creaciones de Adevel</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Los Seres de la Oscuridad</h2>
+            <p class="mx-auto mt-6 max-w-3xl leading-relaxed text-plata-300">
+              Adevel, también llamado Sonorulú o el Séptimo Hermano, nació de la misma estirpe de luz que los constructores de Uduné,
+              pero desvió su inventiva hacia la soberbia. Opera mediante el desvío, la manipulación de la materia y la explotación de
+              la fragilidad humana. Como no puede apagar el alma divina que concedió Gedu, corrompe por otros medios.
+            </p>
+          </header>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-3">
+
+        <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+          <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+            <img data-enfoque src="/images/bestiario/licantropos-y-vampiros.webp" alt="Licántropos y Vampiros" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">El linaje arrebatado</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Licántropos y Vampiros</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">Antiguos Lailshir secuestrados y sometidos por Adevel en los albores del mundo.</p>
+            <button type="button" data-modal-abrir="oscuro-licantropos-y-vampiros" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+          <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+            <img data-enfoque src="/images/bestiario/orcos-y-troles.webp" alt="Orcos y Troles" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">La materia de la discordia</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Orcos y Troles</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">Moldeados por Adevel en su intento de imitar el mundo a escondidas; nacen de la discordia y la avaricia.</p>
+            <button type="button" data-modal-abrir="oscuro-orcos-y-troles" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+          <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+            <img data-enfoque src="/images/bestiario/tentados-y-caidos.webp" alt="Los Tentados y Caídos" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">La sombra interior</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Los Tentados y Caídos</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">Humanos y magos que ceden a los susurros de Sonorulú: una corrupción sin forma monstruosa.</p>
+            <button type="button" data-modal-abrir="oscuro-tentados-y-caidos" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+          </div>
+
+          <p class="mt-10 text-center text-sm text-plata-400">
+            ¿Quién es el Rey de la Oscuridad?
+            <a href="/sombras-ocultas/culto/sistema-culto.html#adevel" class="magic-link text-azul-300 hover:text-white">Leer sobre Adevel</a>
+          </p>
+
+          <!-- ================= MODALES (<dialog> + modales.js) ================= -->
+
+      <!-- Modal · Licántropos y Vampiros -->
+      <dialog id="oscuro-licantropos-y-vampiros" aria-labelledby="titulo-licantropos-y-vampiros" class="m-auto max-h-[85vh] w-[min(92vw,44rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <div class="grid items-start gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+            <figure class="mx-auto w-full max-w-xs sm:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/bestiario/licantropos-y-vampiros.webp" alt="Licántropos y Vampiros" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+            </figure>
+            <div class="text-center sm:text-left">
+              <p class="subtitulo text-xs">El linaje arrebatado</p>
+              <h3 id="titulo-licantropos-y-vampiros" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Licántropos y Vampiros</h3>
+              <dl class="mt-6 divide-y divide-plata-400/15 text-left text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Origen</dt><dd class="text-plata-300">Antiguos Lailshir secuestrados y sometidos por Adevel en los albores del mundo.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Maldición</dt><dd class="text-plata-300">Incapaces de destruir su esencia original, fueron condenados a una mutación perpetua que ata su inmortalidad, su sed y su poder latente a la noche.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Lección</dt><dd class="text-plata-300">Muestran cómo incluso los seres puros pueden caer si el miedo y el aislamiento los dominan.</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Modal · Orcos y Troles -->
+      <dialog id="oscuro-orcos-y-troles" aria-labelledby="titulo-orcos-y-troles" class="m-auto max-h-[85vh] w-[min(92vw,44rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <div class="grid items-start gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+            <figure class="mx-auto w-full max-w-xs sm:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/bestiario/orcos-y-troles.webp" alt="Orcos y Troles" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+            </figure>
+            <div class="text-center sm:text-left">
+              <p class="subtitulo text-xs">La materia de la discordia</p>
+              <h3 id="titulo-orcos-y-troles" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Orcos y Troles</h3>
+              <dl class="mt-6 divide-y divide-plata-400/15 text-left text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Origen</dt><dd class="text-plata-300">Moldeados directamente por Adevel en su intento de imitar el mundo a escondidas.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Naturaleza</dt><dd class="text-plata-300">Carecen de la bendición de la luz y nacen de la discordia y la avaricia.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Instinto</dt><dd class="text-plata-300">Buscan el dominio por la fuerza bruta y el terror.</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Modal · Los Tentados y Caídos -->
+      <dialog id="oscuro-tentados-y-caidos" aria-labelledby="titulo-tentados-y-caidos" class="m-auto max-h-[85vh] w-[min(92vw,44rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <div class="grid items-start gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+            <figure class="mx-auto w-full max-w-xs sm:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/bestiario/tentados-y-caidos.webp" alt="Los Tentados y Caídos" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+            </figure>
+            <div class="text-center sm:text-left">
+              <p class="subtitulo text-xs">La sombra interior</p>
+              <h3 id="titulo-tentados-y-caidos" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Los Tentados y Caídos</h3>
+              <dl class="mt-6 divide-y divide-plata-400/15 text-left text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Quiénes son</dt><dd class="text-plata-300">Humanos y magos que ceden a los susurros de Sonorulú.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cómo actúa Adevel</dt><dd class="text-plata-300">No necesita alterar sus cuerpos: solo tienta su soberbia, su rencor y sus miedos.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[8rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Idea central</dt><dd class="text-plata-300">El mayor triunfo de la oscuridad es que un alma elija corromperse por voluntad propia.</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </dialog>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           8 · CURIOSIDAD · LLAMADO A NENALCAR (full width · degradado azul)
+           ==================================================================== -->
+      <section
+        id="curiosidad"
+        class="relative w-full scroll-mt-20 border-y border-plata-400/25"
+        style="background: radial-gradient(ellipse 70% 90% at 50% 50%, rgb(31 58 110 / 0.6), var(--color-noche-950));"
+        data-reveal
+      >
+        <div class="mx-auto max-w-3xl px-4 py-20 text-center md:py-28">
+          <span class="medallon mx-auto size-20"><iconify-icon icon="lucide:droplets" width="36" height="36"></iconify-icon></span>
+          <p class="subtitulo mt-6 text-xs">Curiosidades</p>
+          <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-5xl">El Llamado a Nenalcar</h2>
+          <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-plata-200">
+            Semanas antes de las lluvias, el canto de las cigarras se considera un evento sagrado en Uduné. Lo llaman el
+            <strong class="text-white">Llamado a Nenalcar</strong>: anuncia que la bendición del agua está por llegar para renovar la tierra.
+          </p>
+          <div class="mt-8 flex justify-center">
+            <a href="/sombras-ocultas/culto/dioses.html#nenalcar" class="boton">
+              <iconify-icon icon="lucide:waves" width="16" height="16"></iconify-icon>
+              Conocer a Nenalcar
+            </a>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================== NAVEGACIÓN ANTERIOR / SIGUIENTE ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <p class="subtitulo mb-8 text-center text-xs text-azul-300">Uduné: donde las nieblas guardan la verdad del corazón</p>
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/idioma-y-escritura/" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Idioma y escritura</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Volver</span>
+              <span class="font-subtitulo text-lg text-plata-100">Inicio</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <!--@include ../src/partials/footer.html-->
+
+    <script type="module" src="../src/js/main.js"></script>
+  </body>
+</html>

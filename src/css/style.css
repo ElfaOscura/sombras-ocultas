@@ -1,0 +1,529 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   SOMBRAS OCULTAS · Tema azul y plata
+   Todo lo visual sale de aquí (@theme) y de clases de Tailwind en el HTML.
+   ========================================================================== */
+
+@theme {
+  /* Fuentes (las mismas de Comisiones) */
+  --font-texto: 'Noto Sans', sans-serif;
+  --font-titulo: 'Merienda', cursive;
+  --font-subtitulo: 'Cinzel', serif;
+
+  /* Azul noche */
+  --color-noche-950: #050a17;
+  --color-noche-900: #0a1429;
+  --color-noche-800: #0f1d3a;
+  --color-noche-700: #172a52;
+  --color-noche-600: #1f3a6e;
+
+  /* Azul zafiro (acentos y resplandores) */
+  --color-azul-300: #93c5fd;
+  --color-azul-400: #60a5fa;
+  --color-azul-500: #3b82f6;
+  --color-azul-600: #2563eb;
+
+  /* Plata */
+  --color-plata-100: #f1f5f9;
+  --color-plata-200: #e2e8f0;
+  --color-plata-300: #cbd5e1;
+  --color-plata-400: #a8b3c7;
+  --color-plata-500: #8693a8;
+  --color-plata-600: #64718a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-texto);
+  }
+  ::selection {
+    background: rgb(96 165 250 / 0.35);
+    color: white;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Utilidades propias
+   -------------------------------------------------------------------------- */
+
+/* Fondo principal: pon tu imagen en public/images/background.jpg.
+   Si no existe, se ve el fondo de auroras azules que hay debajo. */
+@utility main-bg-image {
+  background-color: var(--color-noche-950);
+  background-image:
+    url('/images/background.jpg'),
+    radial-gradient(ellipse 60% 45% at 20% 15%, rgb(37 99 235 / 0.35), transparent 70%),
+    radial-gradient(ellipse 55% 50% at 85% 30%, rgb(96 165 250 / 0.18), transparent 70%),
+    radial-gradient(ellipse 70% 55% at 50% 95%, rgb(31 58 110 / 0.55), transparent 70%),
+    linear-gradient(180deg, var(--color-noche-900), var(--color-noche-950));
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  
+}
+@utility bg-panel-cyan {
+  background-image: linear-gradient(to bottom, #94c1f2, #7aaee6);
+}
+/* Texto con degradado plateado (títulos grandes) */
+@utility titulo-plata {
+  background-image: linear-gradient(180deg, #ffffff 0%, var(--color-plata-300) 50%, var(--color-azul-300) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 2px 10px rgb(59 130 246 / 0.35));
+}
+
+/* Fondo de pergamino azulado (si luego quieres una sección tipo papiro) */
+@utility papiro-bg {
+  background-image: url('/images/fondo-pergamino.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+/* --------------------------------------------------------------------------
+   Componentes
+   -------------------------------------------------------------------------- */
+@layer components {
+  /* Panel principal: el "marco" de cada sección */
+  .panel {
+    @apply relative rounded-2xl border border-plata-400/30 bg-linear-to-b from-noche-800/80 to-noche-950/90 backdrop-blur-md;
+    box-shadow: 0 12px 40px rgb(0 0 0 / 0.5), inset 0 1px 0 rgb(226 232 240 / 0.08);
+  }
+
+  /* Tarjeta interior (personajes, bestias, lugares...) */
+  .tarjeta {
+    @apply rounded-xl border border-plata-400/25 bg-noche-950/60 transition duration-300;
+  }
+  .tarjeta:hover {
+    @apply border-azul-400/60 -translate-y-1;
+    box-shadow: 0 10px 30px rgb(37 99 235 / 0.25);
+  }
+
+  /* Esquinas ornamentales: una imagen, cuatro orientaciones.
+     Uso: <span class="esquina -top-3 -left-3"></span>
+          <span class="esquina -top-3 -right-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span> */
+  .esquina {
+    @apply pointer-events-none absolute z-10 bg-contain bg-center bg-no-repeat;
+    width: clamp(3.25rem, 7vw, 5rem);
+    aspect-ratio: 193 / 187;
+    background-image: url('/images/img-esquina.png');
+  }
+
+  /* Adorno plano centrado sobre el borde superior o inferior de un panel.
+     Uso: <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span> */
+  .adorno {
+    @apply pointer-events-none absolute left-1/2 z-10 -translate-x-1/2 bg-contain bg-center bg-no-repeat;
+    width: clamp(10rem, 28vw, 17rem);
+    aspect-ratio: 330 / 47;
+    background-image: url('/images/bordeinfwid.png');
+  }
+.adorno-extremo {
+  @apply pointer-events-none absolute top-0 -translate-y-1/2 bg-contain bg-center bg-no-repeat;
+  width: clamp(5.5rem, 14vw, 9rem);
+  aspect-ratio: 134 / 47;
+  background-image: url('/images/bordeinfwid-extremo.png');
+}
+  /* Subtítulo en versalitas (Cinzel) */
+  .subtitulo {
+    @apply font-subtitulo tracking-widest text-plata-300 uppercase;
+  }
+
+  /* Botón plateado */
+  .boton {
+    @apply font-subtitulo inline-flex items-center gap-2 rounded-full border border-plata-300/60 bg-linear-to-b from-noche-600/70 to-noche-900 px-6 py-2 text-sm tracking-widest text-plata-100 uppercase transition duration-300;
+  }
+  .boton:hover,
+  .tarjeta:hover .boton {
+    @apply border-azul-300 text-white;
+    box-shadow: 0 0 18px rgb(96 165 250 / 0.55);
+  }
+
+  /* Medallón circular para iconos (con anillo plateado doble) */
+  .medallon {
+    @apply flex size-24 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 transition duration-300;
+    background: radial-gradient(circle at 50% 35%, rgb(31 58 110 / 0.75), var(--color-noche-950) 75%);
+    box-shadow:
+      inset 0 0 18px rgb(59 130 246 / 0.25),
+      0 0 0 5px rgb(10 20 41 / 0.85),
+      0 0 0 6px rgb(168 179 199 / 0.28);
+  }
+  .tarjeta:hover .medallon {
+    @apply border-azul-300 text-white;
+    box-shadow:
+      inset 0 0 22px rgb(96 165 250 / 0.45),
+      0 0 0 5px rgb(10 20 41 / 0.85),
+      0 0 0 6px rgb(147 197 253 / 0.55),
+      0 0 28px rgb(59 130 246 / 0.55);
+  }
+
+  /* ---------- Menú con iconos ---------- */
+  /* Arco curvo que une los 3 iconos de cada lado */
+.arco-nav {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+  z-index: 0;
+  filter: drop-shadow(0 0 6px rgb(96 165 250 / 0.6));
+}
+.arco-nav-der {
+  transform: scaleX(-1); /* refleja el arco para el lado derecho */
+}
+  /* ---------- Menú con iconos laterales (Semicírculo) ---------- */
+  .nav-item {
+    @apply relative;
+  }
+  .nav-link {
+    @apply block rounded-full outline-none;
+  }
+  .nav-icono {
+    @apply flex size-24 items-center justify-center rounded-full border border-plata-400/40 transition duration-300 ease-out;
+    background: radial-gradient(circle at 50% 35%, rgb(31 58 110 / 0.7), var(--color-noche-950) 75%);
+    box-shadow: inset 0 0 10px rgb(59 130 246 / 0.25);
+  }
+  .nav-icono img {
+    @apply size-16 object-contain transition duration-300;
+  }
+  /* Hover o foco de teclado: el icono crece y brilla */
+  .nav-item:hover .nav-icono,
+  .nav-item:focus-within .nav-icono {
+    @apply scale-110 border-azul-300;
+    box-shadow: inset 0 0 14px rgb(96 165 250 / 0.45), 0 0 22px rgb(59 130 246 / 0.6);
+  }
+
+  /* ---------- Paneles laterales (Glasmorfismo) ---------- */
+  .nav-panel {
+    @apply invisible absolute top-1/2 z-30 -translate-y-1/2 opacity-0 transition-all duration-200 ease-out pointer-events-none;
+  }
+  .nav-item:hover .nav-panel,
+  .nav-item:focus-within .nav-panel {
+    @apply visible opacity-100 pointer-events-auto;
+  }
+
+  /* Iconos de la izquierda -> Submenú aparece a la DERECHA del icono */
+  .nav-panel-izq {
+    left: 100%;
+    padding-left: 1rem;
+  }
+
+  /* Iconos de la derecha -> Submenú aparece a la IZQUIERDA del icono */
+  .nav-panel-der {
+    right: 100%;
+    padding-right: 1rem;
+  }
+
+/* Caja del submenú con glasmorfismo oscuro y borde con degradado plateado/azul */
+  .nav-caja {
+    @apply relative flex min-w-52 flex-col rounded-2xl bg-noche-950/30 p-3 whitespace-nowrap backdrop-blur-xl;
+    /* Borde semitransparente base y borde con degradado elegante */
+    border: 1px solid transparent;
+    background-image: linear-gradient(#0035be00, #050a17), linear-gradient(135deg, rgb(104 146 222 / 60%), rgba(96, 165, 250, 0.2), rgb(255 255 255 / 0%));
+    background-origin: border-box;
+    -webkit-background-clip: padding-box, border-box;
+    background-clip: padding-box, border-box;
+    box-shadow: 0 16px 40px rgb(0 0 0 / 0.7), 0 0 20px rgb(37 99 235 / 0.25);
+  }
+  .nav-titulo {
+    @apply font-subtitulo px-3 py-2 text-center text-sm tracking-widest text-plata-100 uppercase border-b border-plata-400/20 mb-1;
+  }
+  .nav-sublink {
+    @apply font-titulo rounded-lg px-3 py-2 text-sm text-plata-300 transition duration-200 hover:bg-noche-700/60 hover:text-white;
+  }
+  /* Menú móvil: icono + texto */
+  .nav-movil {
+    @apply font-titulo flex items-center gap-3 rounded-lg px-2 py-2 font-bold hover:bg-noche-700/60;
+  }
+
+  /* ---------- Banda del título (full width, tono oscuro) ---------- */
+.banda-titulo {
+  @apply relative w-full border-y border-plata-400/25 px-4 overflow-hidden flex flex-col items-center justify-center;
+  height: 100vh;
+  height: 100dvh;
+  background:
+    radial-gradient(ellipse 50% 70% at 50% 55%, rgb(37 99 235 / 0.22), transparent 70%),
+    linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8) 55%, rgb(5 10 23 / 0.9));
+  box-shadow: 0 0 60px rgb(0 0 0 / 0.6);
+}
+
+/* Canvas de humo por detrás */
+.banda-titulo canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* Imagen del espectro de fondo */
+/* Contenedor del espectro posicionado detrás del título */
+.espectro-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 45rem;
+  height: 80%;
+  pointer-events: none;
+  z-index: 1;
+  animation: pulsoEspectro 6s infinite alternate ease-in-out;
+}
+
+@keyframes pulsoEspectro {
+  0% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+  100% {
+    opacity: 0.2;
+    transform: translate(-50%, -50%) scale(0.98);
+  }
+}
+/* Niebla baja, delante del espectro y detrás del título */
+.niebla-hero {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 45%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.85;
+  display: flex;
+
+  /* Transparente arriba, visible gradualmente hacia abajo */
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 0.4) 30%, #00000036 70%);
+    mask-image: linear-gradient(to bottom, transparent 0%, rgb(0 0 0 / 0.4) 30%, #00000036 70%);
+}
+.niebla-hero img {
+  flex: none;
+  width: 100%;
+  min-width: 1200px;
+  height: 100%;
+  object-fit: cover;
+  object-position: bottom;
+  animation: derivaNiebla 80s linear infinite;
+}
+
+@keyframes derivaNiebla {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-100%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .niebla-hero img { animation: none; }
+}
+/* Contenedor del título centrado */
+.contenido-titulo {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  items-center: center;
+  justify-content: center;
+}
+
+/* Imagen del título con propiedades de máscara explícitas para evitar fallos */
+.titulo-logo {
+  width: 100%;
+  max-width: 36rem;
+  aspect-ratio: 1260 / 358;
+  background-image: linear-gradient(180deg, #ffffff 0%, #dbe4f0 38%, #9fbff0 70%, #5b8fe0 100%);
+  
+  /* Máscara compatible con WebKit y navegadores modernos */
+  -webkit-mask-image: url('/images/titulo.webp');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+  
+  mask-image: url('/images/titulo.webp');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+/* ---------- Disposición en semicírculo para los iconos del Hero ---------- */
+.nav-semicirculo-izq-2,
+.nav-semicirculo-der-1 {
+  transform: translateX(-12px);
+}
+.nav-semicirculo-izq-1,
+.nav-semicirculo-der-2, .nav-semicirculo-izq-3
+{
+  transform: translateX(12px); /* Sobresale hacia afuera formando el arco */
+}
+
+.nav-semicirculo-der-3 {
+  transform: translateX(-12px);
+}
+  /* Enlace mágico: la línea se expande desde el centro (azul-plata) */
+  .magic-link {
+    position: relative;
+    transition: color 0.3s ease;
+  }
+  .magic-link::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #dbeafe, transparent);
+    box-shadow: 0 0 8px #93c5fd, 0 0 12px rgb(59 130 246 / 0.6);
+    transition: width 0.4s ease-in-out, left 0.4s ease-in-out;
+    pointer-events: none;
+  }
+  .magic-link:hover::after,
+  .magic-link:focus-visible::after {
+    width: 100%;
+    left: 0;
+  }
+}
+/*efecto humo hero section */
+.smoke-section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #0d0d0d; /* Fondo oscuro ideal para que resalte el humo */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#smokeCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+/* Botón volver arriba */
+.boton-subir {
+  @apply fixed bottom-6 right-6 z-100 flex size-12 items-center justify-center rounded-full border border-plata-300/60 text-plata-100 transition duration-300;
+  background: radial-gradient(circle at 50% 35%, rgb(31 58 110 / 0.85), var(--color-noche-950) 80%);
+  box-shadow: 0 0 18px rgb(96 165 250 / 0.35);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(16px);
+}
+.boton-subir[data-visible='true'] {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.boton-subir:hover,
+.boton-subir:focus-visible {
+  @apply border-azul-300 text-white;
+  box-shadow: 0 0 26px rgb(147 197 253 / 0.7);
+  transform: translateY(-3px);
+}
+/* ===== Botones: manito de "clicable" (Tailwind v4 la quita por defecto) ===== */
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]),
+[data-modal-abrir],
+[data-modal-cerrar] {
+  cursor: pointer;
+}
+
+/* ===== Modales (<dialog>): aparición y cierre suaves ===== */
+dialog {
+  opacity: 0;
+  transform: translateY(1.75rem) scale(0.95);
+  transition:
+    opacity 0.35s ease,
+    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+    overlay 0.5s allow-discrete,
+    display 0.5s allow-discrete;
+}
+
+dialog[open] {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Estado de partida al abrir */
+@starting-style {
+  dialog[open] {
+    opacity: 0;
+    transform: translateY(1.75rem) scale(0.95);
+  }
+}
+
+
+/* Fondo del modal: cristal esmerilado semitransparente */
+dialog::backdrop {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / 0), transparent 70%),
+    rgb(5 10 23 / 0);
+  backdrop-filter: blur(0) saturate(100%);
+  -webkit-backdrop-filter: blur(0) saturate(100%);
+  transition:
+    background 0.45s ease,
+    backdrop-filter 0.45s ease,
+    -webkit-backdrop-filter 0.45s ease,
+    overlay 0.5s allow-discrete,
+    display 0.5s allow-discrete;
+}
+
+dialog[open]::backdrop {
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / 0.18), transparent 70%),
+    rgb(5 10 23 / 0.45);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+}
+
+@starting-style {
+  dialog[open]::backdrop {
+    background:
+      radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / 0), transparent 70%),
+      rgb(5 10 23 / 0);
+    backdrop-filter: blur(0) saturate(100%);
+    -webkit-backdrop-filter: blur(0) saturate(100%);
+  }
+}
+
+/* El contenido entra un instante después, escalonado */
+dialog[open] > div > header,
+dialog[open] > div > dl,
+dialog[open] > div > div:last-child {
+  animation: modal-contenido 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+dialog[open] > div > dl { animation-delay: 0.08s; }
+dialog[open] > div > div:last-child { animation-delay: 0.16s; }
+
+@keyframes modal-contenido {
+  from { opacity: 0; transform: translateY(0.75rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Accesibilidad: sin movimiento si el usuario lo pidió */
+@media (prefers-reduced-motion: reduce) {
+  dialog,
+  dialog::backdrop { transition: none; }
+  dialog[open] > div > * { animation: none !important; }
+}

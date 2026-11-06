@@ -1,0 +1,787 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050a17" />
+<link rel="icon" href="/sombras-ocultas/images/isotipo.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+
+    <title>Dioses · Génesis: El Despertar de Uduné | Sombras Ocultas</title>
+    <meta name="description" content="Ithil, Manar, Erumacar, Nenalcar, Vilyatur, Gaven y Adevel: los seis ayudantes de Gedu y el Séptimo Hermano que dieron forma a Uduné." />
+    <script type="module" crossorigin src="/sombras-ocultas/assets/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/sombras-ocultas/assets/style.css">
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!-- src/partials/nav.html -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 flex justify-center px-4 md:hidden">
+  <nav
+    aria-label="Principal"
+    class="relative flex w-full max-w-4xl items-center justify-between rounded-full border border-plata-400/30 bg-noche-950/80 px-5 py-2 backdrop-blur-md"
+  >
+    <!-- Logo central en móvil = Inicio -->
+    <a
+      href="/sombras-ocultas/"
+      aria-label="Sombras Ocultas, ir al inicio"
+      class="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-plata-300/60 bg-noche-950 shadow-[0_0_18px_rgb(96_165_250/0.35)] transition duration-300 hover:shadow-[0_0_26px_rgb(147_197_253/0.7)]"
+    >
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-7" />
+    </a>
+
+    <!-- Botón de menú móvil -->
+    <button
+      type="button"
+      data-menu-btn
+      aria-expanded="false"
+      aria-controls="menu-movil"
+      aria-label="Abrir menú"
+      class="flex size-10 items-center justify-center rounded-full border border-plata-400/40 text-plata-200"
+    >
+      <iconify-icon icon="lucide:menu" width="22" height="22"></iconify-icon>
+    </button>
+
+    <!-- Menú desplegable móvil -->
+<!-- Menú móvil con títulos fijos y submenús desplegables -->
+<div
+  id="menu-movil"
+  data-menu
+  hidden
+  class="absolute inset-x-0 top-full mt-3 max-h-[75vh] overflow-y-auto rounded-2xl border border-plata-400/30 bg-noche-950/95 p-4 shadow-2xl backdrop-blur-md md:hidden"
+>
+  <ul class="space-y-2 text-plata-200">
+    <li>
+      <a href="/sombras-ocultas/" class="nav-movil">
+        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 p-1" />
+        <span>Inicio</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Personajes -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/personajes.webp" alt="" class="size-8" />
+          <span class="font-bold">Personajes</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/personajes/" class="block py-1">Ver personajes</a></li>
+        <li><a href="/sombras-ocultas/personajes/arboles-genealogicos/" class="block py-1">Árboles genealógicos</a></li>
+        <li><a href="/sombras-ocultas/personajes/karima-fedensol/" class="block py-1">Karima Fedensol</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Mapa -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/mapa.webp" alt="" class="size-8" />
+          <span class="font-bold">Mapa</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/mapa/mapa.html" class="block py-1">Mapa y reinos</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-de-archinon/" class="block py-1">Sitios de Árchinon</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-de-rims/" class="block py-1">Sitios de Rims</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Leyes (este sí puede llevar enlace directo si es página única) -->
+    <li>
+      <a href="/sombras-ocultas/mapa/ley-archinon/" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/leyes.webp" alt="" class="size-8" /><span>Leyes</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Sistema de culto -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/culto.webp" alt="" class="size-8" />
+          <span class="font-bold">Sistema de culto</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/culto/sistema-culto.html" class="block py-1">Culto</a></li>
+        <li><a href="/sombras-ocultas/culto/historia-gedua.html" class="block py-1">Historia del Gedua</a></li>
+        <li><a href="/sombras-ocultas/culto/dioses.html" class="block py-1">Dioses</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Idioma y escritura -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/idioma.webp" alt="" class="size-8" />
+          <span class="font-bold">Idioma y escritura</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/idioma-y-escritura/" class="block py-1">Escrituras</a></li>
+        <li><a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir/" class="block py-1">Glosario de lengua Lailshir</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Bestiario -->
+    <li>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/bestiario.webp" alt="" class="size-8" /><span>Bestiario</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  </nav>
+</header>
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!-- src/partials/header.html
+     Menú de ESCRITORIO para las páginas interiores (md en adelante).
+     - NO se incluye en index.html: ahí el menú son los iconos del hero.
+     - En móvil lo cubre nav.html (la píldora fija con el botón hamburguesa).
+     - La página actual se resalta sola (ver marcarEnlaceActivo() en menu.js). -->
+<header
+  data-header
+  class="sticky top-0 z-50 hidden w-full border-b border-plata-400/20 bg-noche-950/85 shadow-[0_8px_30px_rgb(0_0_0/0.35)] backdrop-blur-md md:block"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
+    <!-- Logo / Inicio -->
+    <a href="/sombras-ocultas/" aria-label="Sombras Ocultas, ir al inicio" class="group flex shrink-0 items-center gap-3">
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 transition duration-300 group-hover:scale-110" />
+      <span class="font-titulo hidden text-lg font-bold tracking-wider text-plata-100 transition group-hover:text-azul-300 lg:inline">
+        Sombras Ocultas
+      </span>
+    </a>
+
+    <nav aria-label="Principal" class="flex items-center gap-4 lg:gap-8">
+
+      <!-- Personajes -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/personajes/"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Personajes
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/personajes/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Ver personajes</a>
+            <a href="/sombras-ocultas/personajes/arboles-genealogicos/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Árboles genealógicos</a>
+            <a href="/sombras-ocultas/personajes/karima-fedensol/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Karima Fedensol</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/mapa/mapa.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Mapa
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/mapa/mapa.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Mapa y reinos</a>
+            <a href="/sombras-ocultas/mapa/sitios-de-archinon/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Árchinon</a>
+            <a href="/sombras-ocultas/mapa/sitios-de-rims/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Rims</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sistema de culto -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/culto/sistema-culto.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Sistema de culto
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/culto/sistema-culto.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">El Culto a Gedu</a>
+            <a href="/sombras-ocultas/culto/historia-gedua.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Historia del Gedua</a>
+            <a href="/sombras-ocultas/culto/dioses.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Dioses</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idioma y escritura -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/idioma-y-escritura/"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Idioma y escritura
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute right-0 top-full z-10 w-64 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/idioma-y-escritura/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Escrituras</a>
+            <a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Glosario de lengua Lailshir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enlaces simples -->
+      <a href="/sombras-ocultas/mapa/ley-archinon/" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Leyes</a>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Bestiario</a>
+    </nav>
+  </div>
+</header>
+
+
+<main id="contenido" class="relative z-8">
+
+  <!-- ====================== 00 · CABECERA DE PÁGINA INTERIOR ====================== -->
+  <header
+    class="relative overflow-hidden border-y border-plata-400/25 px-4 pb-20 pt-28 text-center md:pb-28 md:pt-36"
+    style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+  >
+    <div class="espectro-bg" aria-hidden="true">
+      <img src="/sombras-ocultas/images/espectro.webp" alt="" class="size-full object-contain" />
+    </div>
+
+    <div class="relative z-10">
+      <nav aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+        <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+        <span class="mx-2 text-plata-600">›</span>
+        <span class="text-azul-300">Mapa</span>
+      </nav>
+
+      <!-- Título + icono de mapa -->
+      <div class="mt-6 flex items-center justify-center gap-4 md:gap-6">
+        <img src="/sombras-ocultas/images/iconos/mapa.webp" alt="" class="size-14 object-contain drop-shadow-[0_0_14px_rgb(96_165_250/0.6)] md:size-20" />
+        <h1 class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Mapa</h1>
+      </div>
+      <p class="subtitulo mt-4 text-xs md:text-sm">Explora los reinos desde las tierras blancas hasta el desierto</p>
+    </div>
+  </header>
+  <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+  <div class="relative z-10 h-0" aria-hidden="true">
+    <span class="adorno top-0 -translate-y-1/2"></span>
+  </div>
+
+  <!-- ====================== 21 · IMAGEN PANORÁMICA DEL MAPA (full width) ====================== -->
+  <!-- Pon tu mapa en public/images/mapa-udune.jpg. Si no existe, se ve el isotipo sobre fondo azul -->
+  <figure class="relative mt-16 w-full overflow-hidden border-y border-plata-400/25 bg-noche-950" data-reveal>
+  <!-- Fondo: el mismo mapa, ampliado y desenfocado. Si no existe la imagen, queda el degradado azul con el isotipo -->
+  <div class="absolute inset-0 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950" aria-hidden="true">
+    <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-24 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+    <img src="/sombras-ocultas/images/mapa-udune.jpg" alt="" class="absolute inset-0 size-full scale-125 object-cover opacity-70 blur-2xl" onerror="this.remove()" />
+    <div class="absolute inset-0 bg-noche-950/40"></div>
+  </div>
+
+  <!-- Mapa a su alto normal, centrado y completo -->
+  <div class="relative flex min-h-64 items-center justify-center px-4 py-8 md:px-10 md:py-2">
+    <img
+      src="/sombras-ocultas/images/mapa-udune.jpg"
+      alt="Mapa de los reinos de Uduné"
+      class="block h-auto max-h-[85vh] w-auto max-w-full rounded-lg border border-plata-300/30 shadow-[0_10px_50px_rgb(0_0_0/0.6)]"
+      onerror="this.remove()"
+    />
+  </div>
+
+  <!-- Degradado inferior y pie de foto -->
+  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-noche-950 to-transparent"></div>
+</figure>
+
+  <!-- ====================== LOS SIETE REINOS (Plantilla 06 · Tarjetas + modal) ====================== -->
+  <div id="mapa-reinos" class="mx-auto max-w-5xl px-4 py-10">
+    <section class="panel px-6 py-14 md:px-14" data-reveal>
+      <span class="esquina -left-3 -top-3"></span>
+      <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+      <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+      <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+      <header class="text-center">
+        <p class="subtitulo text-xs">Las Siete Armas Sagradas</p>
+        <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Los Siete Reinos y sus Reliquias</h2>
+        <p class="mx-auto mt-6 max-w-3xl leading-relaxed text-plata-300">
+          Aunque nos encontramos en una era equivalente al medievo feudal, cada imperio en Uduné respira la esencia de
+          civilizaciones antiguas de nuestra propia historia.
+        </p>
+      </header>
+
+      <!-- Escudos: public/images/escudos/<reino>.webp
+           flex + justify-center para que la última fila (3 tarjetas) quede centrada -->
+      <div class="mt-12 flex flex-wrap justify-center gap-6">
+
+        <!-- Archinón -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/archinon.webp" alt="Escudo de Archinón" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">Ottoms-Archinón</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Archinón</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#1e3a8a" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Galaxy</strong> · espada de doble hoja</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-archinon" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <!-- Sheironeison -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/sheironeison.webp" alt="Escudo de Sheironeison" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">Las Tierras Blancas del Norte</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Sheironeison</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#9333ea" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Une</strong> · hacha doble</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-sheironeison" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <!-- Egosth -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/egosth.webp" alt="Escudo de Egosth" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">El Imperio del Sol Eterno</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Egosth</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#facc15" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Tuné</strong> · hoz</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-egosth" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <!-- Rims -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/rims.webp" alt="Escudo de Rims" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">El Gran Valle</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Rims</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#fb923c" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Shirne</strong> · daga</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-rims" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <!-- Bulpiks -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/bulpiks.webp" alt="Escudo de Bulpiks" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">El Reino de Sharnath</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Bulpiks</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full bg-black ring-1 ring-white/50" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Arumi</strong> · lanza</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-bulpiks" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <!-- Arabs -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/arabs.webp" alt="Escudo de Arabs" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">Los Jinetes de medio oriente</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Arabs</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#ef4444" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Rum</strong> · cimitarra</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-arabs" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+
+        <!-- LailShirem -->
+        <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(25%-1.125rem)]">
+          <div class="relative aspect-square overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+            <img src="/sombras-ocultas/images/escudos/lailshirem.webp" alt="Escudo de LailShirem" class="absolute inset-0 size-full object-contain p-6 transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-linear-to-t from-noche-950 to-transparent"></div>
+          </div>
+          <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+            <p class="subtitulo text-[0.65rem] text-azul-300">Tierra de los elfos</p>
+            <h3 class="font-subtitulo mt-2 text-xl text-plata-100">LailShirem</h3>
+            <p class="mt-3 flex flex-1 items-center gap-2 text-sm text-plata-400">
+              <span class="size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#22c55e" aria-hidden="true"></span>
+              <span><strong class="font-semibold text-plata-200">Oruma</strong> · espada ojival</span>
+            </p>
+            <button type="button" data-modal-abrir="reino-lailshirem" class="boton mt-5 after:absolute after:inset-0">
+              Ver detalles
+              <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+            </button>
+          </div>
+        </article>
+      </div>
+
+      <!-- ================= MODALES (<dialog> + modales.js) =================
+           Se abren con data-modal-abrir="id" y se cierran con la X (data-modal-cerrar), Esc o clic fuera. -->
+
+      <!-- Modal · Archinón -->
+      <dialog id="reino-archinon" aria-labelledby="titulo-archinon"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/archinon.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">Ottoms-Archinón</p>
+            <h3 id="titulo-archinon" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Archinón</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cultura</dt><dd class="text-plata-300">La majestuosidad del Antiguo Imperio Otomano.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#1e3a8a" aria-hidden="true"></span>Galaxy, la espada de doble hoja curvada con mango central, color azul oscuro.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Dato extra</dt><dd class="text-plata-300">Es un arma única por su diseño exótico y letal.</dd></div>
+          </dl>
+          <div class="mt-8 flex justify-center">
+            <a href="/sombras-ocultas/mapa/sitios-de-archinon/" class="boton">
+              <iconify-icon icon="lucide:map-pin" width="16" height="16"></iconify-icon>
+              Sitios de interés
+            </a>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Modal · Sheironeison -->
+      <dialog id="reino-sheironeison" aria-labelledby="titulo-sheironeison"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/sheironeison.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">Las Tierras Blancas del Norte</p>
+            <h3 id="titulo-sheironeison" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Sheironeison</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cultura</dt><dd class="text-plata-300">Inspirada en la Rusia medieval y la era Vikinga antigua. El reino más apartado y gélido.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#9333ea" aria-hidden="true"></span>Une, el hacha doble de color morado.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Portador</dt><dd class="text-plata-300">El Rey de las tierras blancas.</dd></div>
+          </dl>
+        </div>
+      </dialog>
+
+      <!-- Modal · Egosth -->
+      <dialog id="reino-egosth" aria-labelledby="titulo-egosth"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/egosth.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">El Imperio del Sol Eterno</p>
+            <h3 id="titulo-egosth" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Egosth</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cultura</dt><dd class="text-plata-300">Reflejo del Antiguo Egipto. Un pueblo de grandes conocimientos y arquitectura monumental.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#facc15" aria-hidden="true"></span>Tuné, la hoz de color amarillo.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Portador</dt><dd class="text-plata-300">El Rey del desierto.</dd></div>
+          </dl>
+        </div>
+      </dialog>
+
+      <!-- Modal · Rims -->
+      <dialog id="reino-rims" aria-labelledby="titulo-rims"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/rims.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">El Gran Valle</p>
+            <h3 id="titulo-rims" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Rims</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cultura</dt><dd class="text-plata-300">Basada en la Europa medieval del siglo XII. Caballeros, castillos y un estricto código feudal.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#fb923c" aria-hidden="true"></span>Shirne, la daga de color naranja.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Portador</dt><dd class="text-plata-300">El Rey del Gran Valle.</dd></div>
+          </dl>
+          <div class="mt-8 flex justify-center">
+            <a href="/sombras-ocultas/mapa/sitios-de-rims/" class="boton">
+              <iconify-icon icon="lucide:map-pin" width="16" height="16"></iconify-icon>
+              Sitios de interés
+            </a>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- Modal · Bulpiks -->
+      <dialog id="reino-bulpiks" aria-labelledby="titulo-bulpiks"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/bulpiks.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">El Reino de Sharnath</p>
+            <h3 id="titulo-bulpiks" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Bulpiks</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cultura</dt><dd class="text-plata-300">Herederos de Mesopotamia y la antigua Persia. Cuna de la civilización y el comercio.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full bg-black ring-1 ring-white/50" aria-hidden="true"></span>Arumi, la lanza de color negro.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Portador</dt><dd class="text-plata-300">El Rey de Sharnath.</dd></div>
+          </dl>
+        </div>
+      </dialog>
+
+      <!-- Modal · Arabs -->
+      <dialog id="reino-arabs" aria-labelledby="titulo-arabs"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/arabs.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">Los Jinetes de medio oriente</p>
+            <h3 id="titulo-arabs" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Arabs</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Cultura</dt><dd class="text-plata-300">Una mezcla vibrante inspirada en la cultura semita antigua.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#ef4444" aria-hidden="true"></span>Rum, la cimitarra de color rojo.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Portador</dt><dd class="text-plata-300">El Rey de Arabs.</dd></div>
+          </dl>
+        </div>
+      </dialog>
+
+      <!-- Modal · LailShirem -->
+      <dialog id="reino-lailshirem" aria-labelledby="titulo-lailshirem"
+        class="m-auto max-h-[85vh] w-[min(92vw,40rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar"
+            class="absolute right-4 top-4 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+          </button>
+          <header class="text-center">
+            <img src="/sombras-ocultas/images/escudos/lailshirem.webp" alt="" class="mx-auto size-28 object-contain drop-shadow-[0_0_18px_rgb(96_165_250/0.45)]" onerror="this.remove()" />
+            <p class="subtitulo mt-4 text-xs">Tierra de los elfos</p>
+            <h3 id="titulo-lailshirem" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">LailShirem</h3>
+          </header>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Identidad</dt><dd class="text-plata-300">El pueblo de las estrellas, maestros de la humanidad. Viven en la ciudad de las siete torres en el norte congelado.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Referencia</dt><dd class="text-plata-300">Seres de luz pura, regidos por Gaven (el Líder cuyo rostro es desconocido).</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Arma sagrada</dt><dd class="flex items-start gap-2 text-plata-300"><span class="mt-1.5 size-3 shrink-0 rounded-full ring-1 ring-white/30" style="background:#22c55e" aria-hidden="true"></span>Oruma, la espada ojival de color verde.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Significado</dt><dd class="text-plata-300">Representa la vida y la esencia de los Lailshir; es el vínculo entre la magia estelar y la naturaleza.</dd></div>
+          </dl>
+        </div>
+      </dialog>
+    </section>
+  </div>
+
+    <!-- ====================== REGIONES INDEPENDIENTES (filas alternas · escudo + texto) ====================== -->
+  <!-- Escudos: public/images/escudos/tianxia.webp, dharmapala.webp, aguem.webp, bosque-solitario.webp -->
+  <div id="mapa-regiones" class="mx-auto max-w-5xl px-4 py-10">
+    <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+      <span class="adorno -top-4"></span>
+      <span class="adorno -bottom-4 rotate-180"></span>
+
+      <header class="text-center">
+        <p class="subtitulo text-xs">Alianzas del Sur</p>
+        <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Regiones Independientes</h2>
+        <p class="mx-auto mt-6 max-w-3xl leading-relaxed text-plata-300">
+          Estas naciones, aunque no poseen una de las Siete Armas Sagradas originales, cuentan con la protección directa de los
+          dioses o alianzas estratégicas.
+        </p>
+      </header>
+
+      <div class="mt-14 divide-y divide-plata-400/15">
+
+        <!-- ===== 1 · Tianxia y Dharmapala (escudos a la izquierda) ===== -->
+        <article class="grid items-center gap-8 pb-12 md:grid-cols-[minmax(0,6fr)_minmax(0,7fr)] md:gap-12">
+          <div class="order-1 mx-auto w-full max-w-md md:max-w-none">
+            <div class="grid grid-cols-2 gap-4">
+              <figure>
+                <div class="relative aspect-square overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                  <img src="/sombras-ocultas/images/escudos/tianxia.webp" alt="Escudo de Tianxia" class="absolute inset-0 size-full object-contain p-5" onerror="this.remove()" />
+                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                </div>
+                <figcaption class="mt-3 text-center">
+                  <span class="subtitulo block text-[0.65rem] text-azul-300">Tianxia</span>
+                  <span class="font-subtitulo mt-1 block text-xs italic leading-snug text-plata-300">«Bajo el cielo, un solo destino»</span>
+                </figcaption>
+              </figure>
+              <figure>
+                <div class="relative aspect-square overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                  <img src="/sombras-ocultas/images/escudos/dharmapala.webp" alt="Escudo de Dharmapala" class="absolute inset-0 size-full object-contain p-5" onerror="this.remove()" />
+                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                </div>
+                <figcaption class="mt-3 text-center">
+                  <span class="subtitulo block text-[0.65rem] text-azul-300">Dharmapala</span>
+                  <span class="font-subtitulo mt-1 block text-xs italic leading-snug text-plata-300">«La Ley es el camino; la Paz, el refugio»</span>
+                </figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="order-2 text-center md:text-left">
+            <p class="subtitulo text-xs">Los Reinos del Lejano Oriente</p>
+            <h3 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">Tianxia y Dharmapala</h3>
+            <p class="mt-5 leading-relaxed text-plata-300">
+              Ubicados al noreste, más allá de los dominios de Sharnath, estos reinos se mantienen bajo la tutela de Manar.
+            </p>
+            <ul class="mt-5 space-y-3 text-left text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Tianxia:</strong> inspirado en la cultura asiática antigua.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Dharmapala:</strong> inspirado en la cultura hindú y tibetana antigua.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:flame" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Protección divina:</strong> al estar bajo la salvaguarda directa de Manar (el dios del fuego y la forja), Gedu consideró que no necesitaban las armas de las Siete Torres, pues cuentan con el favor de Manar.</span></li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ===== 2 · Aguem (escudo a la derecha) ===== -->
+        <article class="grid items-center gap-8 py-12 md:grid-cols-[minmax(0,7fr)_minmax(0,5fr)] md:gap-12">
+          <div class="order-2 text-center md:order-1 md:text-left">
+            <p class="subtitulo text-xs">El Frente de la Libertad</p>
+            <h3 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">Aguem</h3>
+            <p class="mt-5 leading-relaxed text-plata-300">
+              Antiguamente, este territorio formaba parte del reino de Sharnath, pero su historia cambió gracias a la intervención de los Archinenses.
+            </p>
+            <ul class="mt-5 space-y-3 text-left text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Cultura:</strong> reflejo de los pueblos aborígenes de África.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:shield" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Situación actual:</strong> tras ser liberados por Archinón, los Aguemeos forman un frente de resistencia crucial en el sur contra el avance de los Seres Oscuros.</span></li>
+            </ul>
+          </div>
+
+          <figure class="order-1 mx-auto w-full max-w-xs md:order-2 md:max-w-none">
+            <div class="relative aspect-square overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+              <img src="/sombras-ocultas/images/escudos/aguem.webp" alt="Escudo de Aguem" class="absolute inset-0 size-full object-contain p-8" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+            </div>
+            <figcaption class="font-subtitulo mt-3 text-center text-sm italic text-plata-300">«Raíces firmes, espíritu indomable»</figcaption>
+          </figure>
+        </article>
+
+        <!-- ===== 3 · Bosque Solitario (escudo a la izquierda) ===== -->
+        <article class="grid items-center gap-8 pt-12 md:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] md:gap-12">
+          <figure class="order-1 mx-auto w-full max-w-xs md:max-w-none">
+            <div class="relative aspect-square overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+              <img src="/sombras-ocultas/images/escudos/bosque-solitario.webp" alt="Escudo del Bosque Solitario" class="absolute inset-0 size-full object-contain p-8" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+            </div>
+            <figcaption class="font-subtitulo mt-3 text-center text-sm italic text-plata-300">«Solo el viento conoce el camino»</figcaption>
+          </figure>
+
+          <div class="order-2 text-center md:text-left">
+            <p class="subtitulo text-xs">El segundo bastión contra la oscuridad</p>
+            <h3 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">El Bosque Solitario</h3>
+            <p class="mt-5 leading-relaxed text-plata-300">
+              Un lugar donde la realidad y la fantasía se desdibujan. Es el refugio de los seres que la humanidad cree extintos.
+            </p>
+            <ul class="mt-5 space-y-3 text-left text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:map-pin" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Ubicación estratégica:</strong> se encuentra en el corazón del continente, justo entre Sharnath (al sur) y Archinón (al norte).</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:trees" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon><span><strong class="text-plata-100">Naturaleza:</strong> funciona como el segundo bastión de los Elfos (Lailshir) en el sur, protegiendo a los humanos de las ambiciones de Adevel.</span></li>
+            </ul>
+            <p class="mt-5 text-sm text-plata-300">
+              ¿Quién es el Rey de la Oscuridad?
+              <a href="/sombras-ocultas/culto/dioses-y-curiosidades/" class="magic-link text-azul-300 hover:text-white">Leer sobre Adevel y los Seres Oscuros</a>
+            </p>
+          </div>
+        </article>
+      </div>
+
+      <p class="subtitulo mt-14 text-center text-xs text-azul-300">Uduné: donde las nieblas guardan la verdad del corazón</p>
+    </section>
+  </div>
+
+  <!-- ====================== 22 · NAVEGACIÓN ANTERIOR / SIGUIENTE ====================== -->
+  <div class="mx-auto max-w-5xl px-4 py-16">
+    <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+      <a href="/sombras-ocultas/personajes/" class="tarjeta group flex items-center gap-4 px-6 py-5">
+        <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1"></iconify-icon>
+        <span>
+          <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+          <span class="font-subtitulo text-lg text-plata-100">Personajes</span>
+        </span>
+      </a>
+      <a href="/sombras-ocultas/culto/sistema-culto.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+        <span>
+          <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+          <span class="font-subtitulo text-lg text-plata-100">Sistema de culto</span>
+        </span>
+        <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1"></iconify-icon>
+      </a>
+    </nav>
+  </div>
+
+</main>
+
+    <footer class="relative z-10 border-t border-plata-400/25 bg-linear-to-b from-noche-950/90 to-noche-950 px-4 pb-5 pt-9 text-center shadow-[0_-20px_40px_rgb(0_0_0/0.45)] backdrop-blur-sm">
+  <!-- Remates en los extremos de la línea -->
+  <span class="adorno-extremo left-3 -scale-x-100" aria-hidden="true"></span>
+  <span class="adorno-extremo right-3" aria-hidden="true"></span>
+
+  <p class="font-titulo text-lg titulo-plata">Sombras Ocultas</p>
+  <p class="subtitulo mt-1 text-[0.65rem] md:text-xs">Uduné · Donde las nieblas guardan la verdad del corazón</p>
+  <p class="mt-2 text-xs text-plata-500">
+    Un mundo creado por
+    <a href="https://naidiart.com/" class="magic-link text-plata-300 hover:text-white">Naidi_art</a>
+    · © <span data-anio>2026</span>
+  </p>
+</footer>
+
+<!-- Botón volver arriba -->
+<button type="button" data-volver-arriba aria-label="Volver arriba" class="boton-subir">
+  <iconify-icon icon="lucide:chevron-up" width="22" height="22"></iconify-icon>
+</button>
+
+  </body>
+</html>

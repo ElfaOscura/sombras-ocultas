@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--@include ../src/partials/head.html-->
+    <title>Historia y Jerarquía del Gedua | Sombras Ocultas</title>
+    <meta name="description" content="Los Primordiales, las Escuelas del Gedua, los sacerdotes y las tres corrientes de la fe: Shirne-Gedua, Gedua-Orulú y Unime-Gedua." />
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!--@include ../src/partials/nav.html-->
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!--@include ../src/partials/header.html-->
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           CABECERA DE PÁGINA
+           ==================================================================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/images/espectro.webp" alt="" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600">›</span>
+            <a href="sistema-culto.html" class="magic-link hover:text-white">Sistema de culto</a>
+            <span class="mx-2 text-plata-600">›</span>
+            <span class="text-azul-300">Historia del Gedua</span>
+          </nav>
+
+          <p data-cabecera-item class="subtitulo mt-6 text-xs font-semibold text-azul-400">Crónicas Sagradas de Uduné</p>
+          <h1 data-cabecera-item class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-6xl">Historia y Jerarquía del Gedua</h1>
+          <p data-cabecera-item class="font-subtitulo mx-auto mt-4 max-w-2xl text-base text-plata-400 md:text-xl">
+            El origen, la evolución institucional y las tres corrientes de la fe
+          </p>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+      <!-- Índice rápido -->
+      <div class="mx-auto max-w-5xl px-4 pt-16">
+        <nav aria-label="En esta página" class="flex flex-wrap justify-center gap-2" data-reveal>
+          <a href="#primordiales" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Los Primordiales</a>
+          <a href="#evolucion" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Jerarquía y evolución</a>
+          <a href="#corrientes" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Las tres corrientes</a>
+          <a href="#comparativa" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Comparativa</a>
+        </nav>
+      </div>
+
+
+      <!-- ====================================================================
+           1 · LOS PRIMORDIALES (panel oscuro · texto + 2 tarjetas)
+           ==================================================================== -->
+      <div id="primordiales" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Orígenes de la civilización</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Los Primordiales y el Nacimiento de la Religión Gedua</h2>
+          </header>
+
+          <div class="mx-auto mt-8 max-w-3xl space-y-5 text-center leading-relaxed text-plata-300">
+            <p>
+              En los albores de Uduné, tras el moldeado del mundo por los seis ayudantes, surgieron los Primordiales: los primeros
+              elfos nacidos de la luz de Ithil. Ellos esperaron el despertar de los humanos para transmitirles los conocimientos
+              básicos de la civilización, las ciencias, la medicina y los relatos sagrados sobre la humildad, la fe y la comunión
+              con el Creador.
+            </p>
+            <p>
+              Una vez transmitido el mensaje del Gran Escultor, los Primordiales se retiraron a los lugares más puros y alejados
+              del mundo. Su propósito era preservar su enseñanza sin interferir en el libre albedrío humano.
+            </p>
+          </div>
+
+          <h3 class="font-subtitulo mt-12 text-center text-lg text-plata-100">El retiro y los primeros asentamientos</h3>
+
+          <div class="mt-6 grid gap-6 md:grid-cols-2">
+            <article class="tarjeta flex flex-col items-center px-6 py-8 text-center">
+              <span class="medallon size-16"><iconify-icon icon="lucide:mountain-snow" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Asentamiento principal</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Las Montañas Altas</h3>
+              <p class="mt-1 text-xs italic text-plata-400">Tierras Blancas del Norte</p>
+              <p class="mt-3 text-sm leading-relaxed text-plata-400">
+                Cuna ancestral y asentamiento principal de los Lailshir. La cercanía con los cielos nivosos fomentó la
+                contemplación de los planos espirituales elevados y el estudio del cosmos.
+              </p>
+            </article>
+
+            <article class="tarjeta flex flex-col items-center px-6 py-8 text-center">
+              <span class="medallon size-16"><iconify-icon icon="lucide:trees" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Santuario natural</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">El Bosque Solitario</h3>
+              <p class="mt-1 text-xs italic text-plata-400">Entre los reinos de Archinón y Sharnath</p>
+              <p class="mt-3 text-sm leading-relaxed text-plata-400">
+                Su espesura subtropical y sus brumas resguardan la conexión profunda con los ciclos de la tierra y la vida.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           2 · JERARQUÍA Y EVOLUCIÓN DEL CULTO (panel oscuro · línea de tiempo + cargos)
+           ==================================================================== -->
+      <div id="evolucion" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <header class="text-center">
+            <p class="subtitulo text-xs">Institucionalización</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">La Jerarquía y Evolución del Culto a Gedu</h2>
+          </header>
+
+          <ol class="relative mx-auto mt-12 max-w-3xl space-y-12 border-l border-plata-400/30 pl-8">
+            <!-- Tradición oral -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Al principio</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">La tradición oral</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                El líder de cada pueblo guiaba a su comunidad y transmitía el saber de generación en generación, con la palabra y
+                con el ejemplo.
+              </p>
+            </li>
+
+            <!-- Escuelas -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Con el crecimiento de las civilizaciones</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">De la tradición oral a las Escuelas del Gedua</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                Esta labor se institucionalizó con la creación de las <strong class="text-plata-100">Escuelas del Gedua</strong>,
+                centros dedicados a la filosofía, a los anales de los ayudantes divinos y a las leyes del equilibrio universal.
+              </p>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Allí, los <strong class="text-plata-100">escribas y sabios</strong> recopilaron los preceptos del autoconocimiento
+                y formaron a los <strong class="text-plata-100">oradores</strong>, encargados de articular y recordar la visión de
+                Gedu a las comunidades.
+              </p>
+            </li>
+
+            <!-- Sacerdotes -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Consagración</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">La formación de los sacerdotes</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                Cualquier habitante podía acudir a las escuelas para aprender los principios básicos del equilibrio y la
+                conciencia. Quienes sentían una vocación profunda y alcanzaban un dominio avanzado de sus emociones se
+                <strong class="text-plata-100">consagraban como sacerdotes</strong>.
+              </p>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Los sacerdotes de Gedu no imponen dogmas punitivos ni castigos divinos: guían el examen de conciencia, facilitan
+                la introspección y custodian la armonía social.
+              </p>
+            </li>
+
+            <!-- Simbología y rito -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Liturgia del rito</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">Simbología y rito</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">En este periodo se consolidaron dos pilares de la fe:</p>
+              <ul class="mt-3 space-y-3 leading-relaxed text-plata-300">
+                <li class="flex gap-3">
+                  <iconify-icon icon="lucide:star" width="18" height="18" class="mt-1 shrink-0 text-azul-300"></iconify-icon>
+                  <span>
+                    <strong class="text-plata-100">La Estrella de Gedu</strong>, descrita como el «compás moral» del mundo.
+                    <a href="sistema-culto.html#estrella" class="magic-link ml-1 text-sm text-azul-300 hover:text-white">Conocer su significado</a>
+                  </span>
+                </li>
+                <li class="flex gap-3">
+                  <iconify-icon icon="lucide:hand-heart" width="18" height="18" class="mt-1 shrink-0 text-azul-300"></iconify-icon>
+                  <span>
+                    <strong class="text-plata-100">La Comunión del Silencio</strong>, basada en la reflexión, la transparencia (manos con las palmas
+                    hacia arriba) y el respeto por los ciclos del sol.
+                    <a href="sistema-culto.html#rito" class="magic-link ml-1 text-sm text-azul-300 hover:text-white">Ver el rito</a>
+                  </span>
+                </li>
+              </ul>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Al estandarizarse, el rito permitió que fieles de distintos reinos compartieran un mismo lenguaje espiritual.
+              </p>
+            </li>
+          </ol>
+
+          <!-- Cargos y funciones -->
+          <div class="mt-14 border-t border-plata-400/20 pt-10">
+            <h3 class="font-subtitulo text-center text-lg text-plata-100">Cargos y funciones</h3>
+            <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              <div class="rounded-xl border border-plata-400/25 bg-noche-950/60 p-5 text-center">
+                <iconify-icon icon="lucide:users" width="26" height="26" class="text-azul-300"></iconify-icon>
+                <p class="font-subtitulo mt-3 text-sm uppercase tracking-widest text-plata-100">Líder del pueblo</p>
+                <p class="mt-2 text-xs leading-relaxed text-plata-400">Guía a su comunidad y transmite el saber con la palabra y el ejemplo.</p>
+              </div>
+              <div class="rounded-xl border border-plata-400/25 bg-noche-950/60 p-5 text-center">
+                <iconify-icon icon="lucide:feather" width="26" height="26" class="text-azul-300"></iconify-icon>
+                <p class="font-subtitulo mt-3 text-sm uppercase tracking-widest text-plata-100">Escribas y sabios</p>
+                <p class="mt-2 text-xs leading-relaxed text-plata-400">Recopilan los preceptos del autoconocimiento y forman a los oradores.</p>
+              </div>
+              <div class="rounded-xl border border-plata-400/25 bg-noche-950/60 p-5 text-center">
+                <iconify-icon icon="lucide:megaphone" width="26" height="26" class="text-azul-300"></iconify-icon>
+                <p class="font-subtitulo mt-3 text-sm uppercase tracking-widest text-plata-100">Oradores</p>
+                <p class="mt-2 text-xs leading-relaxed text-plata-400">Articulan y recuerdan la visión de Gedu a las comunidades.</p>
+              </div>
+              <div class="rounded-xl border border-azul-400/40 bg-azul-600/10 p-5 text-center">
+                <iconify-icon icon="lucide:sparkles" width="26" height="26" class="text-azul-300"></iconify-icon>
+                <p class="font-subtitulo mt-3 text-sm uppercase tracking-widest text-plata-100">Sacerdotes de Gedu</p>
+                <p class="mt-2 text-xs leading-relaxed text-plata-300">Guían el examen de conciencia, facilitan la introspección y custodian la armonía social.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           3 · LAS TRES CORRIENTES (panel oscuro · 3 tarjetas completas)
+           ==================================================================== -->
+      <div id="corrientes" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section class="panel px-6 py-14 md:px-12" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">La evolución y diversificación de la fe en Uduné</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Las Tres Corrientes del Gedua</h2>
+          </header>
+
+          <div class="mt-12 grid gap-6 lg:grid-cols-3">
+
+            <!-- ============ Corriente 1 · Shirne-Gedua ============ -->
+            <article class="tarjeta flex flex-col px-6 py-8">
+              <span class="medallon size-16"><iconify-icon icon="lucide:users" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Sistema abierto · Culto de los Intercesores</p>
+              <h3 class="font-subtitulo mt-2 text-2xl text-plata-100">Shirne-Gedua</h3>
+              <p class="mt-1 text-sm italic text-plata-400">«La Luz hacia Gedu»</p>
+
+              <dl class="mt-6 space-y-4 text-sm leading-relaxed">
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Significado del nombre</dt>
+                  <dd class="mt-1 text-plata-300"><em>Shirne</em> (Luz / Emisario) y <em>Gedua</em> (Camino de Gedu).</dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Naturaleza</dt>
+                  <dd class="mt-1 text-plata-300">Sistema abierto, devocional y politeísta.</dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Creencias</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Gedu es la deidad suprema, infinita y sin forma. Para los asuntos cotidianos (la salud, las cosechas, la
+                    protección en alta mar, las batallas) se invoca a los Seis Ayudantes Primordiales como intercesores ante el
+                    Gran Escultor.
+                  </dd>
+                  <dd class="mt-3 flex flex-wrap gap-2">
+                    <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Ithil</span>
+                    <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Manar</span>
+                    <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Erumacar</span>
+                    <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Nenalcar</span>
+                    <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Vilyatur</span>
+                    <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Gaven</span>
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Prácticas y ritos</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Uso extendido de iconografía, estatuas y altares tallados en honor a los ayudantes: por ejemplo, altares
+                    marítimos para Nenalcar y monolitos de piedra volcánica para Erumacar. Se celebran festividades estacionales
+                    para agradecer o pedir el favor de un ayudante concreto.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Dónde predomina</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Es la corriente más popular y arraigada entre el pueblo llano, los artesanos y los comerciantes de la mayoría
+                    de los reinos humanos.
+                  </dd>
+                </div>
+              </dl>
+            </article>
+
+            <!-- ============ Corriente 2 · Gedua-Orulú ============ -->
+            <article class="tarjeta flex flex-col px-6 py-8">
+              <span class="medallon size-16"><iconify-icon icon="lucide:scale" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Ortodoxia pura</p>
+              <h3 class="font-subtitulo mt-2 text-2xl text-plata-100">Gedua-Orulú</h3>
+              <p class="mt-1 text-sm italic text-plata-400">«La Voluntad Estricta de Gedu»</p>
+
+              <dl class="mt-6 space-y-4 text-sm leading-relaxed">
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Significado del nombre</dt>
+                  <dd class="mt-1 text-plata-300"><em>Gedu</em> y <em>Orulú</em> («Rechazo a la Sombra» / «Contraste absoluto»).</dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Naturaleza</dt>
+                  <dd class="mt-1 text-plata-300">Monoteísmo estricto, anicónico y dogmático.</dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Origen</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Nació como una reacción histórica y violenta contra la «idolatría» y la flexibilización del Shirne-Gedua.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Creencias</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Darles forma o culto a los Seis Ayudantes es un error de vanidad que fragmenta la devoción debida solo a Gedu.
+                    Los ayudantes no son dioses a los que se reza, sino manifestaciones o herramientas de la voluntad divina.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Qué prohíbe</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Las imágenes, estatuas o representaciones físicas de la divinidad y de los emisarios, y cualquier culto o
+                    forma dada a los ayudantes.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Prácticas y ritos</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Liturgias muy estrictas, con horarios rigurosos, y postraciones orientadas hacia el Este (el amanecer).
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Jerarquía</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Una casta sacerdotal severa que vigila la pureza doctrinal, el orden moral y la obediencia a los textos
+                    sagrados.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Dónde predomina</dt>
+                  <dd class="mt-1 text-plata-300">
+                    En los reinos con estructuras políticas centralizadas, estamentos de poder tradicionales y cortes imperiales
+                    estrictas, como los sectores ortodoxos del imperio de Archinón.
+                  </dd>
+                </div>
+              </dl>
+            </article>
+
+            <!-- ============ Corriente 3 · Unime-Gedua ============ -->
+            <article class="tarjeta flex flex-col px-6 py-8">
+              <span class="medallon size-16"><iconify-icon icon="lucide:sun-moon" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Filosofía viva · El Camino del Corazón</p>
+              <h3 class="font-subtitulo mt-2 text-2xl text-plata-100">Unime-Gedua</h3>
+              <p class="mt-1 text-sm italic text-plata-400">«El Gedua en el Corazón»</p>
+
+              <dl class="mt-6 space-y-4 text-sm leading-relaxed">
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Significado del nombre</dt>
+                  <dd class="mt-1 text-plata-300"><em>Unime</em> (Corazón / Esencia interior) y <em>Gedua</em>.</dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Naturaleza</dt>
+                  <dd class="mt-1 text-plata-300">Filosofía espiritual viva, de comunión libre y autoconocimiento.</dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Origen</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Conserva con más pureza la enseñanza original de los Primordiales en sus santuarios ancestrales: las Tierras
+                    Blancas del Norte y el Bosque Solitario.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Creencias</dt>
+                  <dd class="mt-1 text-plata-300">
+                    Gedu no habita en templos de piedra, sino en la conciencia y en el equilibrio natural de cada ser.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Prácticas y ritos</dt>
+                  <dd class="mt-1 text-plata-300">
+                    La Comunión del Silencio en su forma más pura: introspección personal y colectiva con las palmas abiertas
+                    hacia el cielo, «sin textos dogmáticos ni intermediarios judiciales».
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Jerarquía</dt>
+                  <dd class="mt-1 text-plata-300">
+                    No hay jerarquías punitivas. Sus guías son escribas, sabios u oradores que orientan el autoconocimiento y la
+                    reflexión ética.
+                  </dd>
+                </div>
+                <div>
+                  <dt class="font-subtitulo text-xs uppercase tracking-widest text-azul-300">Dónde predomina</dt>
+                  <dd class="mt-1 text-plata-300">
+                    La conservan los Lailshir (elfos), los ermitaños de las brumas, los magos eruditos y los habitantes del
+                    Bosque Solitario.
+                  </dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           4 · COMPARATIVA (panel oscuro · tabla)
+           ==================================================================== -->
+      <div id="comparativa" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <header class="text-center">
+            <p class="subtitulo text-xs">De un vistazo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Las tres corrientes comparadas</h2>
+          </header>
+
+          <div class="mt-10 overflow-x-auto rounded-xl border border-plata-400/25">
+            <table class="w-full min-w-[40rem] text-left text-sm">
+              <thead class="bg-noche-700/60 font-subtitulo text-xs uppercase tracking-widest text-plata-200">
+                <tr>
+                  <th scope="col" class="px-4 py-3"></th>
+                  <th scope="col" class="px-4 py-3">Shirne-Gedua</th>
+                  <th scope="col" class="px-4 py-3">Gedua-Orulú</th>
+                  <th scope="col" class="px-4 py-3">Unime-Gedua</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-plata-400/15 text-plata-300">
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Lema</th>
+                  <td class="px-4 py-3">La Luz hacia Gedu</td>
+                  <td class="px-4 py-3">La Voluntad Estricta de Gedu</td>
+                  <td class="px-4 py-3">El Gedua en el Corazón</td>
+                </tr>
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Naturaleza</th>
+                  <td class="px-4 py-3">Abierta, devocional y politeísta</td>
+                  <td class="px-4 py-3">Monoteísta, anicónica y dogmática</td>
+                  <td class="px-4 py-3">Filosofía viva, de comunión libre</td>
+                </tr>
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Los Seis Ayudantes</th>
+                  <td class="px-4 py-3">Intercesores ante Gedu</td>
+                  <td class="px-4 py-3">Herramientas de la voluntad divina</td>
+                  <td class="px-4 py-3 text-plata-500">—</td>
+                </tr>
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Imágenes y altares</th>
+                  <td class="px-4 py-3">Extendidos: estatuas, iconografía y altares</td>
+                  <td class="px-4 py-3">Prohibidos</td>
+                  <td class="px-4 py-3">Gedu no habita en templos de piedra</td>
+                </tr>
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Rito principal</th>
+                  <td class="px-4 py-3">Festividades estacionales y altares</td>
+                  <td class="px-4 py-3">Liturgia estricta y postración al Este</td>
+                  <td class="px-4 py-3">Comunión del Silencio</td>
+                </tr>
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Jerarquía</th>
+                  <td class="px-4 py-3 text-plata-500">—</td>
+                  <td class="px-4 py-3">Casta sacerdotal severa</td>
+                  <td class="px-4 py-3">Sin jerarquías punitivas</td>
+                </tr>
+                <tr class="transition hover:bg-noche-700/30">
+                  <th scope="row" class="px-4 py-3 font-semibold text-plata-100">Dónde predomina</th>
+                  <td class="px-4 py-3">Pueblo llano, artesanos y comerciantes</td>
+                  <td class="px-4 py-3">Reinos centralizados y cortes imperiales</td>
+                  <td class="px-4 py-3">Lailshir, ermitaños, magos y Bosque Solitario</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="mt-4 text-center text-xs text-plata-500">Una raya (—) indica que ese dato aún no está definido en el relato.</p>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           5 · NAVEGACIÓN ANTERIOR / SIGUIENTE
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="sistema-culto.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">El Culto a Gedu</span>
+            </span>
+          </a>
+          <a href="dioses.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+              <span class="font-subtitulo text-lg text-plata-100">Dioses</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <!--@include ../src/partials/footer.html-->
+
+    <script type="module" src="../src/js/main.js"></script>
+  </body>
+</html>

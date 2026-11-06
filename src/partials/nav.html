@@ -1,0 +1,123 @@
+<!-- src/partials/nav.html -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 flex justify-center px-4 md:hidden">
+  <nav
+    aria-label="Principal"
+    class="relative flex w-full max-w-4xl items-center justify-between rounded-full border border-plata-400/30 bg-noche-950/80 px-5 py-2 backdrop-blur-md"
+  >
+    <!-- Logo central en móvil = Inicio -->
+    <a
+      href="/sombras-ocultas/"
+      aria-label="Sombras Ocultas, ir al inicio"
+      class="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-plata-300/60 bg-noche-950 shadow-[0_0_18px_rgb(96_165_250/0.35)] transition duration-300 hover:shadow-[0_0_26px_rgb(147_197_253/0.7)]"
+    >
+      <img src="/images/isotipo.svg" alt="" class="size-7" />
+    </a>
+
+    <!-- Botón de menú móvil -->
+    <button
+      type="button"
+      data-menu-btn
+      aria-expanded="false"
+      aria-controls="menu-movil"
+      aria-label="Abrir menú"
+      class="flex size-10 items-center justify-center rounded-full border border-plata-400/40 text-plata-200"
+    >
+      <iconify-icon icon="lucide:menu" width="22" height="22"></iconify-icon>
+    </button>
+
+    <!-- Menú desplegable móvil -->
+<!-- Menú móvil con títulos fijos y submenús desplegables -->
+<div
+  id="menu-movil"
+  data-menu
+  hidden
+  class="absolute inset-x-0 top-full mt-3 max-h-[75vh] overflow-y-auto rounded-2xl border border-plata-400/30 bg-noche-950/95 p-4 shadow-2xl backdrop-blur-md md:hidden"
+>
+  <ul class="space-y-2 text-plata-200">
+    <li>
+      <a href="/sombras-ocultas/" class="nav-movil">
+        <img src="/images/isotipo.svg" alt="" class="size-8 p-1" />
+        <span>Inicio</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Personajes -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/images/iconos/personajes.webp" alt="" class="size-8" />
+          <span class="font-bold">Personajes</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/personajes/" class="block py-1">Ver personajes</a></li>
+        <li><a href="/sombras-ocultas/personajes/arboles-genealogicos/" class="block py-1">Árboles genealógicos</a></li>
+        <li><a href="/sombras-ocultas/personajes/karima-fedensol/" class="block py-1">Karima Fedensol</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Mapa -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/images/iconos/mapa.webp" alt="" class="size-8" />
+          <span class="font-bold">Mapa</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/mapa/mapa.html" class="block py-1">Mapa y reinos</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-de-archinon/" class="block py-1">Sitios de Árchinon</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-de-rims/" class="block py-1">Sitios de Rims</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Leyes (este sí puede llevar enlace directo si es página única) -->
+    <li>
+      <a href="/sombras-ocultas/mapa/ley-archinon/" class="nav-movil">
+        <img src="/images/iconos/leyes.webp" alt="" class="size-8" /><span>Leyes</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Sistema de culto -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/images/iconos/culto.webp" alt="" class="size-8" />
+          <span class="font-bold">Sistema de culto</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/culto/sistema-culto.html" class="block py-1">Culto</a></li>
+        <li><a href="/sombras-ocultas/culto/historia-gedua.html" class="block py-1">Historia del Gedua</a></li>
+        <li><a href="/sombras-ocultas/culto/dioses.html" class="block py-1">Dioses</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Idioma y escritura -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/images/iconos/idioma.webp" alt="" class="size-8" />
+          <span class="font-bold">Idioma y escritura</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/idioma-y-escritura/" class="block py-1">Escrituras</a></li>
+        <li><a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir/" class="block py-1">Glosario de lengua Lailshir</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Bestiario -->
+    <li>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="nav-movil">
+        <img src="/images/iconos/bestiario.webp" alt="" class="size-8" /><span>Bestiario</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  </nav>
+</header>

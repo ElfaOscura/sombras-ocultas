@@ -1,0 +1,25 @@
+{
+  "name": "sombras_ocultas",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist"
+  },
+  "dependencies": {
+    "@tsparticles/engine": "^3.9.1",
+    "@tsparticles/slim": "^3.9.1",
+    "gsap": "^3.14.2",
+    "iconify-icon": "^3.0.2"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.18",
+    "gh-pages": "^6.3.0",
+    "glob": "^13.0.0",
+    "tailwindcss": "^4.1.18",
+    "vite": "^7.3.1"
+  }
+}

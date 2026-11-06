@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050a17" />
+<link rel="icon" href="/sombras-ocultas/images/isotipo.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+
+    <title>El Culto a Gedu · Sistema de culto | Sombras Ocultas</title>
+    <meta name="description" content="El Culto a Gedu: el Gran Escultor del Universo de Uduné, la Estrella de Gedu, el rito de la Comunión del Silencio y el equilibrio entre luz y sombra." />
+    <script type="module" crossorigin src="/sombras-ocultas/assets/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/sombras-ocultas/assets/style.css">
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!-- src/partials/nav.html -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 flex justify-center px-4 md:hidden">
+  <nav
+    aria-label="Principal"
+    class="relative flex w-full max-w-4xl items-center justify-between rounded-full border border-plata-400/30 bg-noche-950/80 px-5 py-2 backdrop-blur-md"
+  >
+    <!-- Logo central en móvil = Inicio -->
+    <a
+      href="/sombras-ocultas/"
+      aria-label="Sombras Ocultas, ir al inicio"
+      class="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-plata-300/60 bg-noche-950 shadow-[0_0_18px_rgb(96_165_250/0.35)] transition duration-300 hover:shadow-[0_0_26px_rgb(147_197_253/0.7)]"
+    >
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-7" />
+    </a>
+
+    <!-- Botón de menú móvil -->
+    <button
+      type="button"
+      data-menu-btn
+      aria-expanded="false"
+      aria-controls="menu-movil"
+      aria-label="Abrir menú"
+      class="flex size-10 items-center justify-center rounded-full border border-plata-400/40 text-plata-200"
+    >
+      <iconify-icon icon="lucide:menu" width="22" height="22"></iconify-icon>
+    </button>
+
+    <!-- Menú desplegable móvil -->
+<!-- Menú móvil con títulos fijos y submenús desplegables -->
+<div
+  id="menu-movil"
+  data-menu
+  hidden
+  class="absolute inset-x-0 top-full mt-3 max-h-[75vh] overflow-y-auto rounded-2xl border border-plata-400/30 bg-noche-950/95 p-4 shadow-2xl backdrop-blur-md md:hidden"
+>
+  <ul class="space-y-2 text-plata-200">
+    <li>
+      <a href="/sombras-ocultas/" class="nav-movil">
+        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 p-1" />
+        <span>Inicio</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Personajes -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/personajes.webp" alt="" class="size-8" />
+          <span class="font-bold">Personajes</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/personajes/" class="block py-1">Ver personajes</a></li>
+        <li><a href="/sombras-ocultas/personajes/arboles-genealogicos/" class="block py-1">Árboles genealógicos</a></li>
+        <li><a href="/sombras-ocultas/personajes/karima-fedensol/" class="block py-1">Karima Fedensol</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Mapa -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/mapa.webp" alt="" class="size-8" />
+          <span class="font-bold">Mapa</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/mapa/mapa.html" class="block py-1">Mapa y reinos</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-de-archinon/" class="block py-1">Sitios de Árchinon</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-de-rims/" class="block py-1">Sitios de Rims</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Leyes (este sí puede llevar enlace directo si es página única) -->
+    <li>
+      <a href="/sombras-ocultas/mapa/ley-archinon/" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/leyes.webp" alt="" class="size-8" /><span>Leyes</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Sistema de culto -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/culto.webp" alt="" class="size-8" />
+          <span class="font-bold">Sistema de culto</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/culto/sistema-culto.html" class="block py-1">Culto</a></li>
+        <li><a href="/sombras-ocultas/culto/historia-gedua.html" class="block py-1">Historia del Gedua</a></li>
+        <li><a href="/sombras-ocultas/culto/dioses.html" class="block py-1">Dioses</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Idioma y escritura -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/idioma.webp" alt="" class="size-8" />
+          <span class="font-bold">Idioma y escritura</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/idioma-y-escritura/" class="block py-1">Escrituras</a></li>
+        <li><a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir/" class="block py-1">Glosario de lengua Lailshir</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Bestiario -->
+    <li>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/bestiario.webp" alt="" class="size-8" /><span>Bestiario</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  </nav>
+</header>
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!-- src/partials/header.html
+     Menú de ESCRITORIO para las páginas interiores (md en adelante).
+     - NO se incluye en index.html: ahí el menú son los iconos del hero.
+     - En móvil lo cubre nav.html (la píldora fija con el botón hamburguesa).
+     - La página actual se resalta sola (ver marcarEnlaceActivo() en menu.js). -->
+<header
+  data-header
+  class="sticky top-0 z-50 hidden w-full border-b border-plata-400/20 bg-noche-950/85 shadow-[0_8px_30px_rgb(0_0_0/0.35)] backdrop-blur-md md:block"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
+    <!-- Logo / Inicio -->
+    <a href="/sombras-ocultas/" aria-label="Sombras Ocultas, ir al inicio" class="group flex shrink-0 items-center gap-3">
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 transition duration-300 group-hover:scale-110" />
+      <span class="font-titulo hidden text-lg font-bold tracking-wider text-plata-100 transition group-hover:text-azul-300 lg:inline">
+        Sombras Ocultas
+      </span>
+    </a>
+
+    <nav aria-label="Principal" class="flex items-center gap-4 lg:gap-8">
+
+      <!-- Personajes -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/personajes/"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Personajes
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/personajes/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Ver personajes</a>
+            <a href="/sombras-ocultas/personajes/arboles-genealogicos/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Árboles genealógicos</a>
+            <a href="/sombras-ocultas/personajes/karima-fedensol/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Karima Fedensol</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/mapa/mapa.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Mapa
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/mapa/mapa.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Mapa y reinos</a>
+            <a href="/sombras-ocultas/mapa/sitios-de-archinon/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Árchinon</a>
+            <a href="/sombras-ocultas/mapa/sitios-de-rims/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Rims</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sistema de culto -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/culto/sistema-culto.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Sistema de culto
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/culto/sistema-culto.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">El Culto a Gedu</a>
+            <a href="/sombras-ocultas/culto/historia-gedua.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Historia del Gedua</a>
+            <a href="/sombras-ocultas/culto/dioses.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Dioses</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idioma y escritura -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/idioma-y-escritura/"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Idioma y escritura
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute right-0 top-full z-10 w-64 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/idioma-y-escritura/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Escrituras</a>
+            <a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir/" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Glosario de lengua Lailshir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enlaces simples -->
+      <a href="/sombras-ocultas/mapa/ley-archinon/" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Leyes</a>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Bestiario</a>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           CABECERA DE PÁGINA
+           Imágenes que debes guardar en public/images/culto/ (ver notas de entrega):
+             cabecera.webp · estrella-de-gedu.webp · rito-de-adoracion.webp
+           ==================================================================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <img data-cabecera-fondo src="/images/culto/cabecera.webp" alt="" class="absolute inset-0 size-full object-cover opacity-40" onerror="this.remove()" />
+        <div class="absolute inset-0 bg-linear-to-b from-noche-950/70 via-noche-950/40 to-noche-950/90"></div>
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/sombras-ocultas/images/espectro.webp" alt="" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600">›</span>
+            <span class="text-azul-300">Sistema de culto</span>
+          </nav>
+
+          <div class="mt-6 flex flex-col items-center gap-5 md:flex-row md:justify-center md:gap-8">
+            <span data-cabecera-item class="relative flex size-24 shrink-0 items-center justify-center md:size-36">
+              <span class="absolute inset-0 rounded-full bg-azul-500/25 blur-2xl" aria-hidden="true"></span>
+              <span class="absolute inset-0 rounded-full border border-plata-300/40 bg-noche-950/60 shadow-[0_0_40px_rgb(37_99_235/0.45)]" aria-hidden="true"></span>
+              <img src="/sombras-ocultas/images/iconos/culto.webp" alt="" class="relative size-3/4 object-contain drop-shadow-[0_0_14px_rgb(147_197_253/0.6)]" />
+            </span>
+            <div class="text-center md:text-left">
+              <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">El Culto a Gedu</h1>
+              <p data-cabecera-item class="subtitulo mt-4 text-xs md:text-sm">El Gran Escultor del Universo de Uduné</p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================================================================
+           ÍNDICE RÁPIDO (chips que saltan a cada sección)
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 pt-16">
+        <nav aria-label="En esta página" class="flex flex-wrap justify-center gap-2" data-reveal>
+          <a href="#primordiales" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Los Primordiales</a>
+          <a href="#naturaleza" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Naturaleza divina</a>
+          <a href="#estrella" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">La Estrella de Gedu</a>
+          <a href="#composicion" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Alma y protección</a>
+          <a href="#rito" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">El rito</a>
+          <a href="#luz-sombra" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Luz y sombra</a>
+          <a href="#adevel" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Adevel</a>
+          <a href="#mandamientos" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Los 12 mandamientos</a>
+        </nav>
+      </div>
+
+
+      <!-- ====================================================================
+           1 · EL GRAN ESCULTOR (full width · cita centrada)
+           ==================================================================== -->
+      <section id="escultor" class="relative mt-16 w-full scroll-mt-24 border-y border-plata-400/25 bg-noche-950" data-reveal>
+        <div class="mx-auto max-w-4xl px-4 py-16 text-center md:py-24">
+          <iconify-icon icon="lucide:astroid" width="34" height="34" class="text-azul-400/70"></iconify-icon>
+          <p class="subtitulo mt-4 text-xs text-azul-300">El Gran Escultor del Universo de Uduné</p>
+          <blockquote class="font-subtitulo titulo-plata mt-5 text-2xl leading-snug md:text-4xl">
+            Gedu es la deidad suprema y la fuente primordial de Uduné.
+          </blockquote>
+          <p class="mx-auto mt-8 max-w-2xl leading-relaxed text-plata-300">
+            Su culto no es una religión de dogmas rígidos, sino un
+            <strong class="text-plata-100">sistema de reflexión consciente</strong>
+            basado en el equilibrio natural y en el aprendizaje del alma.
+          </p>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           2 · LOS PRIMORDIALES (panel oscuro · texto + 2 tarjetas)
+           ==================================================================== -->
+      <div id="primordiales" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-16">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Origen de la fe</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Los Primordiales y el Nacimiento de la Religión Gedua</h2>
+          </header>
+
+          <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-plata-300">
+            La Religión Gedua nació del conocimiento que los Primordiales compartieron con la humanidad. Se funda en leyes de
+            convivencia para todas las creaciones de Gedu y descansa en dos mandamientos inquebrantables.
+          </p>
+
+          <div class="mt-10 grid gap-6 md:grid-cols-2">
+            <article class="tarjeta group flex flex-col items-center px-6 py-8 text-center">
+              <span class="medallon size-16"><iconify-icon icon="lucide:heart-handshake" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Primer mandamiento</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">La Salvación por el Arrepentimiento Sincero</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-400">
+                Ningún alma se pierde de forma definitiva. Toda falta puede remediarse, y el alma se salva mediante un
+                arrepentimiento sincero y consciente.
+              </p>
+            </article>
+
+            <article class="tarjeta group flex flex-col items-center px-6 py-8 text-center">
+              <span class="medallon size-16"><iconify-icon icon="lucide:eye-off" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">Segundo mandamiento</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">La Supremacía Invisible</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-400">
+                Gedu es la máxima autoridad celestial y no se le hará imagen ni representación física. Así la fe queda
+                protegida de la idolatría y de la manipulación terrenal.
+              </p>
+            </article>
+          </div>
+
+          <div class="mt-10 flex justify-center">
+            <a href="historia-gedua.html" class="boton">
+              <iconify-icon icon="lucide:scroll-text" width="16" height="16"></iconify-icon>
+              Ver Historia del Gedua
+            </a>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           3 · NATURALEZA DIVINA (full width · degradado azul · 3 columnas)
+           ==================================================================== -->
+      <section
+        id="naturaleza"
+        class="relative w-full scroll-mt-24 border-y border-plata-400/25"
+        style="background: linear-gradient(180deg, var(--color-noche-950), var(--color-noche-700) 50%, var(--color-noche-950));"
+        data-reveal
+      >
+        <div class="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <header class="text-center">
+            <p class="subtitulo text-xs">Gedu</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Naturaleza Divina</h2>
+          </header>
+
+          <div class="mt-12 grid gap-10 md:grid-cols-3">
+            <div class="text-center">
+              <span class="mx-auto flex size-14 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)]">
+                <iconify-icon icon="lucide:sparkles" width="26" height="26"></iconify-icon>
+              </span>
+              <h3 class="font-subtitulo mt-5 text-xl text-plata-100">Sin forma ni género</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                Gedu no tiene forma física ni género, a diferencia de otras deidades y mitos. Esa naturaleza abstracta impide que
+                un grupo humano o una raza reclame superioridad divina sobre otra.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <span class="mx-auto flex size-14 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)]">
+                <iconify-icon icon="lucide:mountain" width="26" height="26"></iconify-icon>
+              </span>
+              <h3 class="font-subtitulo mt-5 text-xl text-plata-100">La naturaleza como mecanismo</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                Gedu se manifiesta en la armonía del mundo. Las erupciones volcánicas y los huracanes no se ven como castigos
+                divinos, sino como mecanismos de equilibrio energético necesarios para sostener la vida en Uduné.
+              </p>
+            </div>
+
+            <div class="text-center">
+              <span class="mx-auto flex size-14 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)]">
+                <iconify-icon icon="lucide:sun-moon" width="26" height="26"></iconify-icon>
+              </span>
+              <h3 class="font-subtitulo mt-5 text-xl text-plata-100">Padre y Madre</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                Gedu recibe el título de <em>Padre</em> por la fuerza de la conciencia y el raciocinio que otorga al alma, y el de
+                <em>Madre</em> por la capacidad protectora y nutricia de la naturaleza.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- ====================================================================
+           4 · LA ESTRELLA DE GEDU (panel oscuro · texto + imagen)
+           ==================================================================== -->
+      <div id="estrella" class="mx-auto max-w-5xl scroll-mt-24 px-4 pt-16 pb-6">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] md:gap-14">
+            <div class="order-2 text-center md:order-1 md:text-left">
+              <p class="subtitulo text-xs">Compás moral y espiritual</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">El Mapa del Alma</h2>
+              <p class="font-subtitulo mt-3 text-lg text-plata-100">Los Cuatro Pilares de la Estrella de Gedu</p>
+              <p class="mt-6 leading-relaxed text-plata-300">
+                La Estrella de Gedu es el compás moral y espiritual de Uduné. Cada una de sus puntas representa una etapa del
+                viaje que el alma debe recorrer para alcanzar la pureza.
+              </p>
+
+              <ul class="mt-6 grid grid-cols-2 gap-3 text-left text-sm">
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/25 bg-noche-950/60 px-3 py-2">
+                  <iconify-icon icon="lucide:arrow-big-up-dash" width="18" height="18" class="shrink-0 text-azul-300"></iconify-icon>
+                  <span><strong class="text-plata-100">Norte</strong> · Lo espiritual</span>
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/25 bg-noche-950/60 px-3 py-2">
+                  <iconify-icon icon="lucide:sunrise" width="18" height="18" class="shrink-0 text-azul-300"></iconify-icon>
+                  <span><strong class="text-plata-100">Este</strong> · La encarnación</span>
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/25 bg-noche-950/60 px-3 py-2">
+                  <iconify-icon icon="lucide:sparkles" width="18" height="18" class="shrink-0 text-azul-300"></iconify-icon>
+                  <span><strong class="text-plata-100">Sur</strong> · El aprendizaje</span>
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/25 bg-noche-950/60 px-3 py-2">
+                  <iconify-icon icon="lucide:sunset" width="18" height="18" class="shrink-0 text-azul-300"></iconify-icon>
+                  <span><strong class="text-plata-100">Oeste</strong> · El retorno</span>
+                </li>
+              </ul>
+            </div>
+
+            <figure class="relative order-1 mx-auto w-full max-w-sm md:order-2 md:max-w-none">
+              <div class="relative aspect-square overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/sombras-ocultas/images/estrella-gedu.webp" alt="Símbolo de la Estrella de Gedu" class="absolute inset-0 size-full object-contain" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+              <span class="esquina -right-1 -top-1 hidden -scale-x-100 sm:block"></span>
+              <span class="esquina bottom-6 -left-1 hidden -scale-y-100 sm:block"></span>
+              <figcaption class="mt-3 text-center text-xs italic text-plata-400">Símbolo de la Estrella de Gedu · Mitología de Uduné</figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+
+      <!-- El viaje del alma (línea de tiempo) -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <header class="text-center">
+            <p class="subtitulo text-xs">Cada punta, una etapa</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">El viaje del alma</h2>
+          </header>
+
+          <ol class="relative mx-auto mt-12 max-w-3xl space-y-12 border-l border-plata-400/30 pl-8">
+            <!-- Norte -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">El Norte · Lo espiritual</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">El Reino del Origen</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                Representa el espacio infinito y el estado puro del ser, y se asocia con el azul pacífico del cielo.
+              </p>
+              <dl class="mt-4 space-y-3 rounded-xl border border-plata-400/20 bg-noche-950/50 p-4 text-sm">
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Por qué el Norte</dt><dd class="mt-1 text-plata-300">Es el punto fijo, la meta y el origen. Antes de nacer, el alma reside en un plano de paz absoluta, sin conflicto.</dd></div>
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Concepto clave</dt><dd class="mt-1 text-plata-300">Recuerda la naturaleza divina del ser: al mirar al Norte, el fiel reconoce que el mundo terrenal es temporal y que su esencia es pacífica y eterna.</dd></div>
+              </dl>
+            </li>
+
+            <!-- Este -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">El Este · La encarnación</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">El Umbral del Amanecer</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                Es el punto donde el Sol, la luz de Gedu, rompe la oscuridad. Simboliza el nacimiento.
+              </p>
+              <dl class="mt-4 space-y-3 rounded-xl border border-plata-400/20 bg-noche-950/50 p-4 text-sm">
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Por qué el Este</dt><dd class="mt-1 text-plata-300">Así como el sol sale cada mañana, el alma «sale» del plano espiritual para entrar en el físico. El cuerpo no es una cárcel, sino un «uniforme de aprendizaje».</dd></div>
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Concepto clave</dt><dd class="mt-1 text-plata-300">Marca el inicio de la misión: cada nacimiento es una oportunidad que concede el Gran Escultor para experimentar la creación a través de los sentidos.</dd></div>
+              </dl>
+            </li>
+
+            <!-- Sur -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">El Sur · El aprendizaje</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">El Salón de Clases</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                Representa el suelo firme y la vida cotidiana; es el punto más «denso» de la estrella.
+              </p>
+              <dl class="mt-4 space-y-3 rounded-xl border border-plata-400/20 bg-noche-950/50 p-4 text-sm">
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Por qué el Sur</dt><dd class="mt-1 text-plata-300">Es el «abajo», donde la teoría del cielo se pone a prueba en la práctica. Aquí aparecen las tentaciones y los desafíos.</dd></div>
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Concepto clave</dt><dd class="mt-1 text-plata-300">El alma se nutre aprendiendo mediante el servicio al prójimo y el respeto a la naturaleza. «No estamos aquí para sufrir»: en el Sur, el alma «pesa» más por sus acciones.</dd></div>
+              </dl>
+            </li>
+
+            <!-- Oeste -->
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">El Oeste · El retorno</p>
+              <h3 class="font-subtitulo mt-1 text-xl text-plata-100">El Ocaso de la Lección</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">
+                Es el momento en que el sol se oculta y la luz se retira para dar paso al descanso. Simboliza la muerte física.
+              </p>
+              <dl class="mt-4 space-y-3 rounded-xl border border-plata-400/20 bg-noche-950/50 p-4 text-sm">
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Por qué el Oeste</dt><dd class="mt-1 text-plata-300">No es un final trágico, sino el cierre de un ciclo: es el momento de quitarse el «uniforme» (el cuerpo) y evaluar lo aprendido en el «salón de clases» (el Sur).</dd></div>
+                <div><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Concepto clave</dt><dd class="mt-1 text-plata-300">La evolución. El alma no muere: regresa al Norte para procesar lo vivido y esperar su próximo ciclo, pues cada vida es una lección distinta y necesaria para la maduración del alma.</dd></div>
+              </dl>
+            </li>
+          </ol>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           5 · LA COMPOSICIÓN SAGRADA (panel oscuro · 2 tarjetas)
+           ==================================================================== -->
+      <div id="composicion" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section class="panel px-6 py-14 md:px-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Alma y protección</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">La Composición Sagrada</h2>
+          </header>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+            <!-- Estrella de cuatro puntas -->
+            <article class="tarjeta flex flex-col px-6 py-8">
+              <span class="medallon size-16"><iconify-icon icon="lucide:astroid" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">El brillo de la pureza</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">La Estrella de Cuatro Puntas</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                El alma no se dibuja de forma abstracta, sino como una <strong class="text-plata-100">estrella de luz</strong>.
+              </p>
+              <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-400">
+                <li><strong class="text-plata-100">Contraste con la oscuridad.</strong> Una estrella solo se distingue cuando la noche es más profunda; por eso el alma resplandece más ante la adversidad. Simboliza la capacidad de ser luz en medio de la confusión.</li>
+                <li><strong class="text-plata-100">Colectividad de las almas.</strong> Nadie está solo: el cielo de Uduné tiene millones de estrellas, que representan a las innumerables almas que recorren sus propios ciclos de aprendizaje.</li>
+              </ul>
+            </article>
+
+            <!-- Círculo solar -->
+            <article class="tarjeta flex flex-col px-6 py-8">
+              <span class="medallon size-16"><iconify-icon icon="lucide:circle-check" width="30" height="30"></iconify-icon></span>
+              <p class="subtitulo mt-5 text-[0.65rem] text-azul-300">La luz de protección</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">El Círculo Solar</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">
+                Un círculo perfecto rodea las puntas de la estrella. Representa al Sol, la manifestación física más pura de Gedu.
+              </p>
+              <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-400">
+                <li><strong class="text-plata-100">El escudo universal.</strong> Simboliza la protección constante del Gran Escultor: ningún ser queda fuera de su alcance, pues la luz de Gedu cubre a todo ser vivo sin excepción.</li>
+                <li><strong class="text-plata-100">La resonancia de la conciencia.</strong> La protección es universal, pero su intensidad varía según el estado de conciencia de cada persona:</li>
+              </ul>
+              <div class="mt-3 grid gap-3 sm:grid-cols-2">
+                <div class="rounded-lg border border-plata-400/20 bg-noche-950/50 p-3 text-xs leading-relaxed text-plata-300">
+                  <p class="font-subtitulo uppercase tracking-widest text-plata-100">Almas en conflicto</p>
+                  <p class="mt-1">La protección actúa como una «guía sutil».</p>
+                </div>
+                <div class="rounded-lg border border-azul-400/40 bg-azul-600/10 p-3 text-xs leading-relaxed text-plata-300">
+                  <p class="font-subtitulo uppercase tracking-widest text-plata-100">Almas puras</p>
+                  <p class="mt-1">El círculo se vuelve un «baluarte inquebrantable» para actuar con claridad y sabiduría ante las tentaciones del «abajo» (el Sur, el mundo terrenal).</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           6 · EL RITO DE GEDU
+           6a · panel de introducción
+           ==================================================================== -->
+      <div id="rito" class="mx-auto max-w-5xl scroll-mt-24 px-4 pt-10 pb-12">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">El Rito de Gedu</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">La Comunión del Silencio</h2>
+          </header>
+
+          <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-plata-300">
+            El rito de adoración no sigue dogmas rígidos ni oraciones memorizadas. En Uduné se cree que Gedu habita en cada
+            partícula de la creación, así que el rito es un momento de introspección y de alineación con el entorno.
+          </p>
+        </section>
+      </div>
+
+      <!-- 6b · imagen panorámica a todo el ancho -->
+      <figure class="relative w-full border-y border-plata-400/25" data-reveal>
+        <div class="relative aspect-[21/9] max-h-[32rem] min-h-52 w-full overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+          <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-24 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+          <img data-enfoque src="/sombras-ocultas/images/rezo-culto.webp" alt="Rito de adoración al Gran Escultor del Universo" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+          <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-noche-950 to-transparent"></div>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 px-4 pb-5 text-center">
+          <span class="subtitulo text-xs text-plata-200">Rito de adoración al Gran Escultor del Universo</span>
+        </figcaption>
+      </figure>
+
+      <!-- 6c · los tres elementos del rito -->
+      <div class="mx-auto max-w-5xl px-4 pt-12 pb-10">
+        <div class="grid gap-6 md:grid-cols-3" data-reveal>
+          <!-- Manos -->
+          <article class="tarjeta flex flex-col px-6 py-8">
+            <span class="medallon size-16"><iconify-icon icon="lucide:hand-heart" width="30" height="30"></iconify-icon></span>
+            <h3 class="font-subtitulo mt-5 text-xl text-plata-100">El simbolismo de las manos</h3>
+            <p class="mt-3 text-sm leading-relaxed text-plata-300">El gesto central consiste en mantener <strong class="text-plata-100">las palmas hacia arriba</strong>.</p>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-400">
+              <li><strong class="text-plata-100">Recibir para dar.</strong> La postura imita una bandeja o un cuenco: expresa la disposición a recibir las bendiciones y la energía del bien, con el compromiso de devolverla a la comunidad.</li>
+              <li><strong class="text-plata-100">Apertura.</strong> Elimina cualquier barrera entre el alma y el cielo, y muestra transparencia y honestidad ante la divinidad.</li>
+            </ul>
+          </article>
+
+          <!-- Sol -->
+          <article class="tarjeta flex flex-col px-6 py-8">
+            <span class="medallon size-16"><iconify-icon icon="lucide:sunrise" width="30" height="30"></iconify-icon></span>
+            <h3 class="font-subtitulo mt-5 text-xl text-plata-100">El ciclo del Sol y la orientación</h3>
+            <p class="mt-3 text-sm leading-relaxed text-plata-300">Gedu escucha desde cualquier lugar, pero los fieles suelen apoyarse en dos elementos simbólicos.</p>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-400">
+              <li><strong class="text-plata-100">Hacia el Este.</strong> Orientarse hacia el amanecer conecta con el nacimiento y la renovación del punto Este de la Estrella: «Hoy nazco de nuevo en conciencia».</li>
+              <li><strong class="text-plata-100">La luz solar.</strong> Recibir el calor del sol en las palmas se entiende como una bendición tangible de Gedu, que fortalece el círculo de protección del alma.</li>
+            </ul>
+          </article>
+
+          <!-- Propósito -->
+          <article class="tarjeta flex flex-col px-6 py-8">
+            <span class="medallon size-16"><iconify-icon icon="lucide:lightbulb" width="30" height="30"></iconify-icon></span>
+            <h3 class="font-subtitulo mt-5 text-xl text-plata-100">La reflexión consciente</h3>
+            <p class="mt-3 text-sm leading-relaxed text-plata-300">La duración es libre, de unos minutos a una hora. El objetivo no es «pedir favores», sino tres cosas.</p>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-400">
+              <li><strong class="text-plata-100">Congregación.</strong> Reunir a grupos dispersos en un momento de respeto mutuo.</li>
+              <li><strong class="text-plata-100">Examen de conciencia.</strong> Un espacio de silencio para analizar las acciones pasadas y decidir qué tipo de persona se quiere ser.</li>
+              <li><strong class="text-plata-100">Pausa energética.</strong> Detener el ruido del mundo para escuchar la voz interior, donde reside la guía de Gedu.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+
+
+      <!-- ====================================================================
+           7 · LUZ Y SOMBRA (panel CLARO · 2 columnas)
+           ==================================================================== -->
+      <div id="luz-sombra" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section
+          class="relative rounded-2xl border border-noche-600/30 bg-panel-cyan px-6 py-12 text-noche-800 shadow-[0_12px_40px_rgb(0_0_0/0.5)] md:px-14 md:py-14"
+          data-reveal
+        >
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs text-noche-600">Complejidades</p>
+            <h2 class="font-titulo mt-3 text-3xl font-bold text-noche-800 md:text-4xl">El Equilibrio entre Luz y Sombra</h2>
+          </header>
+
+          <p class="mx-auto mt-8 max-w-3xl text-center leading-relaxed text-noche-700">
+            La fe en Uduné no es ciega: se apoya en la comprensión de las capacidades humanas y en las fuerzas de contraste que
+            permiten crecer al alma.
+          </p>
+
+          <div class="mt-12 grid gap-10 md:grid-cols-2 md:gap-14">
+            <div>
+              <h3 class="font-subtitulo text-xl text-noche-800">La evolución del alma y los Magos</h3>
+              <p class="mt-3 leading-relaxed text-noche-700">
+                No todas las almas están en el mismo punto del «salón de clases». Quienes acumularon aprendizaje en vidas
+                anteriores desarrollan capacidades que van más allá de los cinco sentidos básicos: olfato, vista, oído, tacto y gusto.
+              </p>
+              <ul class="mt-5 space-y-3 leading-relaxed text-noche-700">
+                <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-1 shrink-0 text-noche-600"></iconify-icon><span><strong class="text-noche-800">Habilidades del alma.</strong> La intuición, la videncia, el presentimiento y la predicción: herramientas concedidas para hacer el bien.</span></li>
+                <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-1 shrink-0 text-noche-600"></iconify-icon><span><strong class="text-noche-800">Los Magos.</strong> Así se llama a quienes han despertado esta memoria del alma. Tener poder, sin embargo, no equivale a ser puro: un mago, como cualquier persona, decide libremente sus actos y puede caer en pensamientos bajos.</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 class="font-subtitulo text-xl text-noche-800">El origen de la «oscuridad»</h3>
+              <p class="mt-3 leading-relaxed text-noche-700">
+                El término «Oscuro» no proviene de una fuerza mística malvada, sino de causas naturales y humanas:
+              </p>
+              <ol class="mt-5 space-y-4 leading-relaxed text-noche-700">
+                <li class="flex gap-3"><span class="font-titulo flex size-7 shrink-0 items-center justify-center rounded-full border border-noche-600/50 text-sm font-bold text-noche-800">1</span><span><strong class="text-noche-800">El miedo a la noche.</strong> Al no poder ver en la oscuridad, el ser humano desarrolló temor a lo desconocido.</span></li>
+                <li class="flex gap-3"><span class="font-titulo flex size-7 shrink-0 items-center justify-center rounded-full border border-noche-600/50 text-sm font-bold text-noche-800">2</span><span><strong class="text-noche-800">Depredadores y «demonios».</strong> Los animales que cazan de noche recibieron simbólicamente el nombre de demonios por el peligro que representaban.</span></li>
+                <li class="flex gap-3"><span class="font-titulo flex size-7 shrink-0 items-center justify-center rounded-full border border-noche-600/50 text-sm font-bold text-noche-800">3</span><span><strong class="text-noche-800">Magos oscuros.</strong> No son magos con «poderes de sombra», sino magos que tomaron malas decisiones, movidos por el miedo o el egoísmo.</span></li>
+              </ol>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           8 · ADEVEL (panel oscuro · ficha + texto)
+           ==================================================================== -->
+      <div id="adevel" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+
+          <div class="grid gap-10 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-12">
+            <!-- Ficha -->
+            <aside class="mx-auto w-full max-w-sm md:max-w-none">
+              <figure class="relative">
+                <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                  <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                  <!-- Imagen de Adevel: public/images/dioses/adevel.webp (4:5) -->
+                  <img data-enfoque src="/images/dioses/adevel.webp" alt="Adevel (Sonorulú)" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                  <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                </div>
+              </figure>
+              <dl class="mt-8 divide-y divide-plata-400/15 rounded-xl border border-plata-400/25 bg-noche-950/60 text-sm">
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Nombre</dt><dd class="text-right text-plata-100">Adevel</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">También</dt><dd class="text-right text-plata-100">Sonorulú</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Titulo</dt><dd class="text-right text-plata-100">El Tentador Inmaculado</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Naturaleza</dt><dd class="text-right text-plata-100">Ente de luz (Incorruptible)</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Papel</dt><dd class="text-right text-plata-100">El contraste del libre albedrío / Arquitecto de la duda y la prueba.</dd></div>
+              </dl>
+            </aside>
+
+            <!-- Texto -->
+            <div>
+              <p class="subtitulo text-xs">El Rey de la Oscuridad</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">Adevel (Sonorulú)</h2>
+              <p class="mt-6 leading-relaxed text-plata-300">
+                Adevel, también llamado Sonorulú, es, a diferencia de Gedu, un ente de luz que decidió aprovechar el miedo humano
+                para dominar a las personas mediante el temor y el rencor.
+              </p>
+
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">El papel del contraste</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Su existencia tiene un propósito permitido por Gedu: en un mundo solo de bien no habría libre albedrío ni mérito
+                en ser bueno. Adevel crea el contraste necesario para que el ser humano elija activamente la luz.
+              </p>
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">El tentador inmaculado</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">Como encarnación de la luz que pone a prueba la voluntad, 
+                Adevel no sucumbe a la corrupción que él mismo instiga; su papel es ser el arquitecto de la duda y la prueba, obligando al ser humano a enfrentarse a su propia libertad.
+              </p>
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">La responsabilidad es tuya</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">
+                Uduné no tiene un símbolo para el «mal», porque el mal no es una entidad externa que posea a alguien: son
+                decisiones mal tomadas. El rito de reflexión sirve para reconocer esas fallas y retomar el camino.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- ====================================================================
+           LOS 12 MANDAMIENTOS Y LEYES DE GEDU (panel oscuro · tarjetas)
+           ==================================================================== -->
+      <div id="mandamientos" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">La ley del Gran Escultor</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Los 12 Mandamientos y Leyes de Gedu</h2>
+          </header>
+
+          <div class="mt-12 grid gap-5 md:grid-cols-2">
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:heart-handshake" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">01</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">El Respeto al Prójimo y a la Vida</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Protege la vida y la integridad de todo ser. Prohíbe quitar la vida al inocente o atentar contra el aliento vital que Gedu dio a cada alma: «Honrarás la vida y la integridad de todo ser».</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:message-circle-heart" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">02</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Verdad y la Honestidad</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Prohíbe el falso testimonio y la difamación. La palabra dada ante la comunidad es sagrada, y engañar a otro debilita el tejido social.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:shield-plus" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">03</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Protección de los Vulnerables</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Todo miembro del culto y habitante de la comunidad debe amparar y sustentar a quienes atraviesan necesidad, en particular al desprotegido, al huérfano y al extranjero.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:house" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">04</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Honra a la Familia y la Comunidad</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Honrar a los padres y ancianos, respetando su saber y cuidándolos cuando sus fuerzas disminuyan. Respetar los lazos del hogar y la lealtad, sin vulnerar la estructura familiar ni la confianza ajena.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:eye-off" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">05</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">El Rechazo a la Codicia</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Prohíbe desear los bienes o méritos de otros. La envidia corrompe el alma, por lo que cada persona debe trabajar por lo suyo.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:scale" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">06</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Justicia y el Comercio Honesto</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Exige pesos y medidas justos. Prohíbe robar o despojar al trabajador de los bienes que obtuvo con su esfuerzo.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:sunrise" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">07</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Redención y la Justicia Social</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Así como Gedu concede la salvación por el arrepentimiento sincero, se debe dar al arrepentido la oportunidad de reparar su daño y reintegrarse a la sociedad.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:hand-heart" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">08</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Fraternidad y la Solidaridad</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Quien vea caer a su prójimo debe tenderle la mano, pues todos forman parte de una misma creación.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:users" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">09</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Equidad de las Razas</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Exige respetar la diversidad de criaturas. Ningún pueblo recibe mayor favor divino, porque Gedu no tiene rostro ni género que distinga a sus hijos.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:leaf" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">10</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Armonía con el Entorno Natural</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Pide aprender del ritmo de la tierra: la capacidad de la naturaleza para nutrir y proteger es la verdadera guía maternal de Gedu.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:palette" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">11</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Propiedad Intelectual y Creativa</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Prohíbe apropiarse de creaciones ajenas. Obliga a valorar el esfuerzo colectivo de los creadores de Uduné sin corromper el propósito original de sus obras.</p>
+            </article>
+            <article class="tarjeta p-6" data-reveal>
+              <div class="flex items-start gap-4">
+                <span class="medallon size-14 shrink-0"><iconify-icon icon="lucide:infinity" width="26" height="26"></iconify-icon></span>
+                <div>
+                  <p class="font-titulo text-3xl font-bold leading-none text-azul-300/40">12</p>
+                  <h3 class="font-subtitulo mt-2 text-lg text-plata-100">La Inmaterialidad y Supremacía de Gedu</h3>
+                </div>
+              </div>
+              <p class="mt-4 text-sm leading-relaxed text-plata-300">Reconoce a Gedu como máxima autoridad celestial y prohíbe la idolatría. No se debe encerrar lo divino en ídolos de piedra o metal ni hacer representaciones físicas de Gedu: lo sagrado habita en la esencia y protege la fe de la manipulación terrenal.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Nota destacada -->
+      <div class="mx-auto max-w-3xl px-4 pb-16 pt-4">
+        <aside class="flex gap-4 rounded-xl border border-azul-400/40 border-l-4 border-l-azul-400 bg-noche-800/70 p-5 backdrop-blur-md" data-reveal>
+          <iconify-icon icon="lucide:feather" width="24" height="24" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon>
+          <div>
+            <p class="font-subtitulo text-sm uppercase tracking-widest text-plata-100">En Uduné no hay infierno</p>
+            <p class="mt-2 text-sm leading-relaxed text-plata-300">
+              El «infierno» y los «demonios» no existen en otro plano. Están en los actos bajos y en los vicios que retrasan el
+              aprendizaje del alma.
+            </p>
+          </div>
+        </aside>
+      </div>
+
+
+      <!-- ====================================================================
+           9 · CIERRE (full width · llamada a la acción)
+           ==================================================================== -->
+      <section
+        class="relative w-full overflow-hidden border-y border-plata-400/25"
+        style="background: radial-gradient(ellipse 70% 90% at 50% 50%, rgb(31 58 110 / 0.6), var(--color-noche-950));"
+        data-reveal
+      >
+        <img src="/images/culto/cabecera.webp" alt="" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+        <div class="absolute inset-0 bg-linear-to-b from-noche-950/80 via-noche-950/60 to-noche-950/90"></div>
+
+        <div class="relative mx-auto max-w-3xl px-4 py-24 text-center md:py-32">
+          <p class="subtitulo text-xs">Continúa explorando</p>
+          <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-5xl">Uduné: donde las nieblas guardan la verdad del corazón</h2>
+          <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <a href="historia-gedua.html" class="boton"><iconify-icon icon="lucide:scroll-text" width="16" height="16"></iconify-icon>Historia del Gedua</a>
+            <a href="dioses.html" class="boton">Dioses<iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon></a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="relative z-10 border-t border-plata-400/25 bg-linear-to-b from-noche-950/90 to-noche-950 px-4 pb-5 pt-9 text-center shadow-[0_-20px_40px_rgb(0_0_0/0.45)] backdrop-blur-sm">
+  <!-- Remates en los extremos de la línea -->
+  <span class="adorno-extremo left-3 -scale-x-100" aria-hidden="true"></span>
+  <span class="adorno-extremo right-3" aria-hidden="true"></span>
+
+  <p class="font-titulo text-lg titulo-plata">Sombras Ocultas</p>
+  <p class="subtitulo mt-1 text-[0.65rem] md:text-xs">Uduné · Donde las nieblas guardan la verdad del corazón</p>
+  <p class="mt-2 text-xs text-plata-500">
+    Un mundo creado por
+    <a href="https://naidiart.com/" class="magic-link text-plata-300 hover:text-white">Naidi_art</a>
+    · © <span data-anio>2026</span>
+  </p>
+</footer>
+
+<!-- Botón volver arriba -->
+<button type="button" data-volver-arriba aria-label="Volver arriba" class="boton-subir">
+  <iconify-icon icon="lucide:chevron-up" width="22" height="22"></iconify-icon>
+</button>
+
+  </body>
+</html>

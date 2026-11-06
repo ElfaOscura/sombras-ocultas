@@ -1,0 +1,919 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--@include partials/head.html-->
+    <title>Plantillas de sección · Sombras Ocultas</title>
+    <meta name="description" content="Biblioteca de secciones para las páginas interiores de Sombras Ocultas." />
+    <meta name="robots" content="noindex" />
+    <style>
+      /* Solo para esta página: etiquetas de cada plantilla (NO se copian) */
+      .etiqueta-dev { max-width: 64rem; margin: 3rem auto 0; padding: 0 1rem; font: 12px/1.4 ui-monospace, monospace; color: #93c5fd; }
+      .etiqueta-dev span { display: inline-block; padding: .35rem .75rem; border: 1px dashed rgb(96 165 250 / .5); border-radius: .375rem; background: rgb(37 99 235 / .12); }
+    </style>
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!--@include partials/nav.html-->
+
+    <main id="contenido" class="relative z-8">
+
+      <!--
+        ======================================================================
+        CÓMO USAR ESTA PÁGINA
+        1. Cada plantilla va entre los comentarios "▼ COPIAR DESDE AQUÍ" y "▲ HASTA AQUÍ".
+        2. Las etiquetas azules punteadas (class="etiqueta-dev") son solo guía: no se copian.
+        3. Secciones "CONTENIDA": ya traen su contenedor (max-w-5xl). Pégalas directamente dentro de <main>.
+        4. Secciones "FULL WIDTH": ocupan todo el ancho. Pégalas también directamente dentro de <main>,
+           nunca dentro de un contenedor max-w-*.
+        5. Imágenes: las rutas ejemplo-*.jpg y fondo-ejemplo.jpg no existen; mientras tanto se ve el isotipo
+           sobre fondo azul. Cambia el src por tu imagen en public/images/.
+        6. data-reveal = animación de entrada al hacer scroll (ya la maneja animaciones.js).
+        ======================================================================
+      -->
+
+      <!-- ====================================================================
+           00 · CABECERA DE PÁGINA INTERIOR (úsala una vez, al inicio)
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p00" data-dev><span>00 · Cabecera de página interior</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <header
+        class="relative overflow-hidden border-y border-plata-400/25 px-4 pb-20 pt-28 text-center md:pb-28 md:pt-36"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/images/espectro.webp" alt="" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <!-- Migas de pan -->
+          <nav aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600">›</span>
+            <a href="/sombras-ocultas/personajes/" class="magic-link hover:text-white">Sección</a>
+            <span class="mx-2 text-plata-600">›</span>
+            <span class="text-azul-300">Página actual</span>
+          </nav>
+
+          <h1 class="font-titulo titulo-plata mt-6 text-4xl font-bold leading-tight md:text-6xl">Título de la página</h1>
+          <p class="subtitulo mt-4 text-xs md:text-sm">Una frase corta que describe esta página</p>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           ÍNDICE (solo guía, bórralo en tus páginas)
+           ==================================================================== -->
+      <div class="etiqueta-dev" data-dev>
+        <span>Índice de plantillas</span>
+        <div class="mt-3 grid gap-x-6 gap-y-1 text-plata-300 sm:grid-cols-2 lg:grid-cols-3">
+          <a href="#p01" class="hover:text-white">01 · Panel oscuro · solo texto</a>
+          <a href="#p02" class="hover:text-white">02 · Panel oscuro · imagen + texto</a>
+          <a href="#p03" class="hover:text-white">03 · Panel oscuro · texto + imagen</a>
+          <a href="#p04" class="hover:text-white">04 · Panel claro · solo texto</a>
+          <a href="#p05" class="hover:text-white">05 · Panel claro · imagen + texto</a>
+          <a href="#p06" class="hover:text-white">06 · Tarjetas con imagen (3)</a>
+          <a href="#p07" class="hover:text-white">07 · Tarjetas con medallón (iconos)</a>
+          <a href="#p08" class="hover:text-white">08 · Ficha de personaje / criatura</a>
+          <a href="#p09" class="hover:text-white">09 · Texto a dos columnas + capitular</a>
+          <a href="#p10" class="hover:text-white">10 · Acordeón (preguntas / curiosidades)</a>
+          <a href="#p11" class="hover:text-white">11 · Tabla (glosario)</a>
+          <a href="#p12" class="hover:text-white">12 · Línea de tiempo</a>
+          <a href="#p13" class="hover:text-white">13 · Galería de imágenes</a>
+          <a href="#p14" class="hover:text-white">14 · Nota destacada</a>
+          <a href="#p15" class="hover:text-white">15 · Full width · oscuro · cita</a>
+          <a href="#p16" class="hover:text-white">16 · Full width · imagen de fondo + CTA</a>
+          <a href="#p17" class="hover:text-white">17 · Full width · claro · texto + imagen</a>
+          <a href="#p18" class="hover:text-white">18 · Full width · datos / cifras</a>
+          <a href="#p19" class="hover:text-white">19 · Full width · fondo fijo (parallax)</a>
+          <a href="#p20" class="hover:text-white">20 · Full width · azul · 3 columnas</a>
+          <a href="#p21" class="hover:text-white">21 · Full width · imagen panorámica</a>
+          <a href="#p22" class="hover:text-white">22 · Navegación anterior / siguiente</a>
+        </div>
+      </div>
+
+
+      <!-- ====================================================================
+           01 · CONTENIDA · PANEL OSCURO · SOLO TEXTO
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p01" data-dev><span>01 · Contenida · Panel oscuro · Solo texto</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo de la sección</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Título de la sección</h2>
+          </header>
+
+          <div class="mx-auto mt-8 max-w-3xl space-y-5 leading-relaxed text-plata-300">
+            <p>
+              Este es un párrafo de ejemplo. Aquí va el texto principal de la sección: puede hablar de un lugar, de una costumbre
+              o de un personaje del reino. Mantén los párrafos cortos para que la lectura sea cómoda.
+            </p>
+            <p>
+              Un segundo párrafo continúa la idea. Puedes resaltar una <strong class="text-plata-100">palabra clave</strong> o añadir un
+              <a href="#" class="magic-link text-azul-300 hover:text-white">enlace a otra página</a> dentro del texto.
+            </p>
+            <blockquote class="font-subtitulo border-l-2 border-azul-400/70 pl-4 text-lg italic leading-snug text-plata-100">
+              Una frase destacada o un proverbio del reino puede ir aquí, como cita.
+            </blockquote>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           02 · CONTENIDA · PANEL OSCURO · IMAGEN IZQUIERDA + TEXTO
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p02" data-dev><span>02 · Contenida · Panel oscuro · Imagen izquierda + texto</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
+            <figure class="relative mx-auto w-full max-w-sm md:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/Johari-02.png" alt="Descripción de la imagen" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+              <span class="esquina -bottom-3 -left-3 hidden rotate-270 sm:block"></span>
+              <span class="esquina -bottom-3 -right-3 hidden rotate-180 sm:block"></span>
+            </figure>
+
+            <div class="text-center md:text-left">
+              <p class="subtitulo text-xs">Subtítulo</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Título</h2>
+              <p class="font-subtitulo mt-6 text-xl leading-snug text-plata-100 md:text-2xl">
+                Un párrafo introductorio más grande, en tipografía de subtítulo, que resume la sección.
+              </p>
+              <p class="mt-4 leading-relaxed text-plata-300">
+                Después, un párrafo normal con más detalle. Útil para presentar a un personaje, un lugar o una criatura junto a su imagen.
+              </p>
+              <div class="mt-8 flex justify-center md:justify-start">
+                <a href="#" class="boton">
+                  <iconify-icon icon="lucide:crown" width="16" height="16"></iconify-icon>
+                  Botón de ejemplo
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           03 · CONTENIDA · PANEL OSCURO · TEXTO IZQUIERDA + IMAGEN
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p03" data-dev><span>03 · Contenida · Panel oscuro · Texto izquierda + imagen (con lista)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] md:gap-14">
+            <div class="order-2 text-center md:order-1 md:text-left">
+              <p class="subtitulo text-xs">Subtítulo</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Título</h2>
+              <p class="mt-6 leading-relaxed text-plata-300">
+                Párrafo de ejemplo que introduce la lista. Aquí puedes explicar el contexto de lo que se enumera a continuación.
+              </p>
+
+              <ul class="mt-6 space-y-3 text-left text-plata-300">
+                <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon>Primer punto de la lista</li>
+                <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon>Segundo punto de la lista</li>
+                <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon>Tercer punto de la lista</li>
+              </ul>
+
+              <div class="mt-8 flex flex-wrap justify-center gap-4 md:justify-start">
+                <a href="#" class="boton"><iconify-icon icon="lucide:map" width="16" height="16"></iconify-icon>Acción principal</a>
+              </div>
+            </div>
+
+            <figure class="relative order-1 mx-auto w-full max-w-sm md:order-2 md:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/ejemplo-1.jpg" alt="Descripción de la imagen" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+              <span class="esquina -right-3 -top-3 hidden -scale-x-100 sm:block"></span>
+              <span class="esquina -bottom-3 -left-3 hidden -scale-y-100 sm:block"></span>
+            </figure>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           04 · CONTENIDA · PANEL CLARO · SOLO TEXTO
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p04" data-dev><span>04 · Contenida · Panel claro · Solo texto</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section
+          class="relative rounded-2xl border border-noche-600/30 bg-panel-cyan px-6 py-12 text-noche-800 shadow-[0_12px_40px_rgb(0_0_0/0.5)] md:px-14 md:py-14"
+          data-reveal
+        >
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs text-noche-600">Subtítulo de la sección</p>
+            <h2 class="font-titulo mt-3 text-3xl font-bold text-noche-800 md:text-4xl">Título de la sección</h2>
+          </header>
+
+          <div class="mx-auto mt-8 max-w-3xl space-y-5 leading-relaxed text-noche-700">
+            <p>
+              Panel claro, pensado para textos largos o para romper el ritmo entre secciones oscuras. El texto va en azul noche
+              para que se lea bien sobre el fondo plateado.
+            </p>
+            <p>
+              Los enlaces dentro de un panel claro conviene hacerlos
+              <a href="#" class="font-semibold text-azul-600 underline decoration-azul-300 underline-offset-4 hover:text-noche-800">así</a>.
+            </p>
+            <blockquote class="font-subtitulo border-l-2 border-azul-600/60 pl-4 text-lg italic leading-snug text-noche-800">
+              Una cita destacada sobre fondo claro.
+            </blockquote>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           05 · CONTENIDA · PANEL CLARO · IMAGEN + TEXTO
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p05" data-dev><span>05 · Contenida · Panel claro · Imagen + texto</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section
+          class="relative rounded-2xl border border-noche-600/30 bg-panel-cyan px-6 py-12 text-noche-800 shadow-[0_12px_40px_rgb(0_0_0/0.5)] md:px-12 md:py-14"
+          data-reveal
+        >
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
+            <figure class="mx-auto w-full max-w-sm md:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-noche-600/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_10px_30px_rgb(15_29_58/0.35)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/ejemplo-2.jpg" alt="Descripción de la imagen" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              </div>
+              <figcaption class="mt-3 text-center text-xs italic text-noche-600">Pie de foto de ejemplo</figcaption>
+            </figure>
+
+            <div class="text-center md:text-left">
+              <p class="subtitulo text-xs text-noche-600">Subtítulo</p>
+              <h2 class="font-titulo mt-3 text-4xl font-bold leading-tight text-noche-800 md:text-5xl">Título</h2>
+              <p class="mt-6 leading-relaxed text-noche-700">
+                Texto de ejemplo sobre fondo claro con imagen a la izquierda. Funciona bien para pasajes narrativos o descripciones largas.
+              </p>
+              <p class="mt-4 leading-relaxed text-noche-700">
+                Los botones oscuros (.boton) contrastan bien sobre este fondo sin cambiar nada.
+              </p>
+              <div class="mt-8 flex justify-center md:justify-start">
+                <a href="#" class="boton"><iconify-icon icon="lucide:book-open" width="16" height="16"></iconify-icon>Seguir leyendo</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           06 · CONTENIDA · TARJETAS CON IMAGEN (3)
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p06" data-dev><span>06 · Contenida · Tarjetas con imagen (3 columnas)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-14 md:px-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Título de la cuadrícula</h2>
+          </header>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-3">
+            <!-- Repite este <article> tantas veces como necesites -->
+            <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/ejemplo-3.jpg" alt="Nombre" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Etiqueta</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Nombre de la tarjeta</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">Breve descripción de la tarjeta, de una o dos frases.</p>
+                <a href="#" class="boton mt-5 after:absolute after:inset-0">
+                  Ver más
+                  <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+                </a>
+              </div>
+            </article>
+
+            <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/ejemplo-4.jpg" alt="Nombre" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Etiqueta</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Nombre de la tarjeta</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">Breve descripción de la tarjeta, de una o dos frases.</p>
+                <a href="#" class="boton mt-5 after:absolute after:inset-0">
+                  Ver más
+                  <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+                </a>
+              </div>
+            </article>
+
+            <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/ejemplo-5.jpg" alt="Nombre" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Etiqueta</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Nombre de la tarjeta</h3>
+                <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">Breve descripción de la tarjeta, de una o dos frases.</p>
+                <a href="#" class="boton mt-5 after:absolute after:inset-0">
+                  Ver más
+                  <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+                </a>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           07 · CONTENIDA · TARJETAS CON MEDALLÓN (ICONOS)
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p07" data-dev><span>07 · Contenida · Tarjetas con medallón (iconos)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-14 md:px-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <h2 class="font-titulo titulo-plata text-3xl font-bold md:text-4xl">Título con iconos</h2>
+            <p class="subtitulo mt-2 text-xs">Subtítulo</p>
+          </header>
+
+          <div class="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <article class="tarjeta group relative flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon"><img src="/images/iconos/bestiario.webp" alt="" class="size-14 object-contain transition duration-300 group-hover:scale-110" /></span>
+              <h3 class="font-subtitulo mt-6 text-lg text-plata-100">Título</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-plata-400">Texto corto de la tarjeta.</p>
+              <a href="#" class="boton mt-6 after:absolute after:inset-0 after:rounded-xl">Ir</a>
+            </article>
+            <article class="tarjeta group relative flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon"><img src="/images/iconos/personajes.webp" alt="" class="size-14 object-contain transition duration-300 group-hover:scale-110" /></span>
+              <h3 class="font-subtitulo mt-6 text-lg text-plata-100">Título</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-plata-400">Texto corto de la tarjeta.</p>
+              <a href="#" class="boton mt-6 after:absolute after:inset-0 after:rounded-xl">Ir</a>
+            </article>
+            <article class="tarjeta group relative flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon"><img src="/images/iconos/mapa.webp" alt="" class="size-14 object-contain transition duration-300 group-hover:scale-110" /></span>
+              <h3 class="font-subtitulo mt-6 text-lg text-plata-100">Título</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-plata-400">Texto corto de la tarjeta.</p>
+              <a href="#" class="boton mt-6 after:absolute after:inset-0 after:rounded-xl">Ir</a>
+            </article>
+            <article class="tarjeta group relative flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon"><img src="/images/iconos/culto.webp" alt="" class="size-14 object-contain transition duration-300 group-hover:scale-110" /></span>
+              <h3 class="font-subtitulo mt-6 text-lg text-plata-100">Título</h3>
+              <p class="mt-2 flex-1 text-sm leading-relaxed text-plata-400">Texto corto de la tarjeta.</p>
+              <a href="#" class="boton mt-6 after:absolute after:inset-0 after:rounded-xl">Ir</a>
+            </article>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           08 · CONTENIDA · FICHA DE PERSONAJE / CRIATURA
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p08" data-dev><span>08 · Contenida · Ficha de personaje / criatura</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+
+          <div class="grid gap-10 md:grid-cols-[minmax(0,4fr)_minmax(0,7fr)] md:gap-12">
+            <!-- Columna de la ficha -->
+            <aside class="mx-auto w-full max-w-sm md:max-w-none">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img src="/images/Johari-02.png" alt="Nombre del personaje" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              </div>
+
+              <dl class="mt-5 divide-y divide-plata-400/15 rounded-xl border border-plata-400/25 bg-noche-950/60 text-sm">
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Reino</dt><dd class="text-right text-plata-100">Árchinon</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Edad</dt><dd class="text-right text-plata-100">Dato</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza</dt><dd class="text-right text-plata-100">Dato</dd></div>
+                <div class="flex justify-between gap-4 px-4 py-2.5"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-right text-plata-100">Dato</dd></div>
+              </dl>
+            </aside>
+
+            <!-- Columna de texto -->
+            <div>
+              <p class="subtitulo text-xs">Título o rango</p>
+              <h2 class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Nombre</h2>
+
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">Descripción</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">Texto de ejemplo sobre el personaje o criatura: aspecto, carácter, hábitos.</p>
+
+              <h3 class="font-subtitulo mt-8 text-lg text-plata-100">Historia</h3>
+              <p class="mt-3 leading-relaxed text-plata-300">Otro párrafo de ejemplo con su historia y su relación con otros personajes.</p>
+
+              <div class="mt-8 flex flex-wrap gap-2">
+                <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Etiqueta</span>
+                <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Etiqueta</span>
+                <span class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Etiqueta</span>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           09 · CONTENIDA · TEXTO A DOS COLUMNAS + CAPITULAR
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p09" data-dev><span>09 · Contenida · Texto a dos columnas con capitular</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Texto largo en columnas</h2>
+          </header>
+
+          <div class="mt-10 gap-10 leading-relaxed text-plata-300 md:columns-2">
+            <p class="first-letter:float-left first-letter:mr-3 first-letter:font-titulo first-letter:text-6xl first-letter:font-bold first-letter:leading-[0.8] first-letter:text-azul-300">
+              Este párrafo empieza con una letra capitular grande. En pantallas anchas el texto fluye en dos columnas, como en un libro;
+              en móvil se muestra en una sola. Es ideal para textos de historia o de lore largos.
+            </p>
+            <p class="mt-4">
+              Segundo párrafo de ejemplo. El texto se reparte solo entre las dos columnas, así que puedes añadir o quitar párrafos sin
+              tocar nada más. Sigue añadiendo texto para ver cómo fluye entre las dos columnas.
+            </p>
+            <p class="mt-4">
+              Tercer párrafo de ejemplo. Los reinos de Uduné están separados por llanuras, bosques de bruma y desiertos, y cada uno guarda
+              sus propias costumbres y sus propias leyendas sobre el origen del mundo.
+            </p>
+            <p class="mt-4">
+              Cuarto párrafo de ejemplo para completar la segunda columna y ver el efecto final de la composición.
+            </p>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           10 · CONTENIDA · ACORDEÓN
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p10" data-dev><span>10 · Contenida · Acordeón (curiosidades / preguntas)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Curiosidades</h2>
+          </header>
+
+          <div class="mx-auto mt-10 max-w-3xl space-y-3">
+            <!-- Repite este <details>. Añade el atributo "open" para que empiece abierto -->
+            <details class="group rounded-xl border border-plata-400/25 bg-noche-950/60 transition open:border-azul-400/50">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-subtitulo text-plata-100 [&::-webkit-details-marker]:hidden">
+                Primera pregunta o curiosidad
+                <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="shrink-0 text-plata-300 transition duration-300 group-open:rotate-180"></iconify-icon>
+              </summary>
+              <div class="px-5 pb-5 leading-relaxed text-plata-300">La respuesta o el detalle va aquí. Puede tener varios párrafos.</div>
+            </details>
+
+            <details class="group rounded-xl border border-plata-400/25 bg-noche-950/60 transition open:border-azul-400/50">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-subtitulo text-plata-100 [&::-webkit-details-marker]:hidden">
+                Segunda pregunta o curiosidad
+                <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="shrink-0 text-plata-300 transition duration-300 group-open:rotate-180"></iconify-icon>
+              </summary>
+              <div class="px-5 pb-5 leading-relaxed text-plata-300">La respuesta o el detalle va aquí.</div>
+            </details>
+
+            <details class="group rounded-xl border border-plata-400/25 bg-noche-950/60 transition open:border-azul-400/50">
+              <summary class="flex cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 font-subtitulo text-plata-100 [&::-webkit-details-marker]:hidden">
+                Tercera pregunta o curiosidad
+                <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="shrink-0 text-plata-300 transition duration-300 group-open:rotate-180"></iconify-icon>
+              </summary>
+              <div class="px-5 pb-5 leading-relaxed text-plata-300">La respuesta o el detalle va aquí.</div>
+            </details>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           11 · CONTENIDA · TABLA (GLOSARIO)
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p11" data-dev><span>11 · Contenida · Tabla (glosario)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Glosario</h2>
+          </header>
+
+          <div class="mt-10 overflow-x-auto rounded-xl border border-plata-400/25">
+            <table class="w-full min-w-[32rem] text-left text-sm">
+              <thead class="bg-noche-700/60 font-subtitulo text-xs uppercase tracking-widest text-plata-200">
+                <tr>
+                  <th scope="col" class="px-4 py-3">Término</th>
+                  <th scope="col" class="px-4 py-3">Pronunciación</th>
+                  <th scope="col" class="px-4 py-3">Significado</th>
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-plata-400/15 text-plata-300">
+                <tr class="transition hover:bg-noche-700/30"><td class="px-4 py-3 font-semibold text-plata-100">Término 1</td><td class="px-4 py-3 italic">pro-nun-cia-ción</td><td class="px-4 py-3">Significado de ejemplo.</td></tr>
+                <tr class="transition hover:bg-noche-700/30"><td class="px-4 py-3 font-semibold text-plata-100">Término 2</td><td class="px-4 py-3 italic">pro-nun-cia-ción</td><td class="px-4 py-3">Significado de ejemplo.</td></tr>
+                <tr class="transition hover:bg-noche-700/30"><td class="px-4 py-3 font-semibold text-plata-100">Término 3</td><td class="px-4 py-3 italic">pro-nun-cia-ción</td><td class="px-4 py-3">Significado de ejemplo.</td></tr>
+                <tr class="transition hover:bg-noche-700/30"><td class="px-4 py-3 font-semibold text-plata-100">Término 4</td><td class="px-4 py-3 italic">pro-nun-cia-ción</td><td class="px-4 py-3">Significado de ejemplo.</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           12 · CONTENIDA · LÍNEA DE TIEMPO
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p12" data-dev><span>12 · Contenida · Línea de tiempo</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Línea de tiempo</h2>
+          </header>
+
+          <ol class="relative mx-auto mt-12 max-w-3xl space-y-10 border-l border-plata-400/30 pl-8">
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Era o fecha</p>
+              <h3 class="font-subtitulo mt-1 text-lg text-plata-100">Primer acontecimiento</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">Descripción breve de lo que ocurrió en este momento.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Era o fecha</p>
+              <h3 class="font-subtitulo mt-1 text-lg text-plata-100">Segundo acontecimiento</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">Descripción breve de lo que ocurrió en este momento.</p>
+            </li>
+            <li class="relative">
+              <span class="absolute -left-10 top-1 size-4 rounded-full border border-azul-300 bg-noche-950 shadow-[0_0_10px_rgb(96_165_250/0.6)]"></span>
+              <p class="subtitulo text-xs text-azul-300">Era o fecha</p>
+              <h3 class="font-subtitulo mt-1 text-lg text-plata-100">Tercer acontecimiento</h3>
+              <p class="mt-2 leading-relaxed text-plata-300">Descripción breve de lo que ocurrió en este momento.</p>
+            </li>
+          </ol>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           13 · CONTENIDA · GALERÍA DE IMÁGENES
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p13" data-dev><span>13 · Contenida · Galería de imágenes</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Galería</h2>
+          </header>
+
+          <div class="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-4">
+            <!-- Imagen grande (ocupa 2×2) -->
+            <figure class="group relative col-span-2 row-span-2 overflow-hidden rounded-xl border border-plata-400/30 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/ejemplo-6.jpg" alt="Descripción" class="relative size-full min-h-48 object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <figcaption class="absolute inset-x-0 bottom-0 bg-linear-to-t from-noche-950/90 to-transparent px-4 pb-3 pt-8 text-xs text-plata-200">Pie de la imagen grande</figcaption>
+            </figure>
+
+            <figure class="group relative aspect-square overflow-hidden rounded-xl border border-plata-400/30 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/ejemplo-7.jpg" alt="Descripción" class="relative size-full object-cover transition duration-500 group-hover:scale-110" onerror="this.remove()" />
+            </figure>
+            <figure class="group relative aspect-square overflow-hidden rounded-xl border border-plata-400/30 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/ejemplo-8.jpg" alt="Descripción" class="relative size-full object-cover transition duration-500 group-hover:scale-110" onerror="this.remove()" />
+            </figure>
+            <figure class="group relative aspect-square overflow-hidden rounded-xl border border-plata-400/30 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/ejemplo-9.jpg" alt="Descripción" class="relative size-full object-cover transition duration-500 group-hover:scale-110" onerror="this.remove()" />
+            </figure>
+            <figure class="group relative aspect-square overflow-hidden rounded-xl border border-plata-400/30 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/ejemplo-10.jpg" alt="Descripción" class="relative size-full object-cover transition duration-500 group-hover:scale-110" onerror="this.remove()" />
+            </figure>
+          </div>
+        </section>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           14 · CONTENIDA · NOTA DESTACADA (sin panel grande)
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p14" data-dev><span>14 · Contenida · Nota destacada (aviso / dato curioso)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-3xl px-4 py-10">
+        <aside class="flex gap-4 rounded-xl border border-azul-400/40 border-l-4 border-l-azul-400 bg-noche-800/70 p-5 backdrop-blur-md" data-reveal>
+          <iconify-icon icon="lucide:feather" width="24" height="24" class="mt-0.5 shrink-0 text-azul-300"></iconify-icon>
+          <div>
+            <p class="font-subtitulo text-sm uppercase tracking-widest text-plata-100">¿Sabías que…?</p>
+            <p class="mt-2 text-sm leading-relaxed text-plata-300">
+              Un dato curioso, una advertencia de spoilers o una nota del autor. Úsala entre secciones o dentro de una página de texto.
+            </p>
+          </div>
+        </aside>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           ====================================================================
+           FULL WIDTH (ocupan todo el ancho, pégalas directamente en <main>)
+           ====================================================================
+           ==================================================================== -->
+
+
+      <!-- ====================================================================
+           15 · FULL WIDTH · OSCURO SÓLIDO · CITA CENTRADA
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p15" data-dev><span>15 · Full width · Oscuro sólido · Cita centrada</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <section class="relative w-full border-y border-plata-400/25 bg-noche-950" data-reveal>
+        <div class="mx-auto max-w-4xl px-4 py-20 text-center md:py-28">
+          <iconify-icon icon="lucide:quote" width="36" height="36" class="text-azul-400/70"></iconify-icon>
+          <blockquote class="font-subtitulo titulo-plata mt-6 text-2xl leading-snug md:text-4xl">
+            Una frase memorable del libro, un proverbio o una advertencia del reino.
+          </blockquote>
+          <p class="subtitulo mt-6 text-xs text-azul-300">— Quién lo dijo</p>
+        </div>
+      </section>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           16 · FULL WIDTH · IMAGEN DE FONDO + OVERLAY · CTA
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p16" data-dev><span>16 · Full width · Imagen de fondo con overlay · Llamada a la acción</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <section
+        class="relative w-full overflow-hidden border-y border-plata-400/25"
+        style="background: radial-gradient(ellipse 70% 90% at 50% 50%, rgb(31 58 110 / 0.6), var(--color-noche-950));"
+        data-reveal
+      >
+        <!-- Cambia el src por tu imagen. Si no existe, se ve el degradado azul de fondo -->
+        <img src="/images/fondo-ejemplo.jpg" alt="" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+        <!-- Overlay: sube o baja el número (/70) para oscurecer más o menos la imagen -->
+        <div class="absolute inset-0 bg-linear-to-b from-noche-950/80 via-noche-950/60 to-noche-950/90"></div>
+
+        <div class="relative mx-auto max-w-3xl px-4 py-24 text-center md:py-32">
+          <p class="subtitulo text-xs">Subtítulo</p>
+          <h2 class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Título de la llamada a la acción</h2>
+          <p class="mx-auto mt-6 max-w-xl text-lg leading-relaxed text-plata-200">
+            Un texto breve que invita al visitante a seguir explorando otra sección de la web.
+          </p>
+          <div class="mt-10 flex flex-wrap justify-center gap-4">
+            <a href="#" class="boton"><iconify-icon icon="lucide:compass" width="16" height="16"></iconify-icon>Botón principal</a>
+            <a href="#" class="boton"><iconify-icon icon="lucide:book-open" width="16" height="16"></iconify-icon>Botón secundario</a>
+          </div>
+        </div>
+      </section>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           17 · FULL WIDTH · CLARO · TEXTO + IMAGEN
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p17" data-dev><span>17 · Full width · Fondo claro · Texto + imagen</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <section class="relative w-full border-y border-plata-400/40 bg-panel-cyan text-noche-800" data-reveal>
+        <div class="mx-auto grid max-w-5xl items-center gap-10 px-4 py-16 md:grid-cols-2 md:gap-16 md:py-24">
+          <div class="text-center md:text-left">
+            <p class="subtitulo text-xs text-noche-600">Subtítulo</p>
+            <h2 class="font-titulo mt-3 text-4xl font-bold leading-tight text-noche-800 md:text-5xl">Título sobre fondo claro</h2>
+            <p class="mt-6 leading-relaxed text-noche-700">
+              Sección a todo el ancho con fondo plateado. Sirve para dar un respiro visual entre bloques oscuros o para resaltar una idea importante.
+            </p>
+            <p class="mt-4 leading-relaxed text-noche-700">
+              El texto va en azul noche y los botones oscuros mantienen el contraste.
+            </p>
+            <div class="mt-8 flex justify-center md:justify-start">
+              <a href="#" class="boton">Leer más <iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon></a>
+            </div>
+          </div>
+
+          <figure class="mx-auto w-full max-w-md">
+            <div class="relative aspect-[4/3] overflow-hidden rounded-xl border border-noche-600/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_14px_40px_rgb(15_29_58/0.4)]">
+              <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/ejemplo-11.jpg" alt="Descripción de la imagen" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+          </figure>
+        </div>
+      </section>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           18 · FULL WIDTH · DATOS / CIFRAS
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p18" data-dev><span>18 · Full width · Datos / cifras</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <section class="relative w-full border-y border-plata-400/25 bg-noche-900/90 backdrop-blur-sm" data-reveal>
+        <div class="mx-auto max-w-5xl px-4 py-16 md:py-20">
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Uduné en cifras</h2>
+          </header>
+
+          <dl class="mt-12 grid gap-10 text-center sm:grid-cols-3">
+            <div>
+              <dt class="subtitulo text-xs text-plata-400">Etiqueta</dt>
+              <dd class="font-titulo titulo-plata mt-2 text-5xl font-bold md:text-6xl">7</dd>
+              <p class="mt-2 text-sm text-plata-400">Descripción corta del dato</p>
+            </div>
+            <div>
+              <dt class="subtitulo text-xs text-plata-400">Etiqueta</dt>
+              <dd class="font-titulo titulo-plata mt-2 text-5xl font-bold md:text-6xl">12</dd>
+              <p class="mt-2 text-sm text-plata-400">Descripción corta del dato</p>
+            </div>
+            <div>
+              <dt class="subtitulo text-xs text-plata-400">Etiqueta</dt>
+              <dd class="font-titulo titulo-plata mt-2 text-5xl font-bold md:text-6xl">300</dd>
+              <p class="mt-2 text-sm text-plata-400">Descripción corta del dato</p>
+            </div>
+          </dl>
+        </div>
+      </section>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           19 · FULL WIDTH · FONDO FIJO (PARALLAX) · CITA
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p19" data-dev><span>19 · Full width · Imagen de fondo fija (parallax)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <!-- bg-fixed solo en pantallas medianas y grandes (en móvil no funciona bien) -->
+      <section
+        class="relative w-full overflow-hidden border-y border-plata-400/25 bg-noche-900 bg-[url('/images/fondo-ejemplo.jpg')] bg-cover bg-center md:bg-fixed"
+        data-reveal
+      >
+        <div class="absolute inset-0 bg-linear-to-b from-noche-950/85 via-noche-950/60 to-noche-950/90"></div>
+        <div class="relative mx-auto max-w-3xl px-4 py-32 text-center md:py-44">
+          <h2 class="font-titulo titulo-plata text-3xl font-bold leading-snug md:text-5xl">
+            Una frase corta e impactante sobre una imagen que se queda quieta al hacer scroll
+          </h2>
+          <p class="subtitulo mt-6 text-xs text-azul-300">Subtítulo opcional</p>
+        </div>
+      </section>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           20 · FULL WIDTH · DEGRADADO AZUL · 3 COLUMNAS DE TEXTO
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p20" data-dev><span>20 · Full width · Degradado azul · 3 columnas de texto</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <section
+        class="relative w-full border-y border-plata-400/25"
+        style="background: linear-gradient(180deg, var(--color-noche-950), var(--color-noche-700) 50%, var(--color-noche-950));"
+        data-reveal
+      >
+        <div class="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <header class="text-center">
+            <p class="subtitulo text-xs">Subtítulo</p>
+            <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Tres ideas</h2>
+          </header>
+
+          <div class="mt-12 grid gap-10 md:grid-cols-3">
+            <div class="text-center">
+              <span class="mx-auto flex size-14 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)]">
+                <iconify-icon icon="lucide:moon-star" width="26" height="26"></iconify-icon>
+              </span>
+              <h3 class="font-subtitulo mt-5 text-xl text-plata-100">Primer punto</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">Texto breve que desarrolla la primera idea.</p>
+            </div>
+            <div class="text-center">
+              <span class="mx-auto flex size-14 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)]">
+                <iconify-icon icon="lucide:castle" width="26" height="26"></iconify-icon>
+              </span>
+              <h3 class="font-subtitulo mt-5 text-xl text-plata-100">Segundo punto</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">Texto breve que desarrolla la segunda idea.</p>
+            </div>
+            <div class="text-center">
+              <span class="mx-auto flex size-14 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)]">
+                <iconify-icon icon="lucide:scroll-text" width="26" height="26"></iconify-icon>
+              </span>
+              <h3 class="font-subtitulo mt-5 text-xl text-plata-100">Tercer punto</h3>
+              <p class="mt-3 text-sm leading-relaxed text-plata-300">Texto breve que desarrolla la tercera idea.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           21 · FULL WIDTH · IMAGEN PANORÁMICA CON PIE
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p21" data-dev><span>21 · Full width · Imagen panorámica con pie</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <figure class="relative w-full border-y border-plata-400/25" data-reveal>
+        <div class="relative aspect-[21/9] max-h-[32rem] w-full overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+          <img src="/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-24 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+          <img src="/images/ejemplo-panoramica.jpg" alt="Descripción de la imagen" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+          <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-noche-950 to-transparent"></div>
+        </div>
+        <figcaption class="absolute inset-x-0 bottom-0 px-4 pb-5 text-center">
+          <span class="subtitulo text-xs text-plata-200">Pie de la imagen panorámica</span>
+        </figcaption>
+      </figure>
+      <!-- ▲ HASTA AQUÍ -->
+
+
+      <!-- ====================================================================
+           22 · CONTENIDA · NAVEGACIÓN ANTERIOR / SIGUIENTE
+           ==================================================================== -->
+      <p class="etiqueta-dev" id="p22" data-dev><span>22 · Contenida · Navegación anterior / siguiente (al final de la página)</span></p>
+      <!-- ▼ COPIAR DESDE AQUÍ -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="#" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Título de la página anterior</span>
+            </span>
+          </a>
+          <a href="#" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+              <span class="font-subtitulo text-lg text-plata-100">Título de la página siguiente</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+      <!-- ▲ HASTA AQUÍ -->
+
+    </main>
+
+    <!--@include partials/footer.html-->
+
+    <script type="module" src="/src/js/main.js"></script>
+  </body>
+</html>
