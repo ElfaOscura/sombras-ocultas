@@ -1,4 +1,4 @@
-node_modules/
-dist/
-.vite-temp/
-public/
+/node_modules
+/dist
+*.vite-temp
+/public
