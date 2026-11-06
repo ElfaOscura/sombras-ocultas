@@ -1,0 +1,18 @@
+# Dependencias
+node_modules/
+
+# Directorio de compilación de Vite
+dist/
+
+# Ignorar carpetas o archivos pesados específicos dentro de public
+/public/images/
+*.png
+*.jpg
+*.jpeg
+*.webp
+
+# Temporales de Vite
+.vite-temp/
+
+# Control de dependencias (Descomenta la siguiente línea si NO quieres subir el package-lock.json)
+package-lock.json
