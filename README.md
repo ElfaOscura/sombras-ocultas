@@ -2,7 +2,7 @@
 
 ¡Bienvenido o bienvenida al portal interactivo y enciclopedia oficial del universo de fantasía oscura **«Sombras Ocultas»**!
 
-✨ **[👉 Entrar a la Enciclopedia Interactiva](https://elfaoscura.github.io/sombras-ocultas/)**
+✨ **[👉 Entrar a la web](https://elfaoscura.github.io/sombras-ocultas/)**
 
 ---
 
