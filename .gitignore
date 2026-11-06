@@ -2,3 +2,4 @@
 /dist
 *.vite-temp
 /public
+/public/*
