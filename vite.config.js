@@ -40,7 +40,7 @@ const paginas = Object.fromEntries(
 
 export default defineConfig({
   // El sitio vive en naidiart.com/sombras-ocultas/
-  base: '/SombrasOcultas/',
+  base: '/sombras-ocultas/',
   plugins: [tailwindcss(), incluirParciales()],
   build: {
     rollupOptions: { 
