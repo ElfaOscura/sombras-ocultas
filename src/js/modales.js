@@ -1,54 +1,101 @@
-// Modales de los reinos (<dialog> nativo)
-// Abrir:  <button data-modal-abrir="id-del-dialog">
-// Cerrar: <button data-modal-cerrar> dentro del <dialog>, Esc o clic fuera
+// src/js/modales.js  (REEMPLAZA el archivo actual)
+// Se auto-inicia: basta con  import './modales.js';  en main.js
+// Modales <dialog> con animación GSAP (fade + scale) de entrada y salida.
+// Uso: data-modal-abrir="id-del-dialog" · data-modal-cerrar · Esc · clic fuera.
+import { gsap } from 'gsap';
 
-export function iniciarModales() {
-  const root = document.documentElement;
+const reducirMovimiento = () => window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-  function bloquearScroll() {
-    const barra = window.innerWidth - root.clientWidth;
-    root.style.overflow = 'hidden';
-    if (barra > 0) root.style.paddingRight = `${barra}px`;
+let ultimoDisparador = null;
+
+function abrir(dialog, disparador) {
+  if (!dialog || dialog.open) return;
+  ultimoDisparador = disparador || null;
+  gsap.killTweensOf(dialog);
+  dialog.showModal();
+
+  const contenido = dialog.querySelectorAll(':scope > div > *');
+
+  if (reducirMovimiento()) {
+    gsap.set(dialog, { opacity: 1, scale: 1, y: 0, '--fondo': 1 });
+    return;
   }
 
-  function desbloquearScroll() {
-    if (document.querySelector('dialog[open]')) return;
-    root.style.overflow = '';
-    root.style.paddingRight = '';
-  }
+  gsap.fromTo(
+    dialog,
+    { opacity: 0, scale: 0.92, y: 28, '--fondo': 0 },
+    { opacity: 1, scale: 1, y: 0, '--fondo': 1, duration: 0.5, ease: 'power3.out' }
+  );
+  gsap.fromTo(
+    contenido,
+    { opacity: 0, y: 14 },
+    { opacity: 1, y: 0, duration: 0.45, stagger: 0.08, delay: 0.1, ease: 'power2.out', clearProps: 'all' }
+  );
+}
 
-  // Un solo listener para todo: abrir, cerrar con la X y cerrar al pulsar el fondo
+function cerrar(dialog) {
+  if (!dialog || !dialog.open || dialog.dataset.cerrando) return;
+  dialog.dataset.cerrando = '1';
+  gsap.killTweensOf(dialog);
+
+  const terminar = () => {
+    dialog.close();
+    delete dialog.dataset.cerrando;
+    gsap.set(dialog, { clearProps: 'opacity,transform,--fondo' });
+    if (ultimoDisparador && document.contains(ultimoDisparador)) ultimoDisparador.focus();
+  };
+
+  if (reducirMovimiento()) return terminar();
+
+  gsap.to(dialog, {
+    opacity: 0,
+    scale: 0.94,
+    y: 18,
+    '--fondo': 0,
+    duration: 0.3,
+    ease: 'power2.in',
+    onComplete: terminar,
+  });
+}
+
+let iniciado = false;
+
+export function initModales() {
+  if (iniciado) return; // evita registrar los eventos dos veces
+  iniciado = true;
+
+  // Abrir
   document.addEventListener('click', (e) => {
-    const abrir = e.target.closest('[data-modal-abrir]');
-    if (abrir) {
-      const dialog = document.getElementById(abrir.dataset.modalAbrir);
-      if (dialog && typeof dialog.showModal === 'function' && !dialog.open) {
-        bloquearScroll();
-        dialog.showModal();
-      }
+    const disparador = e.target.closest('[data-modal-abrir]');
+    if (disparador) {
+      e.preventDefault();
+      abrir(document.getElementById(disparador.dataset.modalAbrir), disparador);
       return;
     }
 
-    const cerrar = e.target.closest('[data-modal-cerrar]');
-    if (cerrar) {
-      cerrar.closest('dialog')?.close();
+    // Cerrar con botón
+    const botonCerrar = e.target.closest('[data-modal-cerrar]');
+    if (botonCerrar) {
+      cerrar(botonCerrar.closest('dialog'));
       return;
     }
 
-    // Clic en el fondo oscuro: el propio <dialog> es el target
-    if (e.target instanceof HTMLDialogElement && e.target.open) {
-      e.target.close();
-    }
+    // Cerrar al hacer clic en el fondo (el propio <dialog>, no su contenido)
+    if (e.target instanceof HTMLDialogElement && e.target.open) cerrar(e.target);
   });
 
-  // "close" no burbujea, pero sí se puede captar en la fase de captura
+  // Esc: cancelamos el cierre nativo para animarlo con GSAP
   document.addEventListener(
-    'close',
+    'cancel',
     (e) => {
-      if (e.target instanceof HTMLDialogElement) desbloquearScroll();
+      if (e.target instanceof HTMLDialogElement) {
+        e.preventDefault();
+        cerrar(e.target);
+      }
     },
     true
   );
-
-  console.info('[modales] iniciado'); // bórralo cuando compruebes que funciona
 }
+
+// Se inicia solo al importar el archivo, sin depender de cómo lo llame main.js
+initModales();

@@ -83,7 +83,14 @@
   background-size: cover;
   background-position: center;
 }
-
+@utility bg-panel-cyan-fade {
+  background-image: linear-gradient(
+    to bottom,
+    #94c1f2 0%,
+    #7aaee6 55%,
+    var(--color-noche-950) 100%
+  );
+}
 /* --------------------------------------------------------------------------
    Componentes
    -------------------------------------------------------------------------- */
@@ -336,7 +343,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  items-center: center;
+  align-items: center;
   justify-content: center;
 }
 
@@ -449,81 +456,222 @@ button:not(:disabled),
   cursor: pointer;
 }
 
-/* ===== Modales (<dialog>): aparición y cierre suaves ===== */
+/* ===== Modales (<dialog>) · animados con GSAP (modales.js) ===== */
 dialog {
-  opacity: 0;
-  transform: translateY(1.75rem) scale(0.95);
-  transition:
-    opacity 0.35s ease,
-    transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
-    overlay 0.5s allow-discrete,
-    display 0.5s allow-discrete;
+  /* GSAP controla opacity/transform; --fondo (0→1) controla el desenfoque del fondo */
+  --fondo: 0;
 }
-
 dialog[open] {
-  opacity: 1;
-  transform: translateY(0) scale(1);
+  --fondo: 1;
 }
-
-/* Estado de partida al abrir */
-@starting-style {
-  dialog[open] {
-    opacity: 0;
-    transform: translateY(1.75rem) scale(0.95);
-  }
-}
-
-
-/* Fondo del modal: cristal esmerilado semitransparente */
 dialog::backdrop {
   background:
-    radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / 0), transparent 70%),
-    rgb(5 10 23 / 0);
-  backdrop-filter: blur(0) saturate(100%);
-  -webkit-backdrop-filter: blur(0) saturate(100%);
-  transition:
-    background 0.45s ease,
-    backdrop-filter 0.45s ease,
-    -webkit-backdrop-filter 0.45s ease,
-    overlay 0.5s allow-discrete,
-    display 0.5s allow-discrete;
+    radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / calc(var(--fondo, 1) * 0.18)), transparent 70%),
+    rgb(5 10 23 / calc(var(--fondo, 1) * 0.45));
+  backdrop-filter: blur(calc(var(--fondo, 1) * 14px)) saturate(140%);
+  -webkit-backdrop-filter: blur(calc(var(--fondo, 1) * 14px)) saturate(140%);
+}
+ 
+/* ===== Protección de imágenes: sin arrastre ni selección ===== */
+img {
+  -webkit-user-drag: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+ 
+ 
+ 
+/* ===== Estantería 3D de libros ===== */
+.estanteria {
+  perspective: 1200px;
+  perspective-origin: 50% 40%;
+}
+.estanteria-fila {
+  transform-style: preserve-3d;
+}
+.libro-slot {
+  position: relative;
+  transform-style: preserve-3d;
+}
+ 
+/* Libro: gira hacia el centro de la estantería (--ry y --tz se definen en el HTML) */
+.libro {
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateY(var(--ry, 0deg)) translateZ(var(--tz, 0px));
+  transition: filter 0.4s ease; /* el movimiento (transform) lo anima GSAP en libros.js */
+  aspect-ratio: 2 / 3;
+  filter: drop-shadow(0 14px 18px rgb(0 0 0 / 0.55));
+  outline: none;
+}
+.libro-portada {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 0.375rem;
+  border: 1px solid rgb(168 179 199 / 0.4);
+  background: linear-gradient(135deg, var(--color-noche-600), var(--color-noche-800) 50%, var(--color-noche-950));
+  box-shadow: inset 0 0 0 1px rgb(255 255 255 / 0.06);
+}
+/* Lomo: franja de brillo en el borde del libro */
+.libro-portada::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.35) 0%, rgb(255 255 255 / 0.12) 4%, transparent 12%);
+}
+/* Título de relleno si aún no existe la imagen de la portada */
+.libro-titulo-falso {
+  position: absolute;
+  inset: auto 0 12% 0;
+  padding: 0 0.5rem;
+  text-align: center;
+  font-family: var(--font-subtitulo);
+  font-size: 0.6rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-plata-200);
+}
+ 
+/* Interacción: solo el libro activo es clicable (abre el modal) */
+.libro-activo {
+  cursor: pointer;
+}
+.libro-slot[data-hover] .libro-activo {
+  filter: drop-shadow(0 22px 30px rgb(37 99 235 / 0.55));
+}
+.libro-slot[data-hover] .libro-inactivo {
+  filter: drop-shadow(0 16px 22px rgb(0 0 0 / 0.65));
+}
+/* Libros sin sinopsis todavía: no son clicables y se ven un poco apagados */
+.libro-inactivo {
+  cursor: default;
+}
+.libro-inactivo .libro-portada {
+  filter: saturate(0.75) brightness(0.85);
+}
+.libro-activo:focus-visible .libro-portada {
+  border-color: var(--color-azul-300);
+  box-shadow: 0 0 0 2px var(--color-azul-300);
+}
+ 
+/* Base de repisa: una pieza bajo cada libro, ligeramente más ancha para que formen una sola repisa */
+.libro-base {
+  display: block;
+  height: 0.9rem;
+  margin: 0.4rem -0.375rem 0;
+  border-radius: 0.25rem;
+  background: linear-gradient(180deg, var(--color-noche-600), var(--color-noche-900));
+  border-top: 1px solid rgb(203 213 225 / 0.35);
+  box-shadow: 0 12px 20px rgb(0 0 0 / 0.55), 0 0 20px rgb(37 99 235 / 0.18);
+}
+@media (min-width: 768px) {
+  .libro-base { margin-inline: -0.75rem; }
 }
 
-dialog[open]::backdrop {
-  background:
-    radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / 0.18), transparent 70%),
-    rgb(5 10 23 / 0.45);
-  backdrop-filter: blur(14px) saturate(140%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
+/* En móvil (3 columnas) se atenúa la rotación para no recortar */
+@media (max-width: 767px) {
+  .estanteria { perspective: 900px; }
 }
+/* ==========================================================================
+   FICHAS DE LOS SIETE REINOS · tinte del color de cada arma sagrada
+   Pega este bloque AL FINAL de style.css.
 
-@starting-style {
-  dialog[open]::backdrop {
-    background:
-      radial-gradient(ellipse 60% 50% at 50% 40%, rgb(37 99 235 / 0), transparent 70%),
-      rgb(5 10 23 / 0);
-    backdrop-filter: blur(0) saturate(100%);
-    -webkit-backdrop-filter: blur(0) saturate(100%);
+   Uso: cada ficha define dos variables en línea:
+     --reino        color base del reino (tiñe el fondo, siempre muy mezclado con azul noche)
+     --reino-borde  tono visible para borde y brillo (útil si el base es muy oscuro, como el negro de Bulpiks)
+
+   <article class="tarjeta tarjeta-reino ..." style="--reino:#9333ea;--reino-borde:#a855f7">
+   <dialog class="dialogo-reino ..."          style="--reino:#9333ea;--reino-borde:#a855f7">
+   ========================================================================== */
+@layer components {
+  /* ---------- Tarjeta ---------- */
+  .tarjeta-reino {
+    --reino: var(--color-azul-500);
+    --reino-borde: var(--reino);
+    border-color: color-mix(in srgb, var(--reino-borde) 50%, transparent);
+    background-image: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--reino) 22%, var(--color-noche-950)),
+      color-mix(in srgb, var(--reino) 7%, var(--color-noche-950))
+    );
+    box-shadow:
+      inset 0 1px 0 color-mix(in srgb, var(--reino-borde) 25%, transparent),
+      0 6px 24px rgb(0 0 0 / 0.35);
+  }
+  .tarjeta-reino:hover {
+    border-color: var(--reino-borde);
+    box-shadow: 0 10px 30px color-mix(in srgb, var(--reino-borde) 35%, transparent);
+  }
+  .tarjeta-reino:hover .boton {
+    border-color: var(--reino-borde);
+    box-shadow: 0 0 18px color-mix(in srgb, var(--reino-borde) 55%, transparent);
+  }
+
+  /* Marco del escudo: resplandor del color del reino y fundido hacia el fondo de la ficha */
+  .reino-escudo {
+    background: radial-gradient(
+      circle at 50% 42%,
+      color-mix(in srgb, var(--reino) 50%, var(--color-noche-950)),
+      color-mix(in srgb, var(--reino) 12%, var(--color-noche-950)) 78%
+    );
+  }
+  .reino-fade {
+    background-image: linear-gradient(
+      to top,
+      color-mix(in srgb, var(--reino) 22%, var(--color-noche-950)),
+      transparent
+    );
+  }
+
+  /* ---------- Ventana de detalles (<dialog>) ---------- */
+  .dialogo-reino {
+    --reino: var(--color-azul-500);
+    --reino-borde: var(--reino);
+    background-color: var(--color-noche-950);
+    background-image: linear-gradient(
+      to bottom,
+      color-mix(in srgb, var(--reino) 24%, var(--color-noche-800)),
+      var(--color-noche-950) 70%
+    );
+    border-color: color-mix(in srgb, var(--reino-borde) 55%, transparent);
+    box-shadow:
+      0 20px 60px rgb(0 0 0 / 0.7),
+      0 0 40px color-mix(in srgb, var(--reino-borde) 25%, transparent);
+  }
+  .dialogo-reino header > img {
+    filter: drop-shadow(0 0 18px color-mix(in srgb, var(--reino-borde) 55%, transparent));
   }
 }
+/* =================================================================   
+   SCROLLBAR PERSONALIZADO - Sombras Ocultas   
+   ================================================================ */
 
-/* El contenido entra un instante después, escalonado */
-dialog[open] > div > header,
-dialog[open] > div > dl,
-dialog[open] > div > div:last-child {
-  animation: modal-contenido 0.5s cubic-bezier(0.22, 1, 0.36, 1) both;
-}
-dialog[open] > div > dl { animation-delay: 0.08s; }
-dialog[open] > div > div:last-child { animation-delay: 0.16s; }
-
-@keyframes modal-contenido {
-  from { opacity: 0; transform: translateY(0.75rem); }
-  to   { opacity: 1; transform: translateY(0); }
+/* Para navegadores basados en WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Ancho de la barra vertical */
+  height: 10px; /* Alto de la barra horizontal */
 }
 
-/* Accesibilidad: sin movimiento si el usuario lo pidió */
-@media (prefers-reduced-motion: reduce) {
-  dialog,
-  dialog::backdrop { transition: none; }
-  dialog[open] > div > * { animation: none !important; }
+::-webkit-scrollbar-track {
+  background: #050a17; /* Fondo del carril (coincide con --color-noche-950) */
+  border-left: 1px solid rgba(203, 213, 225, 0.1); /* Sutil línea divisoria */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1e3a8a; /* Color base del tirador (tonalidad azul oscura de tu paleta) */
+  border-radius: 5px;
+  border: 2px solid #050a17; /* Margen visual simulado con el color del fondo */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #3b82f6; /* Color azul más brillante al pasar el cursor (coincide con tu acento azul) */
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e3a8a #050a17; /* [color del tirador] [color del carril] */
 }

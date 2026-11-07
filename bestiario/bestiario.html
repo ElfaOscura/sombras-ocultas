@@ -65,6 +65,7 @@
           <a href="#tigriads" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Tigriads</a>
           <a href="#manada" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Manada de la Bruma</a>
           <a href="#oscuridad" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Seres de la oscuridad</a>
+          <a href="#muinem" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Los Muinem</a>
           <a href="#curiosidad" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Curiosidad</a>
         </nav>
       </div>
@@ -529,6 +530,161 @@
       </dialog>
         </section>
       </div>
+      <!-- ====================================================================
+           7.5 · LOS MUINEM (full width · degradado azul oscuro · ficha fija + lore)
+           ==================================================================== -->
+      <section
+        id="muinem"
+        aria-labelledby="titulo-muinem"
+        class="relative w-full scroll-mt-20 overflow-hidden border-y border-plata-400/25"
+        style="background: linear-gradient(180deg, var(--color-noche-950), var(--color-noche-800) 50%, var(--color-noche-950));"
+        data-reveal
+      >
+        <!-- Resplandor frío ambiental (decorativo) -->
+        <div
+          class="pointer-events-none absolute inset-0"
+          aria-hidden="true"
+          style="background: radial-gradient(ellipse 45% 35% at 25% 35%, rgb(96 165 250 / 0.12), transparent 70%), radial-gradient(ellipse 40% 30% at 80% 75%, rgb(37 99 235 / 0.14), transparent 70%);"
+        ></div>
+
+        <div class="relative mx-auto max-w-5xl px-4 py-16 md:py-24">
+
+          <!-- ============ Encabezado + cita ============ -->
+          <header class="text-center">
+            <p class="subtitulo text-xs">Almas atadas a la sombra</p>
+            <h2 id="titulo-muinem" class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-6xl">Los Muinem</h2>
+
+            <figure class="mx-auto mt-10 max-w-2xl">
+              <iconify-icon icon="lucide:quote" width="28" height="28" class="text-azul-400/70" aria-hidden="true"></iconify-icon>
+              <blockquote class="font-subtitulo mt-3 text-lg italic leading-relaxed text-plata-100 md:text-xl">
+                <p>«No son demonios ni errantes del azar, sino las almas a las que la Muerte reclamaba en paz, hasta que la oscuridad del artefacto las arrancó del umbral para convertirlas en cadenas.»</p>
+              </blockquote>
+              <figcaption class="subtitulo mt-4 text-[0.65rem] text-azul-300">— <cite class="not-italic">Crónicas del Este de Archinón</cite></figcaption>
+            </figure>
+          </header>
+
+          <!-- ============ Panel principal: ficha + historia ============ -->
+          <div class="panel mt-14 px-6 py-12 md:px-12 md:py-14">
+            <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
+            <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
+            <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
+            <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
+
+            <div class="grid gap-12 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
+
+              <!-- Ficha (se queda fija al leer el texto en escritorio) -->
+              <aside class="mx-auto w-full max-w-sm md:sticky md:top-24 md:max-w-none md:self-start" aria-label="Ficha de los Muinem">
+                <figure>
+                  <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_50px_rgb(37_99_235/0.35)]">
+                    <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                    <img data-enfoque src="/images/bestiario/muinem.webp" alt="Los Muinem, espectros oscuros" width="800" height="1000" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                    <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950/80 to-transparent"></div>
+                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                  </div>
+                </figure>
+
+                <dl class="mt-5 divide-y divide-plata-400/15 rounded-xl border border-plata-400/25 bg-noche-950/60 text-sm">
+                  <div class="flex items-start justify-between gap-4 px-4 py-3">
+                    <dt class="font-subtitulo flex items-center gap-2 text-xs uppercase tracking-widest text-plata-400">
+                      <iconify-icon icon="lucide:ghost" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Origen
+                    </dt>
+                    <dd class="text-right text-plata-100">Almas reclamadas arrebatadas</dd>
+                  </div>
+                  <div class="flex items-start justify-between gap-4 px-4 py-3">
+                    <dt class="font-subtitulo flex items-center gap-2 text-xs uppercase tracking-widest text-plata-400">
+                      <iconify-icon icon="lucide:wind" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Naturaleza
+                    </dt>
+                    <dd class="text-right text-plata-100">Incorpórea y etérea</dd>
+                  </div>
+                  <div class="flex items-start justify-between gap-4 px-4 py-3">
+                    <dt class="font-subtitulo flex items-center gap-2 text-xs uppercase tracking-widest text-plata-400">
+                      <iconify-icon icon="lucide:crown" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Último maestro
+                    </dt>
+                    <dd class="text-right text-plata-100">Ra’id-Razin</dd>
+                  </div>
+                  <div class="flex items-start justify-between gap-4 px-4 py-3">
+                    <dt class="font-subtitulo flex items-center gap-2 text-xs uppercase tracking-widest text-plata-400">
+                      <iconify-icon icon="lucide:mountain" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Región clave
+                    </dt>
+                    <dd class="text-right text-plata-100">Cordillera de Raz</dd>
+                  </div>
+                </dl>
+              </aside>
+
+              <!-- Historia y naturaleza -->
+              <div class="text-center md:text-left">
+                <div>
+                  <span class="medallon mx-auto size-14 md:mx-0" aria-hidden="true"><iconify-icon icon="lucide:link" width="24" height="24"></iconify-icon></span>
+                  <h3 class="font-subtitulo mt-4 text-2xl text-plata-100">Origen y Esclavitud Oscura</h3>
+                  <p class="mt-3 leading-relaxed text-plata-300">
+                    Los <strong class="text-white">Muinem</strong> son las almas de aquellos fallecidos a quienes la Muerte reclamó en paz, pero que jamás lograron cruzar el velo. Al apagar la vida en la penumbra, una reliquia antigua las intercepta y transmuerta por la fuerza en esclavos oscuros al servicio del invocador.
+                  </p>
+
+                  <!-- Nota destacada: la catástrofe -->
+                  <aside class="mt-5 flex gap-4 rounded-xl border border-azul-400/40 border-l-4 border-l-azul-400 bg-noche-950/60 p-5 text-left">
+                    <iconify-icon icon="lucide:mountain" width="24" height="24" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                    <p class="text-sm leading-relaxed text-plata-300">
+                      Su historia está marcada por la catástrofe de la <strong class="text-white">Cordillera de Raz</strong>, donde una violenta erupción destruyó pueblos enteros y maldijo la región. A diferencia de los espíritus comunes, obedecen ciegamente a magos oscuros de alto rango y se alimentan del terror que causan.
+                    </p>
+                  </aside>
+                </div>
+
+                <div class="mt-12 border-t border-plata-400/15 pt-10">
+                  <span class="medallon mx-auto size-14 md:mx-0" aria-hidden="true"><iconify-icon icon="lucide:eye" width="24" height="24"></iconify-icon></span>
+                  <h3 class="font-subtitulo mt-4 text-2xl text-plata-100">Apariencia y Capuchas Brumosas</h3>
+                  <p class="mt-3 leading-relaxed text-plata-300">
+                    Conservan una silueta humanoide pero carecen de densidad física sólida: están formados por una bruma volátil que asemeja un jirón de humo denso. Sus mantos y capuchas oscuras están integrados en su propia naturaleza espectral, dejando ver únicamente unos <strong class="text-white">ojos resplandecientes de luz fría</strong>.
+                  </p>
+                </div>
+
+                <ul class="mt-10 flex flex-wrap justify-center gap-2 md:justify-start" aria-label="Rasgos de los Muinem">
+                  <li class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Esclavitud arcana</li>
+                  <li class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Almas robadas</li>
+                  <li class="rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">Incorpóreos</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============ Variantes y estrategia ============ -->
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+
+            <article class="tarjeta flex flex-col p-6 md:p-8">
+              <div class="flex items-center gap-4">
+                <span class="medallon size-14 shrink-0" aria-hidden="true"><iconify-icon icon="lucide:flame" width="24" height="24"></iconify-icon></span>
+                <div>
+                  <p class="subtitulo text-[0.65rem] text-azul-300">Variante del espectro</p>
+                  <h3 class="font-subtitulo text-xl text-plata-100">Muinem Marrones</h3>
+                </div>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">
+                Variantes cuya bruma adopta tonalidades terrosas. En la invocación actúan como catalizadores del pánico: cosechan la desesperación circundante para nutrir y potenciar la energía de los Muinem negros.
+              </p>
+            </article>
+
+            <article class="tarjeta flex flex-col p-6 md:p-8">
+              <div class="flex items-center gap-4">
+                <span class="medallon size-14 shrink-0" aria-hidden="true"><iconify-icon icon="lucide:swords" width="24" height="24"></iconify-icon></span>
+                <div>
+                  <p class="subtitulo text-[0.65rem] text-azul-300">Estrategia de combate</p>
+                  <h3 class="font-subtitulo text-xl text-plata-100">Cómo detenerlos</h3>
+                </div>
+              </div>
+              <ul class="mt-5 space-y-4 text-sm leading-relaxed text-plata-300">
+                <li class="flex items-start gap-3">
+                  <iconify-icon icon="lucide:user-x" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                  <span><strong class="text-plata-100">Derrotar al invocador:</strong> Cortar el vínculo con el maestro rompe su cohesión en este plano.</span>
+                </li>
+                <li class="flex items-start gap-3">
+                  <iconify-icon icon="lucide:gem" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                  <span><strong class="text-plata-100">Destruir/recuperar la reliquia:</strong> Desactivar el artefacto arcano libera las almas del mandato que las ataba a este lado del velo.</span>
+                </li>
+              </ul>
+            </article>
+
+          </div>
+        </div>
+      </section>
 
 
       <!-- ====================================================================
@@ -562,11 +718,11 @@
       <div class="mx-auto max-w-5xl px-4 py-16">
         <p class="subtitulo mb-8 text-center text-xs text-azul-300">Uduné: donde las nieblas guardan la verdad del corazón</p>
         <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
-          <a href="/sombras-ocultas/idioma-y-escritura/" class="tarjeta group flex items-center gap-4 px-6 py-5">
+          <a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
             <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1"></iconify-icon>
             <span>
               <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
-              <span class="font-subtitulo text-lg text-plata-100">Idioma y escritura</span>
+              <span class="font-subtitulo text-lg text-plata-100">Escritura</span>
             </span>
           </a>
           <a href="/sombras-ocultas/" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">

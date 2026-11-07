@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--@include ../src/partials/head.html-->
+    <title>Glosario de lengua Lailshir · Sombras Ocultas</title>
+    <meta name="description" content="Glosario de lengua Lailshir: pronombres principales, conjugación verbal, vocabulario esencial y lecciones rápidas." />
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!--@include ../src/partials/nav.html-->
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!--@include ../src/partials/header.html-->
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           IMAGEN de esta página: public/images/iconos/escritura.webp (icono del header)
+           ==================================================================== -->
+
+      <!-- ====================== CABECERA ====================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/images/espectro.webp" alt="" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="magic-link hover:text-white">Idioma y escritura</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <span class="text-azul-300" aria-current="page">Glosario de lengua Lailshir</span>
+          </nav>
+
+          <div class="mt-6 flex items-center justify-center gap-4 md:gap-6">
+            <img data-cabecera-item src="/images/iconos/escritura.webp" alt="" class="size-14 object-contain drop-shadow-[0_0_14px_rgb(96_165_250/0.6)] md:size-20" onerror="this.remove()" />
+            <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Glosario de lengua Lailshir</h1>
+          </div>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================================================================
+           PRONOMBRES PRINCIPALES · panel con esquinas (el adorno central ya está en el header)
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <section class="panel px-6 py-14 md:px-14" aria-labelledby="pronombres" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+          <header class="text-center">
+            <span class="medallon mx-auto size-14" aria-hidden="true"><iconify-icon icon="lucide:users" width="26" height="26"></iconify-icon></span>
+            <h2 id="pronombres" class="font-titulo titulo-plata mt-5 text-3xl font-bold md:text-4xl">Pronombres Principales</h2>
+          </header>
+
+          <!-- Dos tablas lado a lado (una columna en móvil) -->
+          <div class="mt-10 grid items-start gap-6 md:grid-cols-2">
+            <div class="overflow-x-auto rounded-xl border border-plata-400/25">
+              <table class="w-full text-left text-sm">
+                <caption class="sr-only">Pronombres personales en lengua Lailshir: yo, tú, él y ella</caption>
+                <thead class="bg-noche-700/60 font-subtitulo text-xs uppercase tracking-widest text-plata-200">
+                  <tr>
+                    <th scope="col" class="px-4 py-3"><span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:sparkles" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Lailshir</span></th>
+                    <th scope="col" class="px-4 py-3"><span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:languages" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Español</span></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-plata-400/15 text-plata-300">
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Ani</th><td class="px-4 py-3">Yo</td></tr>
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Nu</th><td class="px-4 py-3">Tú</td></tr>
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Then</th><td class="px-4 py-3">Él</td></tr>
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Ain</th><td class="px-4 py-3">Ella</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-plata-400/25">
+              <table class="w-full text-left text-sm">
+                <caption class="sr-only">Pronombres personales en lengua Lailshir: nosotros, ustedes y ellos</caption>
+                <thead class="bg-noche-700/60 font-subtitulo text-xs uppercase tracking-widest text-plata-200">
+                  <tr>
+                    <th scope="col" class="px-4 py-3"><span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:sparkles" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Lailshir</span></th>
+                    <th scope="col" class="px-4 py-3"><span class="inline-flex items-center gap-2"><iconify-icon icon="lucide:languages" width="14" height="14" class="text-azul-300" aria-hidden="true"></iconify-icon>Español</span></th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-plata-400/15 text-plata-300">
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Anima</th><td class="px-4 py-3">Nosotros</td></tr>
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Numa</th><td class="px-4 py-3">Ustedes</td></tr>
+                  <tr class="transition hover:bg-noche-700/30"><th scope="row" class="px-4 py-3 font-semibold text-plata-100" lang="x-lailshir">Thema</th><td class="px-4 py-3">Ellos</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           CONJUGACIÓN VERBAL · panel claro · 3 terminaciones
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section
+          class="relative rounded-2xl border border-noche-600/30 bg-panel-cyan px-6 py-12 text-noche-800 shadow-[0_12px_40px_rgb(0_0_0/0.5)] md:px-14 md:py-14"
+          aria-labelledby="conjugacion"
+          data-reveal
+        >
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <span class="medallon mx-auto size-14" aria-hidden="true"><iconify-icon icon="lucide:hourglass" width="26" height="26"></iconify-icon></span>
+            <h2 id="conjugacion" class="font-titulo mt-5 text-3xl font-bold text-noche-800 md:text-4xl">Conjugación Verbal</h2>
+            <p class="mx-auto mt-4 max-w-xl leading-relaxed text-noche-700">Los verbos cambian su terminación según el tiempo:</p>
+          </header>
+
+          <div class="mt-10 grid gap-6 sm:grid-cols-3">
+            <article class="tarjeta flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon font-titulo text-4xl font-bold" aria-hidden="true">-d</span>
+              <h3 class="font-subtitulo mt-6 flex items-center gap-2 text-lg text-plata-100">
+                <iconify-icon icon="lucide:rewind" width="20" height="20" class="text-azul-300" aria-hidden="true"></iconify-icon>Pasado
+              </h3>
+              <p class="mt-2 text-sm text-plata-400">Terminación en -d</p>
+              <p class="mt-4 text-sm text-plata-300"><span class="font-semibold text-azul-300" lang="x-lailshir">Othared</span> (Esperó)</p>
+            </article>
+            <article class="tarjeta flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon font-titulo text-4xl font-bold" aria-hidden="true">-n</span>
+              <h3 class="font-subtitulo mt-6 flex items-center gap-2 text-lg text-plata-100">
+                <iconify-icon icon="lucide:play" width="20" height="20" class="text-azul-300" aria-hidden="true"></iconify-icon>Presente
+              </h3>
+              <p class="mt-2 text-sm text-plata-400">Terminación en -n</p>
+              <p class="mt-4 text-sm text-plata-300"><span class="font-semibold text-azul-300" lang="x-lailshir">Otharen</span> (Espera)</p>
+            </article>
+            <article class="tarjeta flex flex-col items-center px-5 py-8 text-center">
+              <span class="medallon font-titulo text-4xl font-bold" aria-hidden="true">-l</span>
+              <h3 class="font-subtitulo mt-6 flex items-center gap-2 text-lg text-plata-100">
+                <iconify-icon icon="lucide:fast-forward" width="20" height="20" class="text-azul-300" aria-hidden="true"></iconify-icon>Futuro
+              </h3>
+              <p class="mt-2 text-sm text-plata-400">Terminación en -l</p>
+              <p class="mt-4 text-sm text-plata-300"><span class="font-semibold text-azul-300" lang="x-lailshir">Otharel</span> (Esperará)</p>
+            </article>
+          </div>
+
+          <p class="mx-auto mt-8 flex max-w-3xl items-start justify-center gap-3 text-center leading-relaxed text-noche-700">
+            <iconify-icon icon="lucide:lightbulb" width="20" height="20" class="mt-1 shrink-0 text-azul-600" aria-hidden="true"></iconify-icon>
+            <span>
+              <strong class="text-noche-800">Ejemplo:</strong>
+              <span lang="x-lailshir">Othare</span> (Esperar) →
+              <span lang="x-lailshir">Othared</span> (Esperó),
+              <span lang="x-lailshir">Otharen</span> (Espera),
+              <span lang="x-lailshir">Otharel</span> (Esperará).
+            </span>
+          </p>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           VOCABULARIO ESENCIAL · tarjetas por categoría
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-14 md:px-14" aria-labelledby="vocabulario" data-reveal>
+          <span class="esquina -left-3 -top-3"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100"></span>
+
+          <header class="text-center">
+            <span class="medallon mx-auto size-14" aria-hidden="true"><iconify-icon icon="lucide:book-open" width="26" height="26"></iconify-icon></span>
+            <p class="subtitulo mt-5 text-xs">Diccionario</p>
+            <h2 id="vocabulario" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Vocabulario Esencial</h2>
+          </header>
+
+          <div class="mt-12 flex flex-wrap justify-center gap-6">
+
+            <article class="tarjeta w-full px-6 py-7 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-3 border-b border-plata-400/20 pb-3">
+                <iconify-icon icon="lucide:trees" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>
+                <h3 class="font-subtitulo text-lg text-plata-100">Naturaleza</h3>
+              </div>
+              <dl class="mt-3 divide-y divide-plata-400/10 text-sm">
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:waves" width="16" height="16" aria-hidden="true"></iconify-icon>Edu</dt><dd class="text-plata-300">Agua</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:flame" width="16" height="16" aria-hidden="true"></iconify-icon>Dei</dt><dd class="text-plata-300">Fuego</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:wind" width="16" height="16" aria-hidden="true"></iconify-icon>Sel</dt><dd class="text-plata-300">Viento</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:mountain" width="16" height="16" aria-hidden="true"></iconify-icon>Udu</dt><dd class="text-plata-300">Tierra</dd></div>
+              </dl>
+            </article>
+
+            <article class="tarjeta w-full px-6 py-7 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-3 border-b border-plata-400/20 pb-3">
+                <iconify-icon icon="lucide:moon-star" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>
+                <h3 class="font-subtitulo text-lg text-plata-100">Cielo</h3>
+              </div>
+              <dl class="mt-3 divide-y divide-plata-400/10 text-sm">
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:sun" width="16" height="16" aria-hidden="true"></iconify-icon>Shirnera</dt><dd class="text-plata-300">Sol</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:moon" width="16" height="16" aria-hidden="true"></iconify-icon>Selene</dt><dd class="text-plata-300">Luna</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:star" width="16" height="16" aria-hidden="true"></iconify-icon>Tune</dt><dd class="text-plata-300">Estrella</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:telescope" width="16" height="16" aria-hidden="true"></iconify-icon>Arumi</dt><dd class="text-plata-300">Noche</dd></div>
+              </dl>
+            </article>
+
+            <article class="tarjeta w-full px-6 py-7 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-3 border-b border-plata-400/20 pb-3">
+                <iconify-icon icon="lucide:crown" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>
+                <h3 class="font-subtitulo text-lg text-plata-100">Títulos</h3>
+              </div>
+              <dl class="mt-3 divide-y divide-plata-400/10 text-sm">
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:crown" width="16" height="16" aria-hidden="true"></iconify-icon>Sono</dt><dd class="text-plata-300">Rey</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:gem" width="16" height="16" aria-hidden="true"></iconify-icon>Seni</dt><dd class="text-plata-300">Reina</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:shield" width="16" height="16" aria-hidden="true"></iconify-icon>Lirine</dt><dd class="text-plata-300">Príncipe</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:flower-2" width="16" height="16" aria-hidden="true"></iconify-icon>Lirin</dt><dd class="text-plata-300">Princesa</dd></div>
+              </dl>
+            </article>
+
+            <article class="tarjeta w-full px-6 py-7 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-3 border-b border-plata-400/20 pb-3">
+                <iconify-icon icon="lucide:sparkles" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>
+                <h3 class="font-subtitulo text-lg text-plata-100">Magia</h3>
+              </div>
+              <dl class="mt-3 divide-y divide-plata-400/10 text-sm">
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:wand-sparkles" width="16" height="16" aria-hidden="true"></iconify-icon>Madisa</dt><dd class="text-plata-300">Magia</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:sparkle" width="16" height="16" aria-hidden="true"></iconify-icon>Shirne</dt><dd class="text-plata-300">Luz</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:eclipse" width="16" height="16" aria-hidden="true"></iconify-icon>Orulú</dt><dd class="text-plata-300">Oscuridad</dd></div>
+              </dl>
+            </article>
+
+            <article class="tarjeta w-full px-6 py-7 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-3 border-b border-plata-400/20 pb-3">
+                <iconify-icon icon="lucide:heart" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>
+                <h3 class="font-subtitulo text-lg text-plata-100">Sentimientos</h3>
+              </div>
+              <dl class="mt-3 divide-y divide-plata-400/10 text-sm">
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:heart" width="16" height="16" aria-hidden="true"></iconify-icon>Shura</dt><dd class="text-plata-300">Amor</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:heart-crack" width="16" height="16" aria-hidden="true"></iconify-icon>Muina</dt><dd class="text-plata-300">Odio</dd></div>
+                <div class="flex items-center justify-between gap-4 py-2"><dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:heart-pulse" width="16" height="16" aria-hidden="true"></iconify-icon>Unime</dt><dd class="text-plata-300">Corazón</dd></div>
+              </dl>
+            </article>
+
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           LECCIONES RÁPIDAS DE LAILSHIR · 2 columnas
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section class="panel px-6 py-12 md:px-14 md:py-14" aria-labelledby="lecciones" data-reveal>
+          <span class="adorno -top-4"></span>
+          <span class="adorno -bottom-4 rotate-180"></span>
+
+          <header class="text-center">
+            <span class="medallon mx-auto size-14" aria-hidden="true"><iconify-icon icon="lucide:messages-square" width="26" height="26"></iconify-icon></span>
+            <h2 id="lecciones" class="font-titulo titulo-plata mt-5 text-3xl font-bold md:text-4xl">Lecciones Rápidas de Lailshir</h2>
+          </header>
+
+          <div class="mt-12 grid gap-10 md:grid-cols-2 md:gap-14">
+            <div>
+              <h3 class="font-subtitulo flex items-center gap-3 border-b border-plata-400/20 pb-3 text-lg text-plata-100">
+                <iconify-icon icon="lucide:hand-heart" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>Saludos y Cortesía
+              </h3>
+              <dl class="mt-2 divide-y divide-plata-400/10 text-sm">
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:hand" width="16" height="16" aria-hidden="true"></iconify-icon>¡Olirenzo!</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">¡Saludos! (Literalmente: "Deseo de bienestar").</dd>
+                </div>
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:door-open" width="16" height="16" aria-hidden="true"></iconify-icon>Adomi.</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">Adiós / Despedida.</dd>
+                </div>
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:lightbulb" width="16" height="16" aria-hidden="true"></iconify-icon>Ani atharen.</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">Yo entiendo / Yo comprendo.</dd>
+                </div>
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:eye" width="16" height="16" aria-hidden="true"></iconify-icon>¿Nu elen?</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">¿Tú ves? / ¿Entiendes?</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div>
+              <h3 class="font-subtitulo flex items-center gap-3 border-b border-plata-400/20 pb-3 text-lg text-plata-100">
+                <iconify-icon icon="lucide:scroll-text" width="22" height="22" class="text-azul-300" aria-hidden="true"></iconify-icon>Sabiduría y Magia
+              </h3>
+              <dl class="mt-2 divide-y divide-plata-400/10 text-sm">
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:sparkle" width="16" height="16" aria-hidden="true"></iconify-icon>Shirne en orulú.</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">Luz en la oscuridad.</dd>
+                </div>
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:star" width="16" height="16" aria-hidden="true"></iconify-icon>Gedu elen anima.</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">Gedu nos ve. (Gedu ve a nosotros).</dd>
+                </div>
+                <div class="py-3">
+                  <dt class="flex items-center gap-2 font-semibold text-azul-300" lang="x-lailshir"><iconify-icon icon="lucide:wand-sparkles" width="16" height="16" aria-hidden="true"></iconify-icon>Madisa delene.</dt>
+                  <dd class="mt-1 pl-6 text-plata-300">La magia fluye.</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           CIERRE · full width · cita en Lailshir antiguo
+           ==================================================================== -->
+      <section class="relative w-full border-y border-plata-400/25 bg-noche-950" data-reveal>
+        <div class="mx-auto max-w-4xl px-4 py-20 text-center md:py-28">
+          <iconify-icon icon="lucide:quote" width="36" height="36" class="text-azul-400/70" aria-hidden="true"></iconify-icon>
+          <figure>
+            <blockquote>
+              <p class="font-subtitulo titulo-plata mt-6 text-2xl leading-snug md:text-4xl" lang="x-lailshir">
+                Shirne de Gedu elen unime, ani othon madisa de shura en orulú de Uduné.
+              </p>
+              <p class="mt-6 text-sm italic leading-relaxed text-plata-300 md:text-base">
+                (La luz de Gedu ve el corazón; yo busco la magia del amor en la oscuridad de Uduné)
+              </p>
+            </blockquote>
+            <figcaption class="subtitulo mt-6 flex items-center justify-center gap-2 text-xs text-azul-300">
+              <iconify-icon icon="lucide:feather" width="14" height="14" aria-hidden="true"></iconify-icon>Escrito en lengua Lailshir antigua
+            </figcaption>
+          </figure>
+        </div>
+      </section>
+
+
+      <!-- ====================== NAVEGACIÓN ANTERIOR ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <p class="subtitulo mb-8 text-center text-xs text-azul-300">Uduné: donde las nieblas guardan la verdad del corazón</p>
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Idioma y escritura</span>
+            </span>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <!--@include ../src/partials/footer.html-->
+
+    <script type="module" src="../src/js/main.js"></script>
+  </body>
+</html>

@@ -69,7 +69,7 @@ function iniciarHumo() {
   resizeCanvas();
 
   const particles = [];
-  const numParticles = 25; // Cantidad equilibrada para buen rendimiento y densidad
+  const numParticles = 50; // Cantidad equilibrada para buen rendimiento y densidad
 
   class SmokeParticle {
     constructor() {
