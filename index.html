@@ -368,6 +368,28 @@
   </header>
 
   <div class="mt-12 grid gap-6 md:grid-cols-3">
+    <!-- Los Muinem -->
+    <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
+      <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+        <img src="/images/bestiario/muinem.webp" alt="Los Muinem"
+             class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
+             onerror="this.remove()" />
+        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+      </div>
+      <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+        <p class="subtitulo text-[0.65rem] text-azul-300">Almas atadas a la sombra</p>
+        <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Los Muinem</h3>
+        <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">
+          Almas reclamadas por la Muerte que fueron arrancadas del umbral por un artefacto arcano para convertirse en los esclavos oscuros de un mago.
+        </p>
+        <button type="button" data-modal-abrir="bestia-muinem" class="boton mt-5 after:absolute after:inset-0">
+          Ver más
+          <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
+        </button>
+      </div>
+    </article>
+
     <!-- Manada de la Bruma -->
     <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
       <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
@@ -411,32 +433,50 @@
         </button>
       </div>
     </article>
-
-    <!-- Duendecillos -->
-    <article class="tarjeta group relative flex flex-col overflow-hidden text-center">
-      <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
-        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-        <img src="/images/bestiario/duendecillos.webp" alt="Duendecillos"
-             class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105"
-             onerror="this.remove()" />
-        <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
-      </div>
-      <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
-        <p class="subtitulo text-[0.65rem] text-azul-300">Naturaleza neutral</p>
-        <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Duendecillos</h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-400">
-          Entidades parecidas a poltergeists que reflejan el trato que reciben: protegen a quien los respeta y se vuelven erráticos y maliciosos con quien los ofende.
-        </p>
-        <button type="button" data-modal-abrir="bestia-duendecillos" class="boton mt-5 after:absolute after:inset-0">
-          Ver más
-          <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1"></iconify-icon>
-        </button>
-      </div>
-    </article>
   </div>
 
 
   <!-- ================= MODALES DEL BESTIARIO (<dialog> + modales.js) ================= -->
+  <!-- Modal · Los Muinem -->
+  <dialog id="bestia-muinem" aria-labelledby="titulo-muinem"
+    class="m-auto max-h-[85vh] w-[min(92vw,44rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
+    <div class="relative px-6 py-10 md:px-10">
+      <button type="button" data-modal-cerrar aria-label="Cerrar"
+        class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+        <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
+      </button>
+
+      <div class="grid items-start gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
+        <figure class="mx-auto w-full max-w-xs sm:max-w-none">
+          <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+            <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+            <img src="/images/bestiario/muinem.webp" alt="Los Muinem" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+          </div>
+        </figure>
+
+        <div class="text-center sm:text-left">
+          <p class="subtitulo text-xs">Almas atadas a la sombra</p>
+          <h3 id="titulo-muinem" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Los Muinem</h3>
+          <p class="mt-5 leading-relaxed text-plata-300">
+            Almas reclamadas por la Muerte en paz que fueron interceptadas por una reliquia antigua antes de cruzar el velo, convirtiéndose en esclavos oscuros e incorpóreos de un mago.
+          </p>
+
+          <dl class="mt-6 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[7rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Naturaleza</dt><dd class="text-plata-300">Incorpórea y etérea</dd></div>
+          </dl>
+
+          <div class="mt-6 flex justify-center sm:justify-start">
+            <a href="/sombras-ocultas/bestiario/bestiario.html#muinem" class="boton">
+              <iconify-icon icon="lucide:paw-print" width="16" height="16"></iconify-icon>
+              Ver en el bestiario
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
   <!-- Modal · Manada de la Bruma -->
   <dialog id="bestia-manada-de-la-bruma" aria-labelledby="titulo-manada-de-la-bruma"
     class="m-auto max-h-[85vh] w-[min(92vw,44rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
@@ -462,7 +502,6 @@
             Lobos de pelaje negro y ojos brillantes que se condensan del vapor al anochecer. Persiguen a quien se deja vencer por el pánico; a quien mantiene la calma, solo lo observan en silencio.
           </p>
 
-          <!-- Ficha: añade aquí más filas (hábitat, peligro, etc.) copiando la línea de abajo -->
           <dl class="mt-6 divide-y divide-plata-400/15 text-sm">
             <div class="grid gap-1 py-3 sm:grid-cols-[7rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Ubicación</dt><dd class="text-plata-300">Bosque Solitario</dd></div>
           </dl>
@@ -503,54 +542,12 @@
             Mitad pantera, mitad león, nunca del todo humanos. Pueden adoptar forma animal completa o semihumana y mantienen una conexión constante con su forma animal.
           </p>
 
-          <!-- Ficha: añade aquí más filas (hábitat, peligro, etc.) copiando la línea de abajo -->
           <dl class="mt-6 divide-y divide-plata-400/15 text-sm">
             <div class="grid gap-1 py-3 sm:grid-cols-[7rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Tipo</dt><dd class="text-plata-300">Felinos humanoides</dd></div>
           </dl>
 
           <div class="mt-6 flex justify-center sm:justify-start">
             <a href="/sombras-ocultas/bestiario/bestiario.html#tigriads" class="boton">
-              <iconify-icon icon="lucide:paw-print" width="16" height="16"></iconify-icon>
-              Ver en el bestiario
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </dialog>
-
-  <!-- Modal · Duendecillos -->
-  <dialog id="bestia-duendecillos" aria-labelledby="titulo-duendecillos"
-    class="m-auto max-h-[85vh] w-[min(92vw,44rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
-    <div class="relative px-6 py-10 md:px-10">
-      <button type="button" data-modal-cerrar aria-label="Cerrar"
-        class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
-        <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
-      </button>
-
-      <div class="grid items-start gap-8 sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)]">
-        <figure class="mx-auto w-full max-w-xs sm:max-w-none">
-          <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
-            <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-            <img src="/images/bestiario/duendecillos.webp" alt="Duendecillos" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
-            <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
-          </div>
-        </figure>
-
-        <div class="text-center sm:text-left">
-          <p class="subtitulo text-xs">Naturaleza neutral</p>
-          <h3 id="titulo-duendecillos" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Duendecillos</h3>
-          <p class="mt-5 leading-relaxed text-plata-300">
-            Entidades parecidas a poltergeists que reflejan el trato que reciben: protegen a quien los respeta y se vuelven erráticos y maliciosos con quien los ofende.
-          </p>
-
-          <!-- Ficha: añade aquí más filas (hábitat, peligro, etc.) copiando la línea de abajo -->
-          <dl class="mt-6 divide-y divide-plata-400/15 text-sm">
-            <div class="grid gap-1 py-3 sm:grid-cols-[7rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Naturaleza</dt><dd class="text-plata-300">Neutral</dd></div>
-          </dl>
-
-          <div class="mt-6 flex justify-center sm:justify-start">
-            <a href="/sombras-ocultas/bestiario/bestiario.html#grises" class="boton">
               <iconify-icon icon="lucide:paw-print" width="16" height="16"></iconify-icon>
               Ver en el bestiario
             </a>
