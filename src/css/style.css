@@ -675,3 +675,44 @@ img {
   scrollbar-width: thin;
   scrollbar-color: #1e3a8a #050a17; /* [color del tirador] [color del carril] */
 }
+
+/* ===== Libro que se abre (modal de sinopsis) ===== */
+.libro-abierto {
+  perspective: 2600px;
+}
+.libro-tapa {
+  z-index: 20;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50%;
+}
+.tapa-cara {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 0 1rem 1rem 0;
+  border: 1px solid rgb(168 179 199 / 0.4);
+  background: linear-gradient(135deg, var(--color-noche-600), var(--color-noche-800) 50%, var(--color-noche-950));
+  box-shadow: 0 20px 60px rgb(0 0 0 / 0.6), 0 0 40px rgb(37 99 235 / 0.25);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.tapa-dorso {
+  transform: rotateY(180deg);
+  background: linear-gradient(to bottom, var(--color-noche-800), var(--color-noche-950));
+}
+/* Lomo: sombra en el borde izquierdo de la hoja derecha y de la portada */
+.libro-pagina {
+  box-shadow: inset 18px 0 24px -14px rgb(0 0 0 / 0.55), 0 20px 60px rgb(0 0 0 / 0.7), 0 0 40px rgb(37 99 235 / 0.25);
+}
+.tapa-frente::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.35) 0%, rgb(255 255 255 / 0.12) 4%, transparent 12%);
+}
+/* Sombra que cae sobre la hoja mientras la tapa está cerrada; GSAP la aclara */
+.libro-sombra {
+  background: linear-gradient(90deg, rgb(0 0 0 / 0.7), rgb(0 0 0 / 0.3));
+  opacity: 0;
+}
