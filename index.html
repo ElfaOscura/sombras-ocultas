@@ -860,45 +860,69 @@
                   el id del <h3>, el texto de la sinopsis, la cita y la imagen.
                ============================================================ -->
  
-          <!-- ================= MODAL · SINOPSIS DE EL PESO DE LA CORONA ================= -->
-          <dialog id="sinopsis-peso-corona" aria-labelledby="titulo-peso-corona"
-            class="m-auto max-h-[85vh] w-[min(92vw,56rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-noche-900/75 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop-blur-xl">
-            <div class="relative px-6 py-10 md:px-10">
+          <!-- ================= MODAL · SINOPSIS DE EL PESO DE LA CORONA (libro que se abre) =================
+               data-libro  → modales.js lo abre con la animación del libro
+               data-tapa   → la portada que gira sobre el lomo (frente = portada, dorso = ilustración)
+               data-pagina → la hoja derecha con la sinopsis
+               data-sombra → sombra que se aclara al abrir -->
+          <dialog id="sinopsis-peso-corona" data-libro aria-labelledby="titulo-peso-corona"
+            class="m-auto max-h-none w-[min(92vw,58rem)] max-w-none overflow-visible border-0 bg-transparent p-0 text-plata-200">
+            <div class="libro-abierto relative">
               <button type="button" data-modal-cerrar aria-label="Cerrar"
-                class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+                class="absolute right-3 top-3 z-30 flex size-9 items-center justify-center rounded-full border border-plata-300/40 bg-noche-950/70 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
                 <iconify-icon icon="lucide:x" width="18" height="18"></iconify-icon>
               </button>
- 
-              <div class="grid items-center gap-8 md:grid-cols-[minmax(0,6fr)_minmax(0,4fr)] md:gap-12">
-                <!-- Texto -->
-                <div class="order-2 text-center md:order-1 md:text-left">
-                  <p class="subtitulo text-xs">Sinopsis</p>
-                  <h3 id="titulo-peso-corona" class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">El Peso de la Corona</h3>
- 
-                  <p class="mt-6 leading-relaxed text-plata-300">
-                    La familia real de Archinón, forzada al exilio tras una serie de sangrientos asesinatos, busca refugio en las lejanas tierras del norte.
-                    Para la princesa Johari, el destierro es solo el comienzo de una carga que no pidió: proteger una antigua reliquia cuyo poder oculto ha despertado el interés de fuerzas oscuras.
-                  </p>
- 
-                  <blockquote class="font-subtitulo mt-6 border-l-2 border-azul-400/70 pl-4 text-left text-lg italic leading-snug text-plata-100">
-                    ¿Logrará evitar que la reliquia caiga en manos enemigas? ¿Seguirá huyendo o elegirá enfrentarse a la oscuridad?
-                  </blockquote>
- 
-                </div>
- 
-                <!-- Imagen: public/images/sinopsis.jpg (recomendado 4:5) -->
-                <figure class="relative order-1 mx-auto w-full max-w-xs md:order-2 md:max-w-none">
-                  <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
-                    <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                    <img
-                      src="/images/sinopsis.jpg"
-                      alt="Ilustración de El Peso de la Corona"
-                      class="absolute inset-0 size-full object-cover"
-                      onerror="this.remove()"
-                    />
-                    <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+
+              <div class="grid md:grid-cols-2">
+                <!-- Hoja izquierda: vacía; aquí cae el dorso de la tapa al abrirse -->
+                <div class="pointer-events-none hidden md:block" aria-hidden="true"></div>
+
+                <!-- Hoja derecha: la sinopsis -->
+                <div class="relative">
+                  <div data-pagina class="libro-pagina max-h-[85vh] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 px-6 py-12 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] md:min-h-[32rem] md:rounded-l-none md:px-10">
+                    <!-- Ilustración (solo en móvil; en escritorio va en el dorso de la tapa) -->
+                    <figure class="mx-auto mb-8 w-full max-w-[14rem] md:hidden">
+                      <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                        <img src="/images/sinopsis.jpg" alt="Ilustración de El Peso de la Corona" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                      </div>
+                    </figure>
+                    <div>
+                <p class="subtitulo text-xs">Sinopsis</p>
+                <h3 id="titulo-peso-corona" class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-4xl">El Peso de la Corona</h3>
+
+                <p class="mt-6 leading-relaxed text-plata-300">
+                  La familia real de Archinón, forzada al exilio tras una serie de sangrientos asesinatos, busca refugio en las lejanas tierras del norte.
+                  Para la princesa Johari, el destierro es solo el comienzo de una carga que no pidió: proteger una antigua reliquia cuyo poder oculto ha despertado el interés de fuerzas oscuras.
+                </p>
+
+                <blockquote class="font-subtitulo mt-6 border-l-2 border-azul-400/70 pl-4 text-left text-lg italic leading-snug text-plata-100">
+                  ¿Logrará evitar que la reliquia caiga en manos enemigas? ¿Seguirá huyendo o elegirá enfrentarse a la oscuridad?
+                </blockquote>
+              </div>
                   </div>
-                </figure>
+                  <div data-sombra class="libro-sombra pointer-events-none absolute inset-0 rounded-r-2xl" aria-hidden="true"></div>
+                </div>
+              </div>
+
+              <!-- Tapa: gira sobre el lomo (borde izquierdo de la hoja derecha) -->
+              <div data-tapa class="libro-tapa absolute inset-y-0 right-0 w-full md:w-1/2">
+                <!-- Frente: la portada -->
+                <div class="tapa-cara tapa-frente" aria-hidden="true">
+                  <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-[34%] size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                  <span class="libro-titulo-falso">El Peso de la Corona</span>
+                  <img src="/images/libros/peso-de-la-corona.webp" alt="" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                </div>
+                <!-- Dorso: la ilustración (hoja izquierda, solo escritorio) -->
+                <div class="tapa-cara tapa-dorso hidden items-center justify-center p-8 md:flex">
+                  <figure class="w-full max-w-xs">
+                    <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                      <img src="/images/sinopsis.jpg" alt="Ilustración de El Peso de la Corona" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                      <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+                    </div>
+                  </figure>
+                </div>
               </div>
             </div>
           </dialog>
