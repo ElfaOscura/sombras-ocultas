@@ -252,11 +252,6 @@
              johari · jhoni · jhonaldi · karima · malik · tomedesh · muntassir · lorenzo · ubaldo · thamara · nidelaida
              dalmiro · mugalid · raz-zagul · raid-razin · dumidion · rosa · albino · fannor · naidilen · selene  (.webp)
            Mientras no existan, cada marco muestra el isotipo sobre fondo azul.
-
-           CÓMO ACTIVAR LA FICHA DE OTRO PERSONAJE:
-             1. En la lista de abajo, cambia su botón <button disabled ...>Próximamente</button> por el botón "Ver ficha"
-                de Karima (con data-modal-abrir="pj-nombre") y quítale las clases hover:... y opacity-80 saturate-50 a la tarjeta.
-             2. Copia el <dialog id="pj-karima"> al final de la sección, cambia el id y rellena sus datos.
            ==================================================================== -->
 
       <!-- ====================== CABECERA ====================== -->
@@ -303,43 +298,47 @@
           </p>
 
           <ul class="mt-10 flex flex-wrap justify-center gap-6">
+            <!-- JOHARI (Activado con modal) -->
             <li class="contents">
-            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/johari.webp" alt="Johari" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/johari.webp" alt="Johari" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
                 <h2 class="font-subtitulo text-xl text-plata-100">Johari</h2>
-                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Johari: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
-                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
-                Próximamente
+                <button type="button" data-modal-abrir="pj-johari" aria-label="Ver la ficha de Johari" class="boton mt-5 after:absolute after:inset-0">
+                Ver ficha
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
               </button>
               </div>
             </article>
             </li>
+
+            <!-- JHONI (Activado con modal) -->
             <li class="contents">
-            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/jhoni.webp" alt="Jhoni" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/jhoni.webp" alt="Jhoni" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
                 <h2 class="font-subtitulo text-xl text-plata-100">Jhoni</h2>
-                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Jhoni: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
-                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
-                Próximamente
+                <button type="button" data-modal-abrir="pj-jhoni" aria-label="Ver la ficha de Jhoni" class="boton mt-5 after:absolute after:inset-0">
+                Ver ficha
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
               </button>
               </div>
             </article>
             </li>
+
             <li class="contents">
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/jhonaldi.webp" alt="Jhonaldi" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/jhonaldi.webp" alt="Jhonaldi" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -387,7 +386,7 @@
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/tomedesh.webp" alt="Tomedesh" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/tomedesh.webp" alt="Tomedesh" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -403,7 +402,7 @@
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/muntassir.webp" alt="Muntassir" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/muntassir.webp" alt="Muntassir" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -415,22 +414,25 @@
               </div>
             </article>
             </li>
+
+            <!-- LORENZO (Activado con modal) -->
             <li class="contents">
-            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/lorenzo.webp" alt="Lorenzo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/lorenzo.webp" alt="Lorenzo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
                 <h2 class="font-subtitulo text-xl text-plata-100">Lorenzo</h2>
-                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Lorenzo: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
-                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
-                Próximamente
+                <button type="button" data-modal-abrir="pj-lorenzo" aria-label="Ver la ficha de Lorenzo" class="boton mt-5 after:absolute after:inset-0">
+                Ver ficha
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
               </button>
               </div>
             </article>
             </li>
+
             <li class="contents">
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
@@ -499,7 +501,7 @@
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/mugalid.webp" alt="Mugalid" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/mugalid.webp" alt="Mugalid" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -515,7 +517,7 @@
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/raz-zagul.webp" alt="Raz-zagul" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/raz-zagul.webp" alt="Raz-zagul" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -576,22 +578,25 @@
               </div>
             </article>
             </li>
+
+            <!-- ALBINO (Activado con modal) -->
             <li class="contents">
-            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/albino.webp" alt="Albino" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/albino.webp" alt="Albino" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
                 <h2 class="font-subtitulo text-xl text-plata-100">Albino</h2>
-                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Albino: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
-                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
-                Próximamente
+                <button type="button" data-modal-abrir="pj-albino" aria-label="Ver la ficha de Albino" class="boton mt-5 after:absolute after:inset-0">
+                Ver ficha
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
               </button>
               </div>
             </article>
             </li>
+
             <li class="contents">
             <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
@@ -653,9 +658,10 @@
       </div>
 
 
-      <!-- Modal · Karima Fedensol
-           REVISAR: textos reconstruidos desde un resumen de la página original; sustitúyelos por el texto literal. -->
-      <dialog id="pj-karima" aria-labelledby="titulo-pj-karima" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+      <!-- ====================== MODALES DE PERSONAJES ====================== -->
+
+      <!-- Modal · Johari -->
+      <dialog id="pj-johari" aria-labelledby="titulo-pj-johari" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
         <div class="relative px-6 py-10 md:px-10">
           <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
             <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
@@ -664,46 +670,164 @@
           <header class="text-center">
             <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
               <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/sombras-ocultas/images/personajes/karima.webp" alt="Karima Fedensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/sombras-ocultas/images/personajes/johari.webp" alt="Johari" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </div>
-            <p class="subtitulo mt-4 text-xs">Emperatriz de Árchinon (Soberana)</p>
-            <h3 id="titulo-pj-karima" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Karima Fedensol</h3>
+            <p class="subtitulo mt-4 text-xs">Princesa de Árchinon (Protagonista)</p>
+            <h3 id="titulo-pj-johari" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Johari</h3>
           </header>
 
           <h4 class="sr-only">Datos básicos</h4>
           <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Emperatriz de Árchinon (Soberana)</dd></div>
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Humana, 34 años</dd></div>
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Rasgos suaves, piel clara con pocas pecas, ojos verdes profundos y cabello negro rizado. Tiene una presencia imponente y elegante.</dd></div>
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Esposo</dt><dd class="text-plata-300">Jhonaldi Valeni, Rey Consorte de Árchinon y Duque Valeni.</dd></div>
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Hijos</dt><dd class="text-plata-300">Johari y Jhoni.</dd></div>
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Sobrino/primo de Johari</dt><dd class="text-plata-300">Malik, el varón mayor.</dd></div>
-            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Secretario principal</dt><dd class="text-plata-300">Muntassir, <em>maharam</em> (guardián de confianza).</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Princesa de Árchinon (Protagonista)</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Humana, 14 años</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Porte real y firme entrenamiento físico. Cabello largo y rizado, piel blanca pero tostada, ojos marrones y algunas pecas en el rostro.</dd></div>
           </dl>
 
           <section class="mt-8 border-t border-plata-400/15 pt-8">
-            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:swords" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Habilidades y Aficiones</h4>
-            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Especialidad:</strong> maestra letal con la lanza.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Aficiones:</strong> cocinar en la intimidad, lectura profunda y montar a caballo.</span></li></ul>
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:heart" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Personalidad y Manejo Emocional</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Doble faceta:</strong> Introvertida y reservada ante extraños por la sobreprotección familiar; cálida, natural y extrovertida con conocidos y familiares.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Competitiva y orgullosa:</strong> Siente el deber de no doblegarse ante nadie; acepta los retos sin titubear y se esfuerza al máximo.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Presión y fracaso:</strong> Tiende a sobrepensar, se agarra los dedos o suspira. Si fracasa, se culpa por su "falta de preparación", desahogándose con entrenamiento físico o aislándose.</span></li>
+            </ul>
           </section>
 
           <section class="mt-8 border-t border-plata-400/15 pt-8">
-            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:crown" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Personalidad y Manejo Político</h4>
-            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span>Por dentro es sentimental y protectora, pero hacia fuera se muestra calculadora, pulcra y fría por necesidad política.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span>Planifica sus argumentos con minuciosidad, por lo que sus decisiones rara vez se discuten en la corte.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span>Con sus hijos mantiene honestidad sobre asuntos de Estado, salvo su pasado personal, de modo que ellos conocen la estrategia detrás de su actitud pública.</span></li></ul>
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:swords" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Habilidades de Combate</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Fortalezas:</strong> Excelente en combate cuerpo a cuerpo, uso de dos dagas, espada ligera y gran puntería arrojando dagas.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Debilidades:</strong> Inhábil con espadas pesadas y armas de largo alcance (lanzas o arcos).</span></li>
+            </ul>
           </section>
 
           <section class="mt-8 border-t border-plata-400/15 pt-8">
-            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:users" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Relaciones Clave</h4>
-            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Jhonaldi Valeni:</strong> alianza sólida y confianza.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Muntassir:</strong> círculo íntimo para investigar conspiraciones.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Johari y Jhoni:</strong> a quien prepara para la realidad política.</span></li></ul>
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:shield-alert" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Motivaciones, Miedos y Conflicto Político</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Motivación y miedo:</strong> Servir dignamente a su pueblo; su mayor miedo es fallarle a su gente y a su familia.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">El compromiso:</strong> Comprometida desde antes de nacer con su primo Malik. Sospecha de su tío Rasheed y anhela casarse por amor, aunque la constante atracción hacia Lorenzo complica su dilema.</span></li>
+            </ul>
+          </section>
+        </div>
+      </dialog>
+
+      <!-- Modal · Jhoni -->
+      <dialog id="pj-jhoni" aria-labelledby="titulo-pj-jhoni" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
+          </button>
+
+          <header class="text-center">
+            <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
+              <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/sombras-ocultas/images/personajes/jhoni.webp" alt="Jhoni" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+            <p class="subtitulo mt-4 text-xs">Príncipe de Árchinon (Diplomático y Guerrero)</p>
+            <h3 id="titulo-pj-jhoni" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Jhoni</h3>
+          </header>
+
+          <h4 class="sr-only">Datos básicos</h4>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Príncipe de Árchinon, hermano adoptivo de Johari</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Elfo (inmortal), aparenta 15 años</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Atractivo andrógino, elegante. Orejas de elfo ocultas para fingir ser humano; cabello marrón largo y lacio, ojos marrones.</dd></div>
+          </dl>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:music" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Personalidad y Refugio</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Fachada e interior:</strong> Carismático y seductor en público; alegre, intuitivo y protector en privado. Toca el violín para calmar el estrés.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Mayor miedo:</strong> Le aterra la idea de ver a Johari envejecer y morir mientras él permanece inmortal.</span></li>
+            </ul>
           </section>
 
           <section class="mt-8 border-t border-plata-400/15 pt-8">
-            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:message-circle" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Tono de Voz y Estilo de Diálogo</h4>
-            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En consejo y corte:</strong> distante, elocuente, firme.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En privado con familia y leales:</strong> abierta, honesta, directa y cálida.</span></li></ul>
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:sparkles" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Habilidades y Combate</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Dones élficos:</strong> Detecta el peligro por anticipado y posee la capacidad instintiva de notar la falsedad en la voz de las personas.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Estilo de pelea:</strong> Sigiloso, ágil y rápido. Prefiere el ataque a distancia con arco o incursiones con espada corta, combinándose a la perfección con Johari.</span></li>
+            </ul>
+          </section>
+        </div>
+      </dialog>
+
+      <!-- Modal · Lorenzo -->
+      <dialog id="pj-lorenzo" aria-labelledby="titulo-pj-lorenzo" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
+          </button>
+
+          <header class="text-center">
+            <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
+              <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/sombras-ocultas/images/personajes/lorenzo.webp" alt="Lorenzo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+            <p class="subtitulo mt-4 text-xs">Guardián Personal de Johari (Guardia Real)</p>
+            <h3 id="titulo-pj-lorenzo" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Lorenzo</h3>
+          </header>
+
+          <h4 class="sr-only">Datos básicos</h4>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Guardián personal de Johari (Miembro de la Guardia Real)</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Humano / Hechicero principiante, 18 años</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Porte firme y disciplina militar. Cabello ondulado castaño claro, ojos color hazel, presencia seria y reservada.</dd></div>
+          </dl>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:shield" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Devoción y Control Emocional</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Devoción absoluta:</strong> Su lealtad nace de una devoción total; daría la vida sin dudarlo si se lo ordenaran.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Deber vs Deseo:</strong> Mantiene una postura profesional e impecable en público, permitiéndose cercanía y sinceridad solo a solas con Johari.</span></li>
+            </ul>
           </section>
 
           <section class="mt-8 border-t border-plata-400/15 pt-8">
-            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:lock-keyhole" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Objetivos y Secretos</h4>
-            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Objetivos:</strong> mantener la pureza y continuidad del linaje real, proteger a sus hijos de la corte de ancianos y del clero, y evitar que salga a la luz su pasado.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Secreto:</strong> un hecho de su juventud que solo tres personas vivas conocen y que podría desestabilizar sus alianzas al este del reino.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Dilema de la corte:</strong> un sacerdote ortodoxo, influyente, cuestiona su mandato por ser mujer. Su grupo presionó para un matrimonio consanguíneo entre Johari y Malik. Karima refutó esos argumentos, pero el sacerdote cambió de postura de forma repentina, alegando que la consanguinidad está prohibida. Esta incoherencia lleva a Karima, Johari y Muntassir a investigar.</span></li></ul>
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:wand" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Combate y Magia</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Habilidades:</strong> Fortaleza física destacada y gran entrenamiento en armas. Como mago principiante domina encantamientos de transformación, curación y comunicación activados mediante palabras en lenguaje antiguo.</span></li>
+            </ul>
+          </section>
+        </div>
+      </dialog>
+
+      <!-- Modal · Albino -->
+      <dialog id="pj-albino" aria-labelledby="titulo-pj-albino" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
+          </button>
+
+          <header class="text-center">
+            <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
+              <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/sombras-ocultas/images/personajes/albino.webp" alt="Albino" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+            <p class="subtitulo mt-4 text-xs">Ancestral / Consejero directo de los Reyes de Rims</p>
+            <h3 id="titulo-pj-albino" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Albino</h3>
+          </header>
+
+          <h4 class="sr-only">Datos básicos</h4>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Ancestral de los Valeni, consejero y fundador de "La Casa"</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Elfo hechicero de alto nivel (3,500 años, inmortal)</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Forma adulta (35 años aparentes, muy alto, musculoso, albinismo marcado) y Forma juvenil (16 años aparentes para no intimidar en palacio).</dd></div>
+          </dl>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:compass" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Filosofía y Estilo</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Desapego emocional:</strong> Ve la muerte como un paso natural gracias a su milenaria experiencia, lo que le permite amar a sus descendientes sin quebrarse cuando parten.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Estilo de combate:</strong> Prefiere ser guerrero de armas y combate físico antes que usar magia ofensiva, ya que su descomunal fuerza es suficiente.</span></li>
+            </ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:eye" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Redes de Inteligencia y "La Casa"</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">El "Conejito Blanco":</strong> Finge ser un cliente frívolo en prostíbulos para infiltrar redes de trata y obtener inteligencia sobre rutas de tráfico humano.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">La Casa:</strong> Refugio y villa creada para proteger a las personas rescatadas, dotándolas de una empresa textil para su independencia económica.</span></li>
+            </ul>
           </section>
         </div>
       </dialog>
