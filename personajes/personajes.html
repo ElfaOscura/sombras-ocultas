@@ -1,0 +1,755 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050a17" />
+<link rel="icon" href="/sombras-ocultas/images/isotipo.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/sombras-ocultas/assets/style.css">
+
+    <title>Personajes | Sombras Ocultas</title>
+    <meta name="description" content="Los personajes de Sombras Ocultas: Johari, Jhoni, Jhonaldi, Karima, Malik, Tomedesh, Muntassir y más." />
+    <script type="module" crossorigin src="/sombras-ocultas/assets/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/sombras-ocultas/assets/style.css">
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!-- src/partials/nav.html -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 flex justify-center px-4 md:hidden">
+  <nav
+    aria-label="Principal"
+    class="relative flex w-full max-w-4xl items-center justify-between rounded-full border border-plata-400/30 bg-noche-950/80 px-5 py-2 backdrop-blur-md"
+  >
+    <!-- Logo central en móvil = Inicio -->
+    <a
+      href="/sombras-ocultas/"
+      aria-label="Sombras Ocultas, ir al inicio"
+      class="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-plata-300/60 bg-noche-950 shadow-[0_0_18px_rgb(96_165_250/0.35)] transition duration-300 hover:shadow-[0_0_26px_rgb(147_197_253/0.7)]"
+    >
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-7" />
+    </a>
+
+    <!-- Botón de menú móvil -->
+    <button
+      type="button"
+      data-menu-btn
+      aria-expanded="false"
+      aria-controls="menu-movil"
+      aria-label="Abrir menú"
+      class="flex size-10 items-center justify-center rounded-full border border-plata-400/40 text-plata-200"
+    >
+      <iconify-icon icon="lucide:menu" width="22" height="22"></iconify-icon>
+    </button>
+
+    <!-- Menú desplegable móvil -->
+<!-- Menú móvil con títulos fijos y submenús desplegables -->
+<div
+  id="menu-movil"
+  data-menu
+  hidden
+  class="absolute inset-x-0 top-full mt-3 max-h-[75vh] overflow-y-auto rounded-2xl border border-plata-400/30 bg-noche-950/95 p-4 shadow-2xl backdrop-blur-md md:hidden"
+>
+  <ul class="space-y-2 text-plata-200">
+    <li>
+      <a href="/sombras-ocultas/" class="nav-movil">
+        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 p-1" />
+        <span>Inicio</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Personajes -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/personajes.webp" alt="" class="size-8" />
+          <span class="font-bold">Personajes</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/personajes/personajes.html" class="block py-1">Ver personajes</a></li>
+        <li><a href="/sombras-ocultas/personajes/arboles-genealogicos.html" class="block py-1">Árboles genealógicos</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Mapa -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/mapa.webp" alt="" class="size-8" />
+          <span class="font-bold">Mapa</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/mapa/mapa.html" class="block py-1">Mapa y reinos</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-archinon.html" class="block py-1">Sitios de Árchinon</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-rims.html" class="block py-1">Sitios de Rims</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Leyes (este sí puede llevar enlace directo si es página única) -->
+    <li>
+      <a href="/sombras-ocultas/mapa/ley/ley-archinon.html" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/leyes.webp" alt="" class="size-8" /><span>Leyes</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Sistema de culto -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/culto.webp" alt="" class="size-8" />
+          <span class="font-bold">Sistema de culto</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/culto/sistema-culto.html" class="block py-1">Culto</a></li>
+        <li><a href="/sombras-ocultas/culto/historia-gedua.html" class="block py-1">Historia del Gedua</a></li>
+        <li><a href="/sombras-ocultas/culto/dioses.html" class="block py-1">Dioses</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Idioma y escritura -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/idioma.webp" alt="" class="size-8" />
+          <span class="font-bold">Idioma y escritura</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="block py-1">Escrituras</a></li>
+        <li><a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir.html" class="block py-1">Glosario de lengua Lailshir</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Bestiario -->
+    <li>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/bestiario.webp" alt="" class="size-8" /><span>Bestiario</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  </nav>
+</header>
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!-- src/partials/header.html
+     Menú de ESCRITORIO para las páginas interiores (md en adelante).
+     - NO se incluye en index.html: ahí el menú son los iconos del hero.
+     - En móvil lo cubre nav.html (la píldora fija con el botón hamburguesa).
+     - La página actual se resalta sola (ver marcarEnlaceActivo() en menu.js). -->
+<header
+  data-header
+  class="sticky top-0 z-50 hidden w-full border-b border-plata-400/20 bg-noche-950/85 shadow-[0_8px_30px_rgb(0_0_0/0.35)] backdrop-blur-md md:block"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
+    <!-- Logo / Inicio -->
+    <a href="/sombras-ocultas/" aria-label="Sombras Ocultas, ir al inicio" class="group flex shrink-0 items-center gap-3">
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 transition duration-300 group-hover:scale-110" />
+      <span class="font-titulo hidden text-lg font-bold tracking-wider text-plata-100 transition group-hover:text-azul-300 lg:inline">
+        Sombras Ocultas
+      </span>
+    </a>
+
+    <nav aria-label="Principal" class="flex items-center gap-4 lg:gap-8">
+
+      <!-- Personajes -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/personajes/personajes.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Personajes
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/personajes/personajes.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Ver personajes</a>
+            <a href="/sombras-ocultas/personajes/arboles-genealogicos.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Árboles genealógicos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/mapa/mapa.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Mapa
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/mapa/mapa.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Mapa y reinos</a>
+            <a href="/sombras-ocultas/mapa/sitios-archinon.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Árchinon</a>
+            <a href="/sombras-ocultas/mapa/sitios-rims.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Rims</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sistema de culto -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/culto/sistema-culto.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Sistema de culto
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/culto/sistema-culto.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">El Culto a Gedu</a>
+            <a href="/sombras-ocultas/culto/historia-gedua.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Historia del Gedua</a>
+            <a href="/sombras-ocultas/culto/dioses.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Dioses</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idioma y escritura -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/idioma-y-escritura/escritura.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Idioma y escritura
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute right-0 top-full z-10 w-64 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Escrituras</a>
+            <a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Glosario de lengua Lailshir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enlaces simples -->
+      <a href="/sombras-ocultas/ley/ley-archinon.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Leyes</a>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Bestiario</a>
+    </nav>
+  </div>
+</header>
+
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           IMÁGENES de esta página (public/images/personajes/, proporción 4:5, ej. 800×1000):
+             johari · jhoni · jhonaldi · karima · malik · tomedesh · muntassir · lorenzo · ubaldo · thamara · nidelaida
+             dalmiro · mugalid · raz-zagul · raid-razin · dumidion · rosa · albino · fannor · naidilen · selene  (.webp)
+           Mientras no existan, cada marco muestra el isotipo sobre fondo azul.
+
+           CÓMO ACTIVAR LA FICHA DE OTRO PERSONAJE:
+             1. En la lista de abajo, cambia su botón <button disabled ...>Próximamente</button> por el botón "Ver ficha"
+                de Karima (con data-modal-abrir="pj-nombre") y quítale las clases hover:... y opacity-80 saturate-50 a la tarjeta.
+             2. Copia el <dialog id="pj-karima"> al final de la sección, cambia el id y rellena sus datos.
+           ==================================================================== -->
+
+      <!-- ====================== CABECERA ====================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/sombras-ocultas/images/espectro.webp" alt="" draggable="false" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <span class="text-azul-300" aria-current="page">Personajes</span>
+          </nav>
+
+          <div class="mt-6 flex items-center justify-center gap-4 md:gap-6">
+            <img data-cabecera-item src="/sombras-ocultas/images/iconos/personajes.webp" alt="" draggable="false" class="size-14 object-contain drop-shadow-[0_0_14px_rgb(96_165_250/0.6)] md:size-20" />
+            <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Personajes</h1>
+          </div>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================== LISTADO DE PERSONAJES ====================== -->
+      <div class="mx-auto max-w-5xl px-4 pb-10 pt-20">
+        <section aria-label="Listado de personajes" class="panel px-6 py-14 md:px-14" data-reveal>
+          <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
+          <span class="adorno -top-4" aria-hidden="true"></span>
+          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
+
+          <p class="mx-auto max-w-2xl text-center text-sm leading-relaxed text-plata-400">
+            Los personajes con ficha disponible abren su detalle; el resto se irá activando conforme se publique su información.
+          </p>
+
+          <ul class="mt-10 flex flex-wrap justify-center gap-6">
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/johari.webp" alt="Johari" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Johari</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Johari: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/jhoni.webp" alt="Jhoni" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Jhoni</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Jhoni: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/jhonaldi.webp" alt="Jhonaldi" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Jhonaldi</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Jhonaldi: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/sombras-ocultas/images/personajes/karima.webp" alt="Karima" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Karima</h2>
+                <button type="button" data-modal-abrir="pj-karima" aria-label="Ver la ficha de Karima" class="boton mt-5 after:absolute after:inset-0">
+                Ver ficha
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/malik.webp" alt="Malik" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Malik</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Malik: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/tomedesh.webp" alt="Tomedesh" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Tomedesh</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Tomedesh: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/muntassir.webp" alt="Muntassir" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Muntassir</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Muntassir: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/lorenzo.webp" alt="Lorenzo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Lorenzo</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Lorenzo: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/ubaldo.webp" alt="Ubaldo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Ubaldo</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Ubaldo: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/thamara.webp" alt="Thamara" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Thamara</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Thamara: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/nidelaida.webp" alt="Nidelaida" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Nidelaida</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Nidelaida: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/dalmiro.webp" alt="Dalmiro" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Dalmiro</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Dalmiro: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/mugalid.webp" alt="Mugalid" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Mugalid</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Mugalid: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/raz-zagul.webp" alt="Raz-zagul" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Raz-zagul</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Raz-zagul: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/raid-razin.webp" alt="Ra’id-Razin" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Ra’id-Razin</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Ra’id-Razin: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/dumidion.webp" alt="Rey Dúmidion" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Rey Dúmidion</h2>
+              <p class="subtitulo mt-2 text-[0.65rem] text-azul-300">Reino de Rims</p>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Rey Dúmidion: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/rosa.webp" alt="Rosa" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Rosa</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Rosa: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/albino.webp" alt="Albino" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Albino</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Albino: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/fannor.webp" alt="Fannor" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Fannor</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Fannor: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/naidilen.webp" alt="Naidilen" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Naidilen</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Naidilen: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/selene.webp" alt="Selene" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Selene</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Selene: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+          </ul>
+
+          <div class="mt-14 flex justify-center">
+            <a href="/sombras-ocultas/personajes/arboles-genealogicos.html" class="boton">
+              <iconify-icon icon="lucide:git-fork" width="16" height="16" aria-hidden="true"></iconify-icon>
+              Árboles genealógicos
+            </a>
+          </div>
+
+        </section>
+      </div>
+
+
+      <!-- Modal · Karima Fedensol
+           REVISAR: textos reconstruidos desde un resumen de la página original; sustitúyelos por el texto literal. -->
+      <dialog id="pj-karima" aria-labelledby="titulo-pj-karima" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
+          </button>
+
+          <header class="text-center">
+            <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
+              <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/sombras-ocultas/images/personajes/karima.webp" alt="Karima Fedensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+            <p class="subtitulo mt-4 text-xs">Emperatriz de Árchinon (Soberana)</p>
+            <h3 id="titulo-pj-karima" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Karima Fedensol</h3>
+          </header>
+
+          <h4 class="sr-only">Datos básicos</h4>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Emperatriz de Árchinon (Soberana)</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Humana, 34 años</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Rasgos suaves, piel clara con pocas pecas, ojos verdes profundos y cabello negro rizado. Tiene una presencia imponente y elegante.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Esposo</dt><dd class="text-plata-300">Jhonaldi Valeni, Rey Consorte de Árchinon y Duque Valeni.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Hijos</dt><dd class="text-plata-300">Johari y Jhoni.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Sobrino/primo de Johari</dt><dd class="text-plata-300">Malik, el varón mayor.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Secretario principal</dt><dd class="text-plata-300">Muntassir, <em>maharam</em> (guardián de confianza).</dd></div>
+          </dl>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:swords" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Habilidades y Aficiones</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Especialidad:</strong> maestra letal con la lanza.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Aficiones:</strong> cocinar en la intimidad, lectura profunda y montar a caballo.</span></li></ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:crown" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Personalidad y Manejo Político</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span>Por dentro es sentimental y protectora, pero hacia fuera se muestra calculadora, pulcra y fría por necesidad política.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span>Planifica sus argumentos con minuciosidad, por lo que sus decisiones rara vez se discuten en la corte.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span>Con sus hijos mantiene honestidad sobre asuntos de Estado, salvo su pasado personal, de modo que ellos conocen la estrategia detrás de su actitud pública.</span></li></ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:users" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Relaciones Clave</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Jhonaldi Valeni:</strong> alianza sólida y confianza.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Muntassir:</strong> círculo íntimo para investigar conspiraciones.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Johari y Jhoni:</strong> a quien prepara para la realidad política.</span></li></ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:message-circle" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Tono de Voz y Estilo de Diálogo</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En consejo y corte:</strong> distante, elocuente, firme.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En privado con familia y leales:</strong> abierta, honesta, directa y cálida.</span></li></ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:lock-keyhole" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Objetivos y Secretos</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300"><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Objetivos:</strong> mantener la pureza y continuidad del linaje real, proteger a sus hijos de la corte de ancianos y del clero, y evitar que salga a la luz su pasado.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Secreto:</strong> un hecho de su juventud que solo tres personas vivas conocen y que podría desestabilizar sus alianzas al este del reino.</span></li><li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Dilema de la corte:</strong> un sacerdote ortodoxo, influyente, cuestiona su mandato por ser mujer. Su grupo presionó para un matrimonio consanguíneo entre Johari y Malik. Karima refutó esos argumentos, pero el sacerdote cambió de postura de forma repentina, alegando que la consanguinidad está prohibida. Esta incoherencia lleva a Karima, Johari y Muntassir a investigar.</span></li></ul>
+          </section>
+        </div>
+      </dialog>
+
+
+      <!-- ====================== CIERRE + NAVEGACIÓN ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <p class="subtitulo mb-8 text-center text-xs text-azul-300">Uduné: Donde las nieblas guardan la verdad del corazón.</p>
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Volver</span>
+              <span class="font-subtitulo text-lg text-plata-100">Inicio</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/mapa/mapa.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+              <span class="font-subtitulo text-lg text-plata-100">Mapa</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <footer class="relative z-10 border-t border-plata-400/25 bg-linear-to-b from-noche-950/90 to-noche-950 px-4 pb-5 pt-9 text-center shadow-[0_-20px_40px_rgb(0_0_0/0.45)] backdrop-blur-sm">
+  <!-- Remates en los extremos de la línea -->
+  <span class="adorno-extremo left-3 -scale-x-100" aria-hidden="true"></span>
+  <span class="adorno-extremo right-3" aria-hidden="true"></span>
+
+  <p class="font-titulo text-lg titulo-plata">Sombras Ocultas</p>
+  <p class="subtitulo mt-1 text-[0.65rem] md:text-xs">Uduné · Donde las nieblas guardan la verdad del corazón</p>
+  <p class="mt-2 text-xs text-plata-500">
+    Un mundo creado por
+    <a href="https://naidiart.com/" class="magic-link text-plata-300 hover:text-white">Naidi_art</a>
+    · © <span data-anio>2026</span>
+  </p>
+</footer>
+
+<!-- Botón volver arriba -->
+<button type="button" data-volver-arriba aria-label="Volver arriba" class="boton-subir">
+  <iconify-icon icon="lucide:chevron-up" width="22" height="22"></iconify-icon>
+</button>
+
+  </body>
+</html>
