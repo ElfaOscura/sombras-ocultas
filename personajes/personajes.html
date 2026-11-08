@@ -14,7 +14,7 @@
     <!--@include ../src/partials/nav.html-->
     <!-- Escritorio: barra de navegación con desplegables -->
     <!--@include ../src/partials/header.html-->
-       <!-- Loading entre paginas -->
+         <!-- Loading entre paginas -->
     <!--@include partials/transicion.html-->
     <main id="contenido" class="relative z-8">
 
@@ -31,7 +31,7 @@
         class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-10 pt-24 text-center md:pb-20 md:pt-20"
         style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
       >
-        <div class="espectro-bg pt-10" aria-hidden="true">
+        <div class="espectro-bg pt-10 md:pt-0" aria-hidden="true">
           <img src="/images/espectro.webp" alt="" draggable="false" class="size-full object-contain" />
         </div>
 
@@ -122,7 +122,7 @@
             </article>
             </li>
             <li class="contents">
-            <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article id="karima" class="scroll-mt-24 tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
                 <img data-enfoque src="/images/personajes/karima.webp" alt="Karima" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
@@ -285,17 +285,17 @@
             </article>
             </li>
             <li class="contents">
-            <article id="raz-zagul" class="scroll-mt-24 tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article id="raz-zagul" class="scroll-mt-24 tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/personajes/raz-zagul.webp" alt="Raz-zagul" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <img data-enfoque src="/images/personajes/raz-zagul.webp" alt="Raz-zagul" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
               </div>
               <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
                 <h2 class="font-subtitulo text-xl text-plata-100">Raz-zagul</h2>
-                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Raz-zagul: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
-                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
-                Próximamente
+                <button type="button" data-modal-abrir="pj-raz-zagul" aria-label="Ver la ficha de Raz-zagul" class="boton mt-5 after:absolute after:inset-0">
+                Ver ficha
+                <iconify-icon icon="lucide:arrow-right" width="16" height="16" class="transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
               </button>
               </div>
             </article>
@@ -334,7 +334,7 @@
             </article>
             </li>
             <li class="contents">
-            <article class="tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+            <article id="rosa" class="scroll-mt-24 tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
               <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
                 <img data-enfoque src="/images/personajes/rosa.webp" alt="Rosa" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
@@ -484,6 +484,56 @@
               </div>
             </article>
             </li>
+            <li class="contents">
+            <article id="charo" class="scroll-mt-24 tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/charo.webp" alt="Charo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Charo</h2>
+                <p class="subtitulo mt-2 text-[0.65rem] text-azul-300">Provincia de Shiwans</p>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Charo: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article id="ziroleon" class="scroll-mt-24 tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/ziroleon.webp" alt="Ziroleon" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Ziroleon</h2>
+                <p class="subtitulo mt-2 text-[0.65rem] text-azul-300">Segundo libro</p>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Ziroleon: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
+            <li class="contents">
+            <article id="faket" class="scroll-mt-24 tarjeta group relative hover:translate-y-0 hover:border-plata-400/25 hover:shadow-none flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="relative aspect-[4/5] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/personajes/faket.webp" alt="Faket" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover opacity-80 saturate-50" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
+                <h2 class="font-subtitulo text-xl text-plata-100">Faket</h2>
+                <button type="button" disabled aria-disabled="true" aria-label="Ficha de Faket: próximamente" class="boton mt-5 cursor-not-allowed border-plata-400/25 text-plata-500 opacity-60 shadow-none hover:border-plata-400/25 hover:text-plata-500">
+                <iconify-icon icon="lucide:lock" width="14" height="14" aria-hidden="true"></iconify-icon>
+                Próximamente
+              </button>
+              </div>
+            </article>
+            </li>
           </ul>
 
           <div class="mt-14 flex flex-wrap justify-center gap-4">
@@ -591,8 +641,96 @@
               <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Estilo de pelea:</strong> Sigiloso, ágil y rápido. Prefiere el ataque a distancia con arco o incursiones con espada corta, combinándose a la perfección con Johari.</span></li>
             </ul>
           </section>
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:scroll-text" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Historia y origen</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:trees" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Abandonado en el bosque:</strong> Fue abandonado siendo apenas un bebé elfo en la densidad del bosque.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:heart-handshake" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Rescate:</strong> La emperatriz Karima y el Duque Jhonaldi lo rescataron y lo criaron como a su propio hijo.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:eye-off" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Origen oculto:</strong> Sus padres adoptivos ocultan con énfasis su origen elfo para protegerlo del prejuicio y mantener su estatus real. Por eso Jhoni esconde sus orejas ante el público y finge ser el heredero humano perfecto.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:baby" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Un <a href="/sombras-ocultas/personajes/facciones.html#estatus" class="magic-link text-azul-300 hover:text-white">Crisol</a>:</strong> En Uduné, "Crisol" es el término despectivo con el que se llama a los huérfanos, y es el apodo social con el que se le conoce.</span></li>
+            </ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:violin" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Vínculos y talentos</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:music" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Música:</strong> Toca el violín y compone melodías que interpreta en los techos durante las noches de luna llena, o en la intimidad del palacio. Tiene alma de bardo, con sensibilidad artística y romántica.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:venetian-mask" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Atractivo andrógino:</strong> Una fisonomía envidiable que atrae miradas. Al vestir trajes femeninos puede pasar desapercibido e incluso confundir al más astuto.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:users-round" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Johari:</strong> Su hermana, hija natural de los emperadores, es la única persona a la que ama con total devoción. Ella lo ve como su aliado más leal y no existen rivalidades por el trono ni por la sangre entre ambos.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:landmark" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En la corte:</strong> Conversa de política con personas de alta alcurnia con la misma naturalidad con la que bromea con jóvenes de su edad. Decenas de mujeres buscan su atención, pero su corazón pertenece a su familia.</span></li>
+            </ul>
+          </section>
         </div>
       </dialog>
+
+      <!-- KARIMA (ficha completa) -->
+      <dialog id="pj-karima" aria-labelledby="titulo-pj-karima" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
+          </button>
+
+          <header class="text-center">
+            <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
+              <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/personajes/karima.webp" alt="Karima" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+            <p class="subtitulo mt-4 text-xs">Emperatriz de Árchinon (Soberana)</p>
+            <h3 id="titulo-pj-karima" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Karima Fedensol</h3>
+          </header>
+
+          <h4 class="sr-only">Datos básicos</h4>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Título</dt><dd class="text-plata-300">Emperatriz de Árchinon (Soberana)</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Raza y edad</dt><dd class="text-plata-300">Humana, 34 años</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Apariencia</dt><dd class="text-plata-300">Rasgos faciales suaves, piel clara con pocas pecas, ojos verdes intensos y cabello negro rizado. Transmite una presencia imponente y elegante.</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Armas</dt><dd class="text-plata-300">Maestra letal con la lanza</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Aficiones</dt><dd class="text-plata-300">Cocinar en privado, la lectura profunda y la equitación</dd></div>
+          </dl>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:crown" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Personalidad y manejo político</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:heart" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Por dentro y por fuera:</strong> Por dentro es sentimental y protectora; hacia el exterior es calculadora, meticulosa y fría por necesidad política.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:brain" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Inteligencia diplomática:</strong> Planifica con detalle cada argumento y estrategia, de modo que sus decisiones se aceptan en la corte sin réplica.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:baby" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Transparencia con sus hijos:</strong> Aunque viaja con frecuencia por deberes reales, en palacio es una madre muy dedicada. Mantiene honestidad total con Johari y Jhoni sobre asuntos de Estado, excepto sobre su pasado personal, así que ellos conocen la estrategia completa cuando ella adopta la máscara fría ante el público.</span></li>
+            </ul>
+          </section>
+
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:users-round" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Relaciones clave</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:handshake" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Jhonaldi Valeni:</strong> Su esposo, Rey Consorte de Árchinon y Duque Valeni. Comparten una alianza sólida y una gran confianza en la gestión del reino.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:shield" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Muntassir:</strong> Su secretario principal y maharam (guardián de confianza). Forma parte de su círculo íntimo para investigar conspiraciones.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:heart-handshake" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Johari y Jhoni:</strong> Sus hijos. Los ama con devoción maternal y los prepara estratégicamente para comprender la realidad política sin engaños.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:users" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Charo:</strong> Su hermana menor, a quien se arregló un matrimonio con el entonces príncipe Arhestan para consolidar una alianza con Egosth. Karima y Arhestan decidieron llevar adelante la alianza pese a la huida de Charo.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:mail" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Raz-zagul:</strong> Mantiene correspondencia con <a href="#raz-zagul" data-modal-cerrar class="magic-link text-azul-300 hover:text-white">Raz-zagul</a>, líder de la provincia de Shiwans. Aunque las cartas suelen ser interceptadas o alteradas, nunca ha dejado de confiar en él.</span></li>
+            </ul>
+          </section>
+
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:message-square-quote" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Tono de voz y estilo de diálogo</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:landmark" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En el consejo y la corte:</strong> Distante, elocuente, articulada y firme. Mantiene una frialdad medida, pero defiende a su familia sin vacilar.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:home" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">En privado:</strong> Con su familia y sus leales es abierta, honesta, directa y cálida.</span></li>
+            </ul>
+          </section>
+
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:target" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Objetivos y secretos</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:flag" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Linaje real:</strong> Mantener la pureza y la continuidad del linaje real.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:shield-check" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Proteger a sus hijos:</strong> Proteger a Johari y Jhoni del escrutinio de la corte de ancianos y de las manipulaciones del clero.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:lock" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Pasado secreto:</strong> Impedir que se revelen secretos de su pasado personal. Un secreto de su juventud, que solo tres personas vivas conocen, podría desestabilizar sus alianzas al este del reino si saliera a la luz.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:scale" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Dilema de la corte:</strong> Un sacerdote ortodoxo con fuerte influencia cuestiona su mandato por ser mujer. Este grupo presionó para pactar un matrimonio consanguíneo entre Johari y su primo Malik, el varón mayor. Karima desmontó sus argumentos, pero el sacerdote cambió de postura de forma drástica y afirmó que la consanguinidad está prohibida. Por esa incoherencia, Karima, Johari y Muntassir investigan qué hay detrás.</span></li>
+            </ul>
+          </section>
+        </div>
+      </dialog>
+
 
       <!-- Modal · Lorenzo -->
       <dialog id="pj-lorenzo" aria-labelledby="titulo-pj-lorenzo" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
@@ -672,8 +810,96 @@
               <li class="flex gap-3"><iconify-icon icon="lucide:sparkles" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">La Casa:</strong> Refugio y villa creada para proteger a las personas rescatadas, dotándolas de una empresa textil para su independencia económica.</span></li>
             </ul>
           </section>
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:scroll-text" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Historia</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:dna" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Origen mestizo:</strong> Hijo de una madre elfa y un padre mortal, heredó la longevidad y el porte de su linaje materno. Su hermano Rims nació totalmente humano.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:house" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Orfandad y ruina:</strong> La familia sufrió la muerte del padre, la ruina causada por mercaderes ambiciosos y después la muerte de la madre, que dejó huérfanos a los hermanos. Sobrevivieron con un pequeño puesto de pescado, sin poder conseguir trabajo digno por las mentiras de quienes los arruinaron.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:swords" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Mercenario:</strong> Albino se hizo mercenario. En una de sus misiones eliminó a los cabezas de familia responsables de la ruina y, con su fortuna, restauró el taller de telas y el honor del apellido.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:crown" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Guerra y realeza:</strong> Una invasión de bárbaros del norte amenazó la región. Albino y Rims unificaron al pueblo y, tras años de lucha, Rims fue coronado Rey, lo que trajo orden en la frontera y una era de prosperidad.</span></li>
+            </ul>
+          </section>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:landmark" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Legado y bajo mundo</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:crown" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">La Corona:</strong> Los descendientes de Rims reinan, conocen a Albino en su forma real, lo llaman «Tío» y lo consideran el guardián sagrado de la monarquía. Aunque es el fundador de facto, nunca interviene en las decisiones de los monarcas, que guardan su secreto con respeto.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:users-round" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Familia Valeni:</strong> Son descendientes directos de Albino y todos son humanos. Para acompañarlos sin revelar su longevidad, adopta por temporadas la apariencia de un sobrino adolescente gracias a su magia.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:map-pin" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">La Villa de los Jardines:</strong> Su base es el barrio rojo más famoso de la región, donde combate el tráfico de personas y de sustancias prohibidas.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:flower-2" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Rosa:</strong> Colabora con <a href="#rosa" data-modal-cerrar class="magic-link text-azul-300 hover:text-white">Rosa</a>, una elfa primigenia que trabaja con la casa «Las Hortensias». Mantienen una relación sentimental profunda, pero ambos priorizan su labor humanitaria y aceptan la distancia.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:sword" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Aspecto y carácter:</strong> Alto, fornido y de cabello blanco largo, con ojos que cambian de rosa a rojo según la luz y el cuerpo marcado de cicatrices. Maestro de la espada y de la hechicería; su único punto débil es el arco. Aparenta despreocupación, pero cuando la situación se le escapa muestra que es protector y responsable.</span></li>
+            </ul>
+          </section>
         </div>
       </dialog>
+
+      <!-- RAZ-ZAGUL (ficha completa) -->
+      <dialog id="pj-raz-zagul" aria-labelledby="titulo-pj-raz-zagul" class="m-auto max-h-[90vh] w-[min(92vw,48rem)] overflow-y-auto rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
+        <div class="relative px-6 py-10 md:px-10">
+          <button type="button" data-modal-cerrar aria-label="Cerrar" class="absolute right-4 top-4 z-10 flex size-9 items-center justify-center rounded-full border border-plata-300/40 text-plata-200 transition duration-300 hover:border-azul-300 hover:text-white">
+            <iconify-icon icon="lucide:x" width="18" height="18" aria-hidden="true"></iconify-icon>
+          </button>
+
+          <header class="text-center">
+            <div class="relative mx-auto size-32 overflow-hidden rounded-full border border-plata-300/50 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_30px_rgb(37_99_235/0.4)]">
+              <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/4 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img src="/images/personajes/raz-zagul.webp" alt="Raz-zagul" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+            </div>
+            <p class="subtitulo mt-4 text-xs">Líder de la provincia de Shiwans</p>
+            <h3 id="titulo-pj-raz-zagul" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Raz-zagul</h3>
+          </header>
+
+          <h4 class="sr-only">Datos básicos</h4>
+          <dl class="mt-8 divide-y divide-plata-400/15 text-sm">
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Rol</dt><dd class="text-plata-300">Líder de la provincia de Shiwans, en el este</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Edad</dt><dd class="text-plata-300">36 años</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Especialidad</dt><dd class="text-plata-300">Espadas y magia de fuego, herencia de su padre Ra’id-Razin</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Linaje</dt><dd class="text-plata-300">Hijo de Ra’id-Razin y hermano de <a href="#mugalid" data-modal-cerrar class="magic-link text-azul-300 hover:text-white">Mugalid</a>; estirpe de los Maculados</dd></div>
+            <div class="grid gap-1 py-3 sm:grid-cols-[9rem_1fr]"><dt class="font-subtitulo text-xs uppercase tracking-widest text-plata-400">Familia</dt><dd class="text-plata-300">Esposo de <a href="#charo" data-modal-cerrar class="magic-link text-azul-300 hover:text-white">Charo</a> y padre de <a href="#ziroleon" data-modal-cerrar class="magic-link text-azul-300 hover:text-white">Ziroleon</a></dd></div>
+          </dl>
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:shield-check" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Carácter</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:award" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Honor:</strong> Hombre honorable: su honor prevaleció incluso por encima de la venganza de Charo.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:brain" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Astucia:</strong> Lleva la administración de la provincia con mucha astucia.</span></li>
+            </ul>
+          </section>
+
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:scroll-text" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Historia</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:badge-x" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Linaje manchado:</strong> Su padre Ra’id-Razin traicionó a la corona y murió en la misma batalla donde cometió la traición. Siendo niño quedó marcado como Maculado, por el clamor de las víctimas.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:shield" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Servicio a la corona:</strong> Se puso al servicio de la corona para resarcir un error que no cometió y limpiar su linaje, y el rey lo perdonó. Como soldado de Faket, padre de Karima, conoció a Karima.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:map-pin" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Envío al este:</strong> Para evitar males, el rey lo envió a liderar la provincia de Shiwans, y así mantener a Mugalid lejos de la corona.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:flame" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Honor manchado:</strong> Los actos de Mugalid mancharon el honor que Raz-zagul había construido.</span></li>
+            </ul>
+          </section>
+
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:mail" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>Cartas con Karima</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:mail" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Comunicación por cartas:</strong> Mantiene correspondencia con <a href="#karima" data-modal-cerrar class="magic-link text-azul-300 hover:text-white">Karima</a>. Las cartas suelen ser interceptadas o cambiadas en el camino, con Mugalid de por medio.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:search-check" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Cartas manipuladas:</strong> Reconoce cuando una carta ha sido manipulada, porque conoció a Karima cuando era soldado de Faket.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:heart-handshake" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Confianza:</strong> Por las dificultades de comunicación ha habido muchos problemas en la corona, pero Karima nunca ha dejado de confiar en él.</span></li>
+            </ul>
+          </section>
+
+
+          <section class="mt-8 border-t border-plata-400/15 pt-8">
+            <h4 class="flex items-center gap-2 font-subtitulo text-lg text-plata-100"><iconify-icon icon="lucide:swords" width="18" height="18" class="text-azul-300" aria-hidden="true"></iconify-icon>La revuelta de Shiwans</h4>
+            <ul class="mt-4 space-y-3 text-sm leading-relaxed text-plata-300">
+              <li class="flex gap-3"><iconify-icon icon="lucide:bell-ring" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Falta de respuesta:</strong> La falta de respuesta de la corona a situaciones importantes hace que la provincia se levante en armas, liderada por Charo y Mugalid.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:heart-crack" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Charo:</strong> Hermana menor de Karima, prometida en matrimonio al entonces príncipe Arhestan para consolidar una alianza. Cuando la enviaban a Egosth, escapó a Shiwans, donde Raz-zagul la aceptó. Arhestan y Karima trataron el asunto con cautela y llevaron la alianza adelante sin tomar en cuenta la acción de Charo. Llena de venganza, ella quiso mancillar su temple siendo su mujer, pero su honor prevaleció.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:users-round" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Alianzas:</strong> Charo consiguió aliado en Mugalid, creó discordia entre el pueblo de Shiwans y la corona, y sumó aliados en provincias cercanas para una revuelta y una batalla contra la corona.</span></li>
+              <li class="flex gap-3"><iconify-icon icon="lucide:baby" width="16" height="16" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon><span><strong class="text-plata-100">Ziroleon:</strong> De la unión de Charo y Raz-zagul nace Ziroleon, que aparece en el segundo libro.</span></li>
+            </ul>
+          </section>
+        </div>
+      </dialog>
+
 
 
       <!-- ====================== CIERRE + NAVEGACIÓN ====================== -->
