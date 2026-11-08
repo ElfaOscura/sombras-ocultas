@@ -100,7 +100,7 @@
 
     <!-- Item sin submenú: Leyes (este sí puede llevar enlace directo si es página única) -->
     <li>
-      <a href="/sombras-ocultas/mapa/ley/ley-archinon.html" class="nav-movil">
+      <a href="/sombras-ocultas/mapa/leyes/ley-archinon.html" class="nav-movil">
         <img src="/sombras-ocultas/images/iconos/leyes.webp" alt="" class="size-8" /><span>Leyes</span>
       </a>
     </li>
@@ -238,7 +238,7 @@
       </div>
 
       <!-- Enlaces simples -->
-      <a href="/sombras-ocultas/ley/ley-archinon.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Leyes</a>
+      <a href="/sombras-ocultas/leyes/ley-archinon.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Leyes</a>
       <a href="/sombras-ocultas/bestiario/bestiario.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Bestiario</a>
     </nav>
   </div>
@@ -273,7 +273,7 @@
         class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-10 pt-24 text-center md:pb-20 md:pt-20"
         style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
       >
-        <div class="espectro-bg pt-10" aria-hidden="true">
+        <div class="espectro-bg pt-10 md:pt-0" aria-hidden="true">
           <img src="/sombras-ocultas/images/espectro.webp" alt="" class="size-full object-contain" />
         </div>
 
@@ -283,14 +283,18 @@
             <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
             <span class="text-azul-300" aria-current="page">Idioma y escritura</span>
           </nav>
-
-          <div class="mt-6 flex items-center justify-center gap-4 md:gap-6">
-            <img data-cabecera-item src="/images/iconos/escritura.webp" alt="" class="size-14 object-contain drop-shadow-[0_0_14px_rgb(96_165_250/0.6)] md:size-20" onerror="this.remove()" />
-            <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Lenguas y Escrituras de Uduné</h1>
+          <div class="mt-6 flex flex-col items-center gap-5 md:flex-row md:justify-center md:gap-8">
+            <span data-cabecera-item class="relative flex size-24 shrink-0 items-center justify-center md:size-36">
+             
+              <span class="absolute inset-0 " aria-hidden="true"></span>
+              <img src="/sombras-ocultas/images/iconos/idioma.webp" alt="" class="relative size-3/4 object-contain drop-shadow-[0_0_14px_rgb(147_197_253/0.6)]" />
+            </span>
+            <div class="text-center md:text-left">
+              <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Lenguas y Escrituras de Uduné</h1>
+              <p data-cabecera-item class="subtitulo mt-4 text-xs md:text-sm">El conocimiento en Uduné se divide según quién lo porta: desde los susurros eternos de los elfos hasta el lenguaje práctico de los mercaderes.</p>
+            </div>
           </div>
-          <p data-cabecera-item class="mx-auto mt-4 max-w-2xl text-plata-300">
-            El conocimiento en Uduné se divide según quién lo porta: desde los susurros eternos de los elfos hasta el lenguaje práctico de los mercaderes.
-          </p>
+          
         </div>
       </header>
       <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
