@@ -31,13 +31,13 @@ export const REINOS = [
     nombre: 'Archinón',
     etiqueta: 'Ottoms-Archinón',
     escudo: '/images/escudos/archinon.webp',
-    reino: '#1e3a8a', borde: '#3b82f6', mapa: '#2f45e0',
+    reino: '#1e3a8a', borde: '#96beff', mapa: '#2f45e0',
     cultura: 'Inspirada en el antiguo Imperio otomano.',
     arma: { nombre: 'Galaxy', descripcion: 'espada de doble hoja curvada con mango central, azul oscuro. Arma única por su diseño exótico y letal.', color: '#1e3a8a' },
     grupos: [
       { nombre: 'Los 7 Ladrones', tipo: 'Grupo delictivo', texto: 'Liderados por Déximir. Operan desde la ciudad de Goordes.' }
     ],
-    aliados: ['egosth'],
+    aliados: ['egosth','rims'],
     enlace: { texto: 'Sitios de interés', href: '/sombras-ocultas/mapa/sitios-archinon.html' }
   },
   {
@@ -46,7 +46,7 @@ export const REINOS = [
     nombre: 'Sheironeison',
     etiqueta: 'Las Tierras Blancas del Norte',
     escudo: '/images/escudos/sheironeison.webp',
-    reino: '#9333ea', borde: '#a855f7', mapa: '#9333ea',
+    reino: '#9333ea', borde: '#d09fff', mapa: '#9333ea',
     cultura: 'Inspirada en la Rusia medieval y en la antigua era vikinga. Es el reino más apartado y gélido.',
     arma: { nombre: 'Une', descripcion: 'hacha doble, morada.', color: '#9333ea' },
     portador: 'El Rey de las tierras blancas'
@@ -74,6 +74,7 @@ export const REINOS = [
     cultura: 'Basada en la Europa medieval del siglo XII, con caballeros, castillos y un estricto código feudal.',
     arma: { nombre: 'Shirne', descripcion: 'daga, naranja.', color: '#f97316' },
     portador: 'El Rey del Gran Valle',
+    aliados: ['archinon'],
     grupos: [
       { nombre: 'Casa Valeni', tipo: 'Casa noble',
         texto: 'Nobles criadores de caballos, descendientes de Albino. Están emparentados por sangre con la familia real de Rims, pues Albino fue hermano de Rims, el primer rey.' }
@@ -100,7 +101,8 @@ export const REINOS = [
     reino: '#dc2626', borde: '#f87171', mapa: '#dc2626',
     cultura: 'Mezcla vibrante inspirada en la antigua cultura semita.',
     arma: { nombre: 'Rum', descripcion: 'cimitarra, roja.', color: '#dc2626' },
-    portador: 'El Rey de Arabs'
+    portador: 'El Rey de Arabs',
+    aliados: ['tianxia'],
   },
   {
     id: 'lailshirem',
@@ -122,7 +124,8 @@ export const REINOS = [
     reino: '#3b82f6', borde: '#60a5fa', mapa: '#2563eb',
     lema: '«Bajo el cielo, un solo destino»',
     cultura: 'Se inspira en la antigua cultura asiática.',
-    ubicacion: 'Al noreste, más allá de Sharnath, bajo la tutela de Manar.',
+    ubicacion: 'Al noreste, más allá de Arabs, bajo la tutela de Manar.',
+    aliados: ['arabs','dharmapala'],
     proteccion: 'Manar, dios del fuego y la forja, los protege directamente, por lo que Gedu consideró que no necesitaban las armas de las Siete Torres.'
   },
   {
@@ -135,6 +138,7 @@ export const REINOS = [
     lema: '«La Ley es el camino; la Paz, el refugio»',
     cultura: 'Se inspira en la antigua cultura hindú y tibetana.',
     ubicacion: 'Al noreste, más allá de Sharnath, bajo la tutela de Manar.',
+    aliados: ['tianxia'],
     proteccion: 'Manar, dios del fuego y la forja, los protege directamente, por lo que Gedu consideró que no necesitaban las armas de las Siete Torres.'
   }
 ];

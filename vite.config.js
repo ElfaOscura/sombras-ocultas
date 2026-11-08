@@ -21,7 +21,7 @@ const incluirParciales = () => ({
   },
 });
 // 1. Define los nombres exactos de los archivos HTML que quieres ignorar
-const archivosIgnorados = ['guia-estilos.html', 'plantillas-secciones.html'];
+   const archivosIgnorados = ['guia-estilos.html', 'plantillas-secciones.html', '403.html', '500.html', '503.html'];
 
 // Busca todos los .html en la raíz y en cualquier subcarpeta (excepto src/partials/ y node_modules/)
 const paginas = Object.fromEntries(
@@ -61,3 +61,4 @@ export default defineConfig({
     },
   },
 });
+

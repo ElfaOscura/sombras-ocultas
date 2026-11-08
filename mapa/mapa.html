@@ -14,15 +14,17 @@
     <!--@include ../src/partials/nav.html-->
     <!-- Escritorio: barra de navegación con desplegables -->
     <!--@include ../src/partials/header.html-->
+    <!-- Loading entre paginas -->
+    <!--@include partials/transicion.html-->
 
 <main id="contenido" class="relative z-8">
 
   <!-- ====================== 00 · CABECERA DE PÁGINA INTERIOR ====================== -->
   <header
-    class="relative overflow-hidden border-y border-plata-400/25 px-4 pb-20 pt-28 text-center md:pb-28 md:pt-36"
+    class="relative overflow-hidden border-y border-plata-400/25 px-4 pb-10 pt-28 text-center md:pb-20 md:pt-20"
     style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
   >
-    <div class="espectro-bg" aria-hidden="true">
+    <div class="espectro-bg pt-10" aria-hidden="true">
       <img src="/images/espectro.webp" alt="" class="size-full object-contain" />
     </div>
 
@@ -47,7 +49,7 @@
   </div>
 
   <!-- ====================== MAPA INTERACTIVO · FULL WIDTH ====================== -->
-     <section class="relative w-full bg-noche-950 pb-12" aria-labelledby="mapa-h2">
+     <section class="relative w-full bg-noche-950 pb-6" aria-labelledby="mapa-h2">
         <header class="mx-auto max-w-5xl px-4 pb-8 pt-14 text-center">
           <p class="subtitulo text-xs">Mapa interactivo</p>
           <h2 id="mapa-h2" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Los reinos de Uduné</h2>

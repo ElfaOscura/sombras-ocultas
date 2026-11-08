@@ -7,6 +7,7 @@ import { iniciarVolverArriba } from './volver-arriba.js';
 import { initModales } from './modales.js';   
 import { initLibros } from './libros.js';     // nuevo
 import './mapa-interactivo.js';
+import './transicion.js';
 
 document.querySelectorAll('[data-anio]').forEach((el) => {
   el.textContent = new Date().getFullYear();

@@ -932,3 +932,116 @@ img {
     .mapa.is-open .mapa-sel, .mapa-cuerpo.is-in { animation: none !important; }
   }
 }
+/* ==========================================================================
+   VISTA DE CARGA / TRANSICIÓN ENTRE PÁGINAS  (v2 · CSS plano)
+   Pega este bloque AL FINAL de style.css, FUERA de cualquier @layer o llave abierta.
+   Si pegaste la versión anterior, BÓRRALA primero.
+   ========================================================================== */
+
+.transicion-pagina {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background:
+    radial-gradient(ellipse 60% 50% at 50% 45%, rgb(37 99 235 / 0.28), transparent 70%),
+    linear-gradient(180deg, #0a1429, #050a17);
+}
+
+/* Sello: contenedor cuadrado; los anillos y el isotipo se centran dentro */
+.transicion-sello {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  flex: none;
+}
+@media (min-width: 768px) {
+  .transicion-sello {
+    width: 8rem;
+    height: 8rem;
+  }
+}
+
+.transicion-anillo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-radius: 9999px;
+  border: 1px solid rgb(203 213 225 / 0.25);
+  border-top-color: #93c5fd;
+  box-shadow: 0 0 22px rgb(59 130 246 / 0.35);
+  animation: transicionGiro 1.6s linear infinite;
+}
+.transicion-anillo-inverso {
+  top: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.75rem;
+  left: 0.75rem;
+  border-top-color: transparent;
+  border-bottom-color: #cbd5e1;
+  box-shadow: none;
+  animation: transicionGiro 2.4s linear infinite reverse;
+}
+
+/* Isotipo centrado con margin:auto (sin translate, para que la animación no lo desplace) */
+.transicion-isotipo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 14px rgb(96 165 250 / 0.6));
+  animation: transicionLatido 2.4s ease-in-out infinite;
+}
+
+/* Barra de luz que va y viene bajo el nombre */
+.transicion-barra {
+  position: relative;
+  display: block;
+  width: 11rem;
+  height: 1px;
+  margin-top: 1.5rem;
+  overflow: hidden;
+  background: rgb(168 179 199 / 0.2);
+}
+.transicion-barra::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, #dbeafe, transparent);
+  box-shadow: 0 0 10px #93c5fd;
+  animation: transicionBarra 1.4s ease-in-out infinite;
+}
+
+@keyframes transicionGiro {
+  to { transform: rotate(360deg); }
+}
+@keyframes transicionLatido {
+  0%, 100% { opacity: 0.55; transform: scale(0.94); }
+  50%      { opacity: 1;    transform: scale(1.06); }
+}
+@keyframes transicionBarra {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(250%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .transicion-anillo,
+  .transicion-isotipo,
+  .transicion-barra::after {
+    animation: none;
+  }
+}
