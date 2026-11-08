@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#050a17" />
+<link rel="icon" href="/sombras-ocultas/images/isotipo.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Merienda:wght@400;700&family=Noto+Sans:wght@400;500;700&display=swap"
+  rel="stylesheet"
+/>
+<link rel="stylesheet" href="/sombras-ocultas/assets/style.css">
+
+    <title>Sitios de Rims | Sombras Ocultas</title>
+    <meta name="description" content="Sitios de interés de Rims: la ciudad de Fairens, con el río Rims y el Palacio Valeni, y la villa de Borteña." />
+    <script type="module" crossorigin src="/sombras-ocultas/assets/main.js"></script>
+    <link rel="stylesheet" crossorigin href="/sombras-ocultas/assets/style.css">
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!-- src/partials/nav.html -->
+<header id="nav" class="fixed inset-x-0 top-3 z-50 flex justify-center px-4 md:hidden">
+  <nav
+    aria-label="Principal"
+    class="relative flex w-full max-w-4xl items-center justify-between rounded-full border border-plata-400/30 bg-noche-950/80 px-5 py-2 backdrop-blur-md"
+  >
+    <!-- Logo central en móvil = Inicio -->
+    <a
+      href="/sombras-ocultas/"
+      aria-label="Sombras Ocultas, ir al inicio"
+      class="flex size-12 shrink-0 items-center justify-center rounded-full border-2 border-plata-300/60 bg-noche-950 shadow-[0_0_18px_rgb(96_165_250/0.35)] transition duration-300 hover:shadow-[0_0_26px_rgb(147_197_253/0.7)]"
+    >
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-7" />
+    </a>
+
+    <!-- Botón de menú móvil -->
+    <button
+      type="button"
+      data-menu-btn
+      aria-expanded="false"
+      aria-controls="menu-movil"
+      aria-label="Abrir menú"
+      class="flex size-10 items-center justify-center rounded-full border border-plata-400/40 text-plata-200"
+    >
+      <iconify-icon icon="lucide:menu" width="22" height="22"></iconify-icon>
+    </button>
+
+    <!-- Menú desplegable móvil -->
+<!-- Menú móvil con títulos fijos y submenús desplegables -->
+<div
+  id="menu-movil"
+  data-menu
+  hidden
+  class="absolute inset-x-0 top-full mt-3 max-h-[75vh] overflow-y-auto rounded-2xl border border-plata-400/30 bg-noche-950/95 p-4 shadow-2xl backdrop-blur-md md:hidden"
+>
+  <ul class="space-y-2 text-plata-200">
+    <li>
+      <a href="/sombras-ocultas/" class="nav-movil">
+        <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 p-1" />
+        <span>Inicio</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Personajes -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/personajes.webp" alt="" class="size-8" />
+          <span class="font-bold">Personajes</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/personajes/personajes.html" class="block py-1">Ver personajes</a></li>
+        <li><a href="/sombras-ocultas/personajes/arboles-genealogicos.html" class="block py-1">Árboles genealógicos</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Mapa -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/mapa.webp" alt="" class="size-8" />
+          <span class="font-bold">Mapa</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/mapa/mapa.html" class="block py-1">Mapa y reinos</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-archinon.html" class="block py-1">Sitios de Árchinon</a></li>
+        <li><a href="/sombras-ocultas/mapa/sitios-rims.html" class="block py-1">Sitios de Rims</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Leyes (este sí puede llevar enlace directo si es página única) -->
+    <li>
+      <a href="/sombras-ocultas/mapa/leyes/ley-archinon.html" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/leyes.webp" alt="" class="size-8" /><span>Leyes</span>
+      </a>
+    </li>
+
+    <!-- Item con título fijo: Sistema de culto -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/culto.webp" alt="" class="size-8" />
+          <span class="font-bold">Sistema de culto</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/culto/sistema-culto.html" class="block py-1">Culto</a></li>
+        <li><a href="/sombras-ocultas/culto/historia-gedua.html" class="block py-1">Historia del Gedua</a></li>
+        <li><a href="/sombras-ocultas/culto/dioses.html" class="block py-1">Dioses</a></li>
+      </ul>
+    </li>
+
+    <!-- Item con título fijo: Idioma y escritura -->
+    <li class="nav-movil-grupo">
+      <div class="flex items-center justify-between nav-movil cursor-pointer" data-submenu-btn aria-expanded="false">
+        <div class="flex items-center gap-3">
+          <img src="/sombras-ocultas/images/iconos/idioma.webp" alt="" class="size-8" />
+          <span class="font-bold">Idioma y escritura</span>
+        </div>
+        <iconify-icon icon="lucide:chevron-down" width="20" height="20" class="transition-transform duration-300 text-plata-300"></iconify-icon>
+      </div>
+      <ul data-submenu hidden class="ml-11 border-l border-plata-400/20 pl-3 text-sm text-plata-300 space-y-1 py-1">
+        <li><a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="block py-1">Escrituras</a></li>
+        <li><a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir.html" class="block py-1">Glosario de lengua Lailshir</a></li>
+      </ul>
+    </li>
+
+    <!-- Item sin submenú: Bestiario -->
+    <li>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="nav-movil">
+        <img src="/sombras-ocultas/images/iconos/bestiario.webp" alt="" class="size-8" /><span>Bestiario</span>
+      </a>
+    </li>
+  </ul>
+</div>
+  </nav>
+</header>
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!-- src/partials/header.html
+     Menú de ESCRITORIO para las páginas interiores (md en adelante).
+     - NO se incluye en index.html: ahí el menú son los iconos del hero.
+     - En móvil lo cubre nav.html (la píldora fija con el botón hamburguesa).
+     - La página actual se resalta sola (ver marcarEnlaceActivo() en menu.js). -->
+<header
+  data-header
+  class="sticky top-0 z-50 hidden w-full border-b border-plata-400/20 bg-noche-950/85 shadow-[0_8px_30px_rgb(0_0_0/0.35)] backdrop-blur-md md:block"
+>
+  <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-6 py-3">
+    <!-- Logo / Inicio -->
+    <a href="/sombras-ocultas/" aria-label="Sombras Ocultas, ir al inicio" class="group flex shrink-0 items-center gap-3">
+      <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="size-8 transition duration-300 group-hover:scale-110" />
+      <span class="font-titulo hidden text-lg font-bold tracking-wider text-plata-100 transition group-hover:text-azul-300 lg:inline">
+        Sombras Ocultas
+      </span>
+    </a>
+
+    <nav aria-label="Principal" class="flex items-center gap-4 lg:gap-8">
+
+      <!-- Personajes -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/personajes/personajes.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Personajes
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/personajes/personajes.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Ver personajes</a>
+            <a href="/sombras-ocultas/personajes/arboles-genealogicos.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Árboles genealógicos</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mapa -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/mapa/mapa.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Mapa
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/mapa/mapa.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Mapa y reinos</a>
+            <a href="/sombras-ocultas/mapa/sitios-archinon.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Árchinon</a>
+            <a href="/sombras-ocultas/mapa/sitios-rims.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Sitios de Rims</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sistema de culto -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/culto/sistema-culto.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Sistema de culto
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute left-0 top-full z-10 w-60 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/culto/sistema-culto.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">El Culto a Gedu</a>
+            <a href="/sombras-ocultas/culto/historia-gedua.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Historia del Gedua</a>
+            <a href="/sombras-ocultas/culto/dioses.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Dioses</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Idioma y escritura -->
+      <div class="group relative" data-grupo>
+        <a
+          href="/sombras-ocultas/idioma-y-escritura/escritura.html"
+          class="flex items-center gap-1 py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300 data-[actual=true]:text-azul-300"
+        >
+          Idioma y escritura
+          <iconify-icon icon="lucide:chevron-down" width="14" height="14" class="transition duration-300 group-hover:rotate-180 group-focus-within:rotate-180"></iconify-icon>
+        </a>
+        <div class="invisible absolute right-0 top-full z-10 w-64 pt-2 opacity-0 transition-all duration-200 group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+          <div class="rounded-xl border border-plata-400/25 bg-noche-900/95 p-2 shadow-xl backdrop-blur-md">
+            <a href="/sombras-ocultas/idioma-y-escritura/escritura.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Escrituras</a>
+            <a href="/sombras-ocultas/idioma-y-escritura/glosario-lailshir.html" class="block rounded-lg px-4 py-2 text-xs text-plata-300 transition hover:bg-azul-400/10 hover:text-plata-100 aria-[current=page]:text-azul-300">Glosario de lengua Lailshir</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enlaces simples -->
+      <a href="/sombras-ocultas/leyes/ley-archinon.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Leyes</a>
+      <a href="/sombras-ocultas/bestiario/bestiario.html" class="py-2 text-sm font-medium text-plata-400 transition hover:text-plata-100 focus-visible:text-plata-100 aria-[current=page]:text-azul-300">Bestiario</a>
+    </nav>
+  </div>
+</header>
+
+    <!-- Loading entre paginas -->
+    <!-- Vista de carga / transición entre páginas. -->
+<div
+  id="transicion-pagina"
+  class="transicion-pagina"
+  role="status"
+  aria-live="polite"
+  style="position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#050a17"
+>
+  <div class="transicion-sello" data-transicion-logo aria-hidden="true">
+    <span class="transicion-anillo"></span>
+    <span class="transicion-anillo transicion-anillo-inverso"></span>
+    <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="transicion-isotipo" />
+  </div>
+  <p class="font-titulo titulo-plata mt-8 text-2xl font-bold md:text-3xl" aria-hidden="true">Sombras Ocultas</p>
+  <span class="transicion-barra" aria-hidden="true"></span>
+  <span class="sr-only">Cargando…</span>
+</div>
+<noscript><style>#transicion-pagina{display:none!important}</style></noscript>
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           IMÁGENES de esta página (public/images/mapa/):
+             Fairens:  fairens.webp · rio-rims.webp · palacio-valeni.webp
+             Borteña:  bortena.webp · bortena-lago.webp · bortena-festival-barcos.webp
+           Mientras no existan, cada marco muestra el isotipo sobre fondo azul.
+           Texto adaptado de https://sites.google.com/view/sombras-ocultas/mapa/sitios-de-rims
+           ==================================================================== -->
+
+      <!-- ====================== CABECERA ====================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-10 pt-24 text-center md:pb-20 md:pt-20"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg pt-10 md:pt-0" aria-hidden="true">
+          <img src="/sombras-ocultas/images/espectro.webp" alt="" draggable="false" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <a href="/sombras-ocultas/mapa/mapa.html" class="magic-link hover:text-white">Mapa</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <span class="text-azul-300" aria-current="page">Sitios de Rims</span>
+          </nav>
+
+          <div class="mt-6 flex flex-col items-center gap-5 md:flex-row md:justify-center md:gap-8">
+            <span data-cabecera-item class="relative flex size-24 shrink-0 items-center justify-center md:size-36">
+              <img src="/sombras-ocultas/images/iconos/mapa.webp" alt="" draggable="false" class="relative size-3/4 object-contain drop-shadow-[0_0_14px_rgb(147_197_253/0.6)]" />
+            </span>
+            <div class="text-center md:text-left">
+              <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Sitios de interés de Rims</h1>
+              <p data-cabecera-item class="subtitulo mt-4 text-xs md:text-sm">Mapa</p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================== ÍNDICE RÁPIDO ====================== -->
+      <div class="mx-auto max-w-5xl px-4 pt-16">
+        <nav aria-label="En esta página" class="flex flex-wrap justify-center gap-2" data-reveal>
+          <a href="#fairens" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Ciudad de Fairens</a>
+          <a href="#bortena" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Ciudad de Borteña</a>
+        </nav>
+      </div>
+
+
+      <!-- ====================================================================
+           CIUDAD DE FAIRENS · panel oscuro · imagen + texto
+           ==================================================================== -->
+      <div id="fairens" class="mx-auto max-w-5xl scroll-mt-24 px-4 pb-6 pt-16">
+        <section aria-labelledby="titulo-fairens" class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4" aria-hidden="true"></span>
+          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
+
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
+            <div class="order-2 text-center md:order-1 md:text-left">
+              <p class="subtitulo text-xs">Rims</p>
+              <h2 id="titulo-fairens" class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Ciudad de Fairens</h2>
+
+              <p class="mt-6 leading-relaxed text-plata-300">
+                La ciudad de Fairens está cerca de las costas, es una ciudad feudal, su economía se basa en la cría de ganado y
+                especies de equinos de calidad para la caballería real, competencias y trabajo pesado.
+              </p>
+              <p class="mt-4 leading-relaxed text-plata-300">
+                Su mercado central es el más grande de Rims debido a su cercanía al puerto, parte de la Caravana de Comerciantes.
+              </p>
+
+              <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-azul-400/40 bg-azul-600/10 px-4 py-1.5 text-xs text-azul-300">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14" aria-hidden="true"></iconify-icon>
+                <span>Carcassonne, Aude / Francia</span>
+              </p>
+            </div>
+
+            <figure class="relative order-1 mx-auto w-full max-w-md md:order-2 md:max-w-none">
+              <div class="relative aspect-[3/2] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/sombras-ocultas/images/mapa/fairens.webp" alt="Ciudad feudal de Fairens, con sus murallas y torres" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+              <span class="esquina -right-1 -top-1 hidden -scale-x-100 sm:block" aria-hidden="true"></span>
+              <span class="esquina -bottom-1 -left-1 hidden -scale-y-100 sm:block" aria-hidden="true"></span>
+            </figure>
+          </div>
+        </section>
+      </div>
+
+      <!-- Fairens · río Rims y Palacio Valeni -->
+      <div class="mx-auto max-w-5xl px-4 pb-16 pt-10">
+        <div class="grid gap-8 md:grid-cols-2" data-reveal>
+          <figure class="tarjeta group overflow-hidden">
+            <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img data-enfoque src="/sombras-ocultas/images/mapa/rio-rims.webp" alt="El río Rims y, al fondo, uno de los castillos de Fairens" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+            </div>
+            <figcaption class="px-6 pb-7 pt-5 text-center">
+              <p class="subtitulo text-[0.65rem] text-azul-300">Fairens</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Río Rims, al fondo uno de los castillos de Fairens</h3>
+            </figcaption>
+          </figure>
+
+          <figure class="tarjeta group overflow-hidden">
+            <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img data-enfoque src="/sombras-ocultas/images/mapa/palacio-valeni.webp" alt="Palacio Valeni" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+            </div>
+            <figcaption class="px-6 pb-7 pt-5 text-center">
+              <p class="subtitulo text-[0.65rem] text-azul-300">Fairens</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Palacio Valeni</h3>
+              <p class="mt-3 inline-flex items-center gap-2 rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14" aria-hidden="true"></iconify-icon>
+                <span>Palacio de Linderhof, Alemania</span>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+
+      <!-- ====================================================================
+           CIUDAD DE BORTEÑA · full width · degradado azul · texto + imagen
+           ==================================================================== -->
+      <section
+        id="bortena"
+        aria-labelledby="titulo-bortena"
+        class="relative w-full scroll-mt-24 border-y border-plata-400/25"
+        style="background: linear-gradient(180deg, var(--color-noche-950), var(--color-noche-700) 50%, var(--color-noche-950));"
+        data-reveal
+      >
+        <div class="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] md:gap-14">
+            <figure class="relative mx-auto w-full max-w-md md:max-w-none">
+              <div class="relative aspect-[3/2] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/sombras-ocultas/images/mapa/bortena.webp" alt="Villa de Borteña, de techos rojos y paredes de colores claros" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+            </figure>
+
+            <div class="text-center md:text-left">
+              <p class="subtitulo text-xs">Extremo norte de Rims</p>
+              <h2 id="titulo-bortena" class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Ciudad de Borteña</h2>
+
+              <p class="mt-6 leading-relaxed text-plata-300">Una ciudad pequeña al extremo norte de Rims.</p>
+              <p class="mt-4 leading-relaxed text-plata-300">
+                Es una hermosa villa de techos rojos, paredes de colores claros y soportes visibles de color negro y marrón.
+              </p>
+
+              <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-azul-400/40 bg-azul-600/10 px-4 py-1.5 text-xs text-azul-300">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14" aria-hidden="true"></iconify-icon>
+                <span>Nördlingen, Alemania</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Borteña · lago y festival de los barcos -->
+          <div class="mt-14 grid gap-8 md:grid-cols-2">
+            <figure class="tarjeta group overflow-hidden">
+              <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/sombras-ocultas/images/mapa/bortena-lago.webp" alt="Borteña, a la orilla del lago" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <figcaption class="px-6 pb-7 pt-5 text-center">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Borteña</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Borteña, orilla al lago</h3>
+              </figcaption>
+            </figure>
+
+            <figure class="tarjeta group overflow-hidden">
+              <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/sombras-ocultas/images/mapa/bortena-festival-barcos.webp" alt="Borteña durante el festival de los barcos" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <figcaption class="px-6 pb-7 pt-5 text-center">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Borteña</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Borteña en el festival de los barcos</h3>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== NAVEGACIÓN ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/ley/ley-archinon.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Ley de Archinón</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/mapa/mapa.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Volver</span>
+              <span class="font-subtitulo text-lg text-plata-100">Mapa</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <footer class="relative z-10 border-t border-plata-400/25 bg-linear-to-b from-noche-950/90 to-noche-950 px-4 pb-5 pt-9 text-center shadow-[0_-20px_40px_rgb(0_0_0/0.45)] backdrop-blur-sm">
+  <!-- Remates en los extremos de la línea -->
+  <span class="adorno-extremo left-3 -scale-x-100" aria-hidden="true"></span>
+  <span class="adorno-extremo right-3" aria-hidden="true"></span>
+
+  <p class="font-titulo text-lg titulo-plata">Sombras Ocultas</p>
+  <p class="subtitulo mt-1 text-[0.65rem] md:text-xs">Uduné · Donde las nieblas guardan la verdad del corazón</p>
+  <p class="mt-2 text-xs text-plata-500">
+    Un mundo creado por
+    <a href="https://naidiart.com/" class="magic-link text-plata-300 hover:text-white">Naidi_art</a>
+    · © <span data-anio>2026</span>
+  </p>
+  <nav aria-label="Enlaces del pie de página" class="mt-3">
+    <a href="/sombras-ocultas/creditos.html" class="boton px-5 py-1.5 text-xs">
+      <iconify-icon icon="lucide:heart-handshake" width="14" height="14" aria-hidden="true"></iconify-icon>
+      Créditos
+    </a>
+  </nav>
+</footer>
+
+<!-- Botón volver arriba -->
+<button type="button" data-volver-arriba aria-label="Volver arriba" class="boton-subir">
+  <iconify-icon icon="lucide:chevron-up" width="22" height="22"></iconify-icon>
+</button>
+
+  </body>
+</html>

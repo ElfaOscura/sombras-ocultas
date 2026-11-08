@@ -303,40 +303,36 @@
         <span class="adorno top-0 -translate-y-1/2"></span>
       </div>
 
-      <div class="pt-10">
       <!-- ====================================================================
-           ÁRBOL 1 · imagen: public/images/arboles/arbol-1.webp
+           ÁRBOL 1 · Ottoms · imagen: public/images/arboles/arbol-ottoms.webp
            ==================================================================== -->
-      <div id="arbol-1" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
-        <section aria-labelledby="titulo-arbol-1" class="panel px-6 py-14 md:px-14" data-reveal>
-          <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
-          <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
-          <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
-          <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
-          <span class="adorno -top-4" aria-hidden="true"></span>
-          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
-
+      <section id="arbol-1" aria-labelledby="titulo-arbol-1" class="relative w-full scroll-mt-24 border-y border-plata-400/25 backdrop-blur-sm" style="background: radial-gradient(ellipse 70% 60% at 50% 0%, rgb(37 99 235 / 0.22), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.85), rgb(5 10 23 / 0.7));" data-reveal>
+        <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <header class="text-center">
             <p class="subtitulo text-xs">Árbol genealógico</p>
-            <!-- Cambia "Árbol 1" por el nombre de la familia o linaje -->
-            <h2 id="titulo-arbol-1" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Ottoms</h2>
+            <h2 id="titulo-arbol-1" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-5xl">Ottoms</h2>
           </header>
 
           <figure class="mt-10">
             <div class="relative min-h-64 overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-16 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/sombras-ocultas/images/arboles/arbol-ottoms.webp" alt="Árbol genealógico 1" loading="lazy" decoding="async" draggable="false" class="relative block h-auto w-full" onerror="this.remove()" />
+              <img src="/sombras-ocultas/images/arboles/arbol-ottoms.webp" alt="Árbol genealógico de la familia Ottoms" loading="lazy" decoding="async" draggable="false" class="relative block h-auto w-full" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
             </div>
           </figure>
 
-          <div class="mt-8 flex justify-center">
+          <!-- El botón solo aparece en móvil (md:hidden); en escritorio el árbol ya se ve completo -->
+          <div class="mt-8 flex justify-center md:hidden">
             <button type="button" data-modal-abrir="dialogo-arbol-1" class="boton">
               <iconify-icon icon="lucide:maximize-2" width="16" height="16" aria-hidden="true"></iconify-icon>
               Ampliar árbol
             </button>
           </div>
-        </section>
+        </div>
+      </section>
+      <!-- Adorno centrado sobre el borde inferior: acentúa la división entre secciones -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
       </div>
 
       <dialog id="dialogo-arbol-1" aria-labelledby="titulo-dialogo-arbol-1" class="m-auto max-h-[92vh] w-[min(96vw,80rem)] overflow-hidden rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
@@ -349,45 +345,42 @@
             <h3 id="titulo-dialogo-arbol-1" class="font-titulo titulo-plata mt-2 text-2xl font-bold md:text-3xl">Ottoms</h3>
           </header>
           <!-- En pantallas pequeñas el árbol conserva un ancho mínimo y se desplaza con el dedo -->
-          <div class="min-h-0 flex-1 overflow-auto rounded-xl border border-plata-300/30 bg-noche-950" tabindex="0" role="region" aria-label="Árbol genealógico 1 ampliado, desplazable">
-            <img src="/sombras-ocultas/images/arboles/arbol-ottoms.webp" alt="Árbol genealógico 1" loading="lazy" decoding="async" draggable="false" class="block h-auto w-full min-w-[56rem]" onerror="this.remove()" />
+          <div class="min-h-0 flex-1 overflow-auto rounded-xl border border-plata-300/30 bg-noche-950" tabindex="0" role="region" aria-label="Árbol genealógico de Ottoms ampliado, desplazable">
+            <img src="/sombras-ocultas/images/arboles/arbol-ottoms.webp" alt="Árbol genealógico de la familia Ottoms" loading="lazy" decoding="async" draggable="false" class="block h-auto w-full min-w-[56rem]" onerror="this.remove()" />
           </div>
         </div>
       </dialog>
 
       <!-- ====================================================================
-           ÁRBOL 2 · imagen: public/images/arboles/arbol-2.webp
+           ÁRBOL 2 · Fedensol · imagen: public/images/arboles/arbol-fedensol.webp
            ==================================================================== -->
-      <div id="arbol-2" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
-        <section aria-labelledby="titulo-arbol-2" class="panel px-6 py-14 md:px-14" data-reveal>
-          <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
-          <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
-          <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
-          <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
-          <span class="adorno -top-4" aria-hidden="true"></span>
-          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
-
+      <section id="arbol-2" aria-labelledby="titulo-arbol-2" class="relative w-full scroll-mt-24 border-y border-plata-400/25 backdrop-blur-sm" style="background: linear-gradient(180deg, rgb(5 10 23 / 0.85), rgb(23 42 82 / 0.75) 50%, rgb(5 10 23 / 0.85));" data-reveal>
+        <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <header class="text-center">
             <p class="subtitulo text-xs">Árbol genealógico</p>
-            <!-- Cambia "Árbol 2" por el nombre de la familia o linaje -->
-            <h2 id="titulo-arbol-2" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Fedensol</h2>
+            <h2 id="titulo-arbol-2" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-5xl">Fedensol</h2>
           </header>
 
           <figure class="mt-10">
             <div class="relative min-h-64 overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-16 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/sombras-ocultas/images/arboles/arbol-fedensol.webp" alt="Árbol genealógico 2" loading="lazy" decoding="async" draggable="false" class="relative block h-auto w-full" onerror="this.remove()" />
+              <img src="/sombras-ocultas/images/arboles/arbol-fedensol.webp" alt="Árbol genealógico de la familia Fedensol" loading="lazy" decoding="async" draggable="false" class="relative block h-auto w-full" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
             </div>
           </figure>
 
-          <div class="mt-8 flex justify-center">
+          <!-- El botón solo aparece en móvil (md:hidden); en escritorio el árbol ya se ve completo -->
+          <div class="mt-8 flex justify-center md:hidden">
             <button type="button" data-modal-abrir="dialogo-arbol-2" class="boton">
               <iconify-icon icon="lucide:maximize-2" width="16" height="16" aria-hidden="true"></iconify-icon>
               Ampliar árbol
             </button>
           </div>
-        </section>
+        </div>
+      </section>
+      <!-- Adorno centrado sobre el borde inferior: acentúa la división entre secciones -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
       </div>
 
       <dialog id="dialogo-arbol-2" aria-labelledby="titulo-dialogo-arbol-2" class="m-auto max-h-[92vh] w-[min(96vw,80rem)] overflow-hidden rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
@@ -400,45 +393,42 @@
             <h3 id="titulo-dialogo-arbol-2" class="font-titulo titulo-plata mt-2 text-2xl font-bold md:text-3xl">Fedensol</h3>
           </header>
           <!-- En pantallas pequeñas el árbol conserva un ancho mínimo y se desplaza con el dedo -->
-          <div class="min-h-0 flex-1 overflow-auto rounded-xl border border-plata-300/30 bg-noche-950" tabindex="0" role="region" aria-label="Árbol genealógico 2 ampliado, desplazable">
-            <img src="/sombras-ocultas/images/arboles/arbol-fedensol.webp" alt="Árbol genealógico 2" loading="lazy" decoding="async" draggable="false" class="block h-auto w-full min-w-[56rem]" onerror="this.remove()" />
+          <div class="min-h-0 flex-1 overflow-auto rounded-xl border border-plata-300/30 bg-noche-950" tabindex="0" role="region" aria-label="Árbol genealógico de Fedensol ampliado, desplazable">
+            <img src="/sombras-ocultas/images/arboles/arbol-fedensol.webp" alt="Árbol genealógico de la familia Fedensol" loading="lazy" decoding="async" draggable="false" class="block h-auto w-full min-w-[56rem]" onerror="this.remove()" />
           </div>
         </div>
       </dialog>
 
       <!-- ====================================================================
-           ÁRBOL 3 · imagen: public/images/arboles/arbol-3.webp
+           ÁRBOL 3 · Adisson · imagen: public/images/arboles/arbol-adisson.webp
            ==================================================================== -->
-      <div id="arbol-3" class="mx-auto max-w-5xl scroll-mt-24 px-4 py-10">
-        <section aria-labelledby="titulo-arbol-3" class="panel px-6 py-14 md:px-14" data-reveal>
-          <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
-          <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
-          <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
-          <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
-          <span class="adorno -top-4" aria-hidden="true"></span>
-          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
-
+      <section id="arbol-3" aria-labelledby="titulo-arbol-3" class="relative w-full scroll-mt-24 border-y border-plata-400/25 backdrop-blur-sm" style="background: radial-gradient(ellipse 70% 60% at 50% 100%, rgb(37 99 235 / 0.22), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.7), rgb(5 10 23 / 0.85));" data-reveal>
+        <div class="mx-auto max-w-6xl px-4 py-16 md:py-24">
           <header class="text-center">
             <p class="subtitulo text-xs">Árbol genealógico</p>
-            <!-- Cambia "Árbol 3" por el nombre de la familia o linaje -->
-            <h2 id="titulo-arbol-3" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Adisson</h2>
+            <h2 id="titulo-arbol-3" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-5xl">Adisson</h2>
           </header>
 
           <figure class="mt-10">
             <div class="relative min-h-64 overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/sombras-ocultas/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-16 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/sombras-ocultas/images/arboles/arbol-adisson.webp" alt="Árbol genealógico 3" loading="lazy" decoding="async" draggable="false" class="relative block h-auto w-full" onerror="this.remove()" />
+              <img src="/sombras-ocultas/images/arboles/arbol-adisson.webp" alt="Árbol genealógico de la familia Adisson" loading="lazy" decoding="async" draggable="false" class="relative block h-auto w-full" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
             </div>
           </figure>
 
-          <div class="mt-8 flex justify-center">
+          <!-- El botón solo aparece en móvil (md:hidden); en escritorio el árbol ya se ve completo -->
+          <div class="mt-8 flex justify-center md:hidden">
             <button type="button" data-modal-abrir="dialogo-arbol-3" class="boton">
               <iconify-icon icon="lucide:maximize-2" width="16" height="16" aria-hidden="true"></iconify-icon>
               Ampliar árbol
             </button>
           </div>
-        </section>
+        </div>
+      </section>
+      <!-- Adorno centrado sobre el borde inferior: acentúa la división entre secciones -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
       </div>
 
       <dialog id="dialogo-arbol-3" aria-labelledby="titulo-dialogo-arbol-3" class="m-auto max-h-[92vh] w-[min(96vw,80rem)] overflow-hidden rounded-2xl border border-plata-300/40 bg-linear-to-b from-noche-800 to-noche-950 p-0 text-plata-200 shadow-[0_20px_60px_rgb(0_0_0/0.7),0_0_40px_rgb(37_99_235/0.25)] backdrop:bg-noche-950/80 backdrop:backdrop-blur-sm">
@@ -451,12 +441,11 @@
             <h3 id="titulo-dialogo-arbol-3" class="font-titulo titulo-plata mt-2 text-2xl font-bold md:text-3xl">Adisson</h3>
           </header>
           <!-- En pantallas pequeñas el árbol conserva un ancho mínimo y se desplaza con el dedo -->
-          <div class="min-h-0 flex-1 overflow-auto rounded-xl border border-plata-300/30 bg-noche-950" tabindex="0" role="region" aria-label="Árbol genealógico 3 ampliado, desplazable">
-            <img src="/sombras-ocultas/images/arboles/arbol-adisson.webp" alt="Árbol genealógico 3" loading="lazy" decoding="async" draggable="false" class="block h-auto w-full min-w-[56rem]" onerror="this.remove()" />
+          <div class="min-h-0 flex-1 overflow-auto rounded-xl border border-plata-300/30 bg-noche-950" tabindex="0" role="region" aria-label="Árbol genealógico de Adisson ampliado, desplazable">
+            <img src="/sombras-ocultas/images/arboles/arbol-adisson.webp" alt="Árbol genealógico de la familia Adisson" loading="lazy" decoding="async" draggable="false" class="block h-auto w-full min-w-[56rem]" onerror="this.remove()" />
           </div>
         </div>
       </dialog>
-</div>
 
       <!-- ====================== CIERRE + NAVEGACIÓN ====================== -->
       <div class="mx-auto max-w-5xl px-4 py-16">
