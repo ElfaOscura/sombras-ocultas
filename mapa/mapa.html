@@ -276,30 +276,74 @@
     <span class="adorno top-0 -translate-y-1/2"></span>
   </div>
 
-  <!-- ====================== 21 · IMAGEN PANORÁMICA DEL MAPA (full width) ====================== -->
-  <!-- Pon tu mapa en public/images/mapa-udune.jpg. Si no existe, se ve el isotipo sobre fondo azul -->
-  <figure class="relative mt-16 w-full overflow-hidden border-y border-plata-400/25 bg-noche-950" data-reveal>
-  <!-- Fondo: el mismo mapa, ampliado y desenfocado. Si no existe la imagen, queda el degradado azul con el isotipo -->
-  <div class="absolute inset-0 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950" aria-hidden="true">
-    <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="absolute left-1/2 top-1/2 size-24 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-    <img src="/sombras-ocultas/images/mapa-udune.jpg" alt="" class="absolute inset-0 size-full scale-125 object-cover opacity-70 blur-2xl" onerror="this.remove()" />
-    <div class="absolute inset-0 bg-noche-950/40"></div>
-  </div>
-
-  <!-- Mapa a su alto normal, centrado y completo -->
-  <div class="relative flex min-h-64 items-center justify-center px-4 py-8 md:px-10 md:py-2">
-    <img
-      src="/sombras-ocultas/images/mapa-udune.jpg"
-      alt="Mapa de los reinos de Uduné"
-      class="block h-auto max-h-[85vh] w-auto max-w-full rounded-lg border border-plata-300/30 shadow-[0_10px_50px_rgb(0_0_0/0.6)]"
-      onerror="this.remove()"
-    />
-  </div>
-
-  <!-- Degradado inferior y pie de foto -->
-  <div class="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-noche-950 to-transparent"></div>
-</figure>
-
+  <!--   MAPA INTERACTIVO · CONTENIDA · PANEL OSCURO -->
+     <section class="relative w-full bg-noche-950 pb-12" aria-labelledby="mapa-h2">
+        <header class="mx-auto max-w-5xl px-4 pb-8 pt-14 text-center">
+          <p class="subtitulo text-xs">Uduné</p>
+          <h2 id="mapa-h2" class="font-titulo titulo-plata mt-3 text-3xl font-bold md:text-4xl">Mapa de los reinos de Uduné</h2>
+          <p class="mapa-ayuda mx-auto mt-4 max-w-2xl">
+            <span class="t-raton">Pasa el cursor sobre un reino y haz clic para ver su ficha · Ctrl + rueda para acercar</span>
+            <span class="t-tactil">Toca un reino para ver su ficha · pellizca para acercar</span>
+          </p>
+        </header>
+ 
+        <div class="mapa" id="mapa-interactivo" data-mapa>
+          <!-- Hueco a todo el ancho. Al abrir un reino, el contenido de .mapa-marco pasa a pantalla completa -->
+          <div class="mapa-sitio" data-mapa-sitio>
+            <div class="mapa-marco" data-mapa-marco>
+              <div class="mapa-escenario" data-mapa-escenario>
+                <!-- Fondo: el mismo mapa, desenfocado, para rellenar lo que el mapa no cubre -->
+                <img class="mapa-fondo" src="/sombras-ocultas/images/mapa-udune.jpg" alt="" aria-hidden="true" draggable="false" />
+                <div class="mapa-fondo-velo" aria-hidden="true"></div>
+ 
+                <div class="mapa-mundo" data-mapa-mundo>
+                  <img class="mapa-img" src="/sombras-ocultas/images/mapa-udune.jpg" width="1600" height="926" alt="Mapa de los reinos de Uduné" draggable="false" />
+                  <svg class="mapa-svg" viewBox="0 0 1600 926" role="group" aria-label="Reinos de Uduné">
+                    <g data-mapa-areas></g>
+                    <path class="mapa-oscuro" data-mapa-oscuro></path>
+                    <path class="mapa-sel" data-mapa-sel></path>
+                    <path class="mapa-hi" data-mapa-hi></path>
+                  </svg>
+                </div>
+ 
+                <div class="mapa-ctl" data-mapa-ctl role="group" aria-label="Controles del mapa">
+                  <button type="button" class="mapa-cristal" data-z="in" aria-label="Acercar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14" /></svg>
+                  </button>
+                  <button type="button" class="mapa-cristal" data-z="out" aria-label="Alejar">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14" /></svg>
+                  </button>
+                  <button type="button" class="mapa-cristal" data-z="home" aria-label="Ver todo el mapa">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5" /></svg>
+                  </button>
+                </div>
+                <div class="mapa-tip mapa-cristal" data-mapa-tip role="presentation"></div>
+              </div>
+ 
+              <!-- Ficha de cristal: el contenido lo pinta mapa-interactivo.js desde mapa-datos.js -->
+              <aside class="mapa-ficha" data-mapa-ficha aria-labelledby="mapa-ficha-titulo" inert>
+                <div class="mapa-barra">
+                  <span class="mapa-barra-etq">Ficha del reino</span>
+                  <div class="mapa-nav">
+                    <button type="button" data-paso="-1" aria-label="Reino anterior">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6" /></svg>
+                    </button>
+                    <button type="button" data-paso="1" aria-label="Reino siguiente">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6" /></svg>
+                    </button>
+                    <button type="button" data-cerrar aria-label="Cerrar ficha">
+                      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                    </button>
+                  </div>
+                </div>
+                <div class="mapa-cuerpo" data-mapa-cuerpo></div>
+              </aside>
+            </div>
+          </div>
+ 
+          <nav class="mapa-leyenda" data-mapa-leyenda aria-label="Lista de reinos"></nav>
+        </div>
+      </section>
   <!-- ====================== LOS SIETE REINOS (Plantilla 06 · Tarjetas + modal) ====================== -->
   <div id="mapa-reinos" class="mx-auto max-w-5xl px-4 py-10">
     <section class="panel px-6 py-14 md:px-14" data-reveal>
