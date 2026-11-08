@@ -66,7 +66,7 @@
   
 }
 @utility bg-panel-cyan {
-  background-image: linear-gradient(to bottom, #94c1f2, #7aaee6);
+  background-image: linear-gradient(to bottom, #437fc0, #335982);
 }
 /* Texto con degradado plateado (títulos grandes) */
 @utility titulo-plata {
@@ -86,8 +86,9 @@
 @utility bg-panel-cyan-fade {
   background-image: linear-gradient(
     to bottom,
-    #94c1f2 0%,
-    #7aaee6 55%,
+    #4066ae 0%,
+    #365a9c 45%,
+    #1a2f5c 80%,
     var(--color-noche-950) 100%
   );
 }

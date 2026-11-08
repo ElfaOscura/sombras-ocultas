@@ -19,7 +19,7 @@
     <main id="contenido" class="relative z-8">
 
       <!-- ====================================================================
-           IMÁGENES de esta página (guárdalas en public/images/archinon/ en .webp):
+           IMÁGENES de esta página (guárdalas en public/images/mapa/ en .webp):
              cabecera (panorámica 21:9, banner inicial)
              Lutania ......... lutania-1 (grande, 4:5) · lutania-2 · prado-de-lirios-azules · puerto-de-lut (galería 4:3)
              Goordes ......... goordes-1 (grande, 4:5) · goordes-2 · castillo-fedensol · patio-de-armas · ruinas · mercado · callejones (galería 4:3)
@@ -36,7 +36,7 @@
         class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-10 pt-24 text-center md:pb-20 md:pt-20"
         style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
       >
-        <img data-cabecera-fondo src="/images/archinon/cabecera.webp" alt="" draggable="false" class="absolute inset-0 size-full object-cover opacity-30" onerror="this.remove()" />
+        <img data-cabecera-fondo src="/images/mapa/cabecera.webp" alt="" draggable="false" class="absolute inset-0 size-full object-cover opacity-30" onerror="this.remove()" />
         <div class="espectro-bg pt-10 md:pt-0" aria-hidden="true">
           <img src="/images/espectro.webp" alt="" draggable="false" class="size-full object-contain" />
         </div>
@@ -76,34 +76,34 @@
       <!-- ====================================================================
            1 · LUTANIA · CLARO · imagen grande a la izquierda + texto · galería abajo
            ==================================================================== -->
-      <section id="lutania" aria-labelledby="titulo-lutania" class="relative mt-16 w-full scroll-mt-20 border-t border-plata-400/40 bg-panel-cyan-fade text-noche-800" data-reveal>
+      <section id="lutania" aria-labelledby="titulo-lutania" class="relative mt-16 w-full scroll-mt-20 border-t border-plata-400/40 bg-panel-cyan-fade text-white" data-reveal>
         <div class="mx-auto max-w-5xl px-4 py-16 md:py-24">
           <div class="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
             <figure class="relative mx-auto w-full max-w-sm md:max-w-none">
-              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-noche-600/40 shadow-[0_14px_40px_rgb(15_29_58/0.4)] bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 shadow-[0_14px_40px_rgb(5_10_23/0.5)] bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/archinon/lutania-1.webp" alt="Lutania, la ciudad del puerto de Lut" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
-                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/20"></div>
+                <img data-enfoque src="/images/mapa/lutania.webp" alt="Lutania, la ciudad del puerto de Lut" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/15"></div>
               </div>
               <span class="esquina -left-3 -top-3 hidden sm:block" aria-hidden="true"></span>
               <span class="esquina -bottom-3 -right-3 hidden rotate-180 sm:block" aria-hidden="true"></span>
             </figure>
 
             <div class="text-center md:text-left">
-              <p class="subtitulo text-xs text-noche-600">Ciudad del puerto de Lut</p>
-              <h2 id="titulo-lutania" class="font-titulo mt-3 text-4xl font-bold leading-tight text-noche-800 md:text-5xl">Lutania</h2>
+              <p class="subtitulo text-xs text-plata-100">Ciudad del puerto de Lut</p>
+              <h2 id="titulo-lutania" class="font-titulo mt-3 text-4xl font-bold leading-tight text-white md:text-5xl">Lutania</h2>
 
               <!-- REVISAR: sustituir por el texto literal de la página original -->
-              <p class="mt-6 leading-relaxed text-noche-700">
+              <p class="mt-6 leading-relaxed text-plata-100">
                 Lutania es el puerto de la provincia de Lut, en una ladera de montaña que desciende hasta la costa.
               </p>
-              <p class="mt-4 leading-relaxed text-noche-700">
-                Lut posee extensos prados de <strong class="text-noche-800">lirios azules</strong>, cuyo fruto se usa en pinturas para telas y muros.
+              <p class="mt-4 leading-relaxed text-plata-100">
+                Lut posee extensos prados de <strong class="text-white">lirios azules</strong>, cuyo fruto se usa en pinturas para telas y muros.
                 El lirio azul da el color simbólico a la nación de Archinón.
               </p>
 
-              <p class="mt-6 inline-flex items-start gap-2 rounded-xl border border-noche-600/30 bg-white/40 px-4 py-3 text-left text-sm text-noche-700">
-                <iconify-icon icon="lucide:camera" width="18" height="18" class="mt-0.5 shrink-0 text-azul-600" aria-hidden="true"></iconify-icon>
+              <p class="mt-6 inline-flex items-start gap-2 rounded-xl border border-plata-300/30 bg-noche-950/40 px-4 py-3 text-left text-sm text-plata-100">
+                <iconify-icon icon="lucide:camera" width="18" height="18" class="mt-0.5 shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
                 <span><span class="sr-only">Inspiración real: </span>(Chefchaouen, Marruecos)</span>
               </p>
             </div>
@@ -120,7 +120,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/lutania-2.webp" alt="Lutania" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/lutania.webp" alt="Lutania" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -134,7 +134,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/prado-de-lirios-azules.webp" alt="Prado de Lirios Azules" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/prado-de-lirios-azules.webp" alt="Prado de Lirios Azules" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -148,7 +148,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/puerto-de-lut.webp" alt="Puerto de Lut" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/puerto-de-lut.webp" alt="Puerto de Lut" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -174,7 +174,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/lutania-2.webp" alt="Lutania" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/lutania.webp" alt="Lutania" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -189,7 +189,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/prado-de-lirios-azules.webp" alt="Prado de Lirios Azules" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/prado-de-lirios-azules.webp" alt="Prado de Lirios Azules" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -204,7 +204,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/puerto-de-lut.webp" alt="Puerto de Lut" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/puerto-de-lut.webp" alt="Puerto de Lut" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -241,7 +241,7 @@
             <figure class="relative order-1 mx-auto w-full max-w-sm md:order-2 md:max-w-none">
               <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 shadow-[0_0_60px_rgb(37_99_235/0.35)] bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/archinon/goordes-1.webp" alt="Goordes y el castillo Fédensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <img data-enfoque src="/images/mapa/goordes.webp" alt="Goordes y el castillo Fédensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
               </div>
               <span class="esquina -right-3 -top-3 hidden -scale-x-100 sm:block" aria-hidden="true"></span>
@@ -260,7 +260,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/goordes-2.webp" alt="Goordes" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/goordes.webp" alt="Goordes" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -274,7 +274,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/castillo-fedensol.webp" alt="El castillo de Fedensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/castillo-fedensol.webp" alt="El castillo de Fedensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -288,7 +288,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/patio-de-armas.webp" alt="Patio de armas del castillo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/patio-de-armas.webp" alt="Patio de armas del castillo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -302,7 +302,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/ruinas.webp" alt="Ruinas de las afueras de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/ruinas.webp" alt="Ruinas de las afueras de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -316,7 +316,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/mercado.webp" alt="Parte del mercado de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/mercado.webp" alt="Parte del mercado de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -330,7 +330,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/callejones.webp" alt="Callejones de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/callejones.webp" alt="Callejones de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -356,7 +356,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/goordes-2.webp" alt="Goordes" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/goordes.webp" alt="Goordes" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -371,7 +371,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/castillo-fedensol.webp" alt="El castillo de Fedensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/castillo-fedensol.webp" alt="El castillo de Fedensol" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -386,7 +386,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/patio-de-armas.webp" alt="Patio de armas del castillo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/patio-de-armas.webp" alt="Patio de armas del castillo" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -401,7 +401,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/ruinas.webp" alt="Ruinas de las afueras de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/ruinas.webp" alt="Ruinas de las afueras de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -416,7 +416,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/mercado.webp" alt="Parte del mercado de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/mercado.webp" alt="Parte del mercado de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -431,7 +431,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/callejones.webp" alt="Callejones de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/callejones.webp" alt="Callejones de la ciudad" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -447,7 +447,7 @@
             <figure class="relative mx-auto w-full max-w-sm md:max-w-none">
               <div class="relative aspect-[4/5] overflow-hidden rounded-xl border border-plata-300/40 shadow-[0_0_60px_rgb(37_99_235/0.35)] bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
                 <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-                <img data-enfoque src="/images/archinon/siwans-1.webp" alt="El Oasis de Siwans" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <img data-enfoque src="/images/mapa/siwans.webp" alt="El Oasis de Siwans" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
                 <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
               </div>
               <span class="esquina -left-3 -top-3 hidden sm:block" aria-hidden="true"></span>
@@ -484,7 +484,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/siwans-2.webp" alt="Oasis de Siwans" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/siwans.webp" alt="Oasis de Siwans" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -498,7 +498,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/ciudadela-por-dentro.webp" alt="Ciudadela de Siwans por dentro" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/ciudadela-por-dentro.webp" alt="Ciudadela de Siwans por dentro" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -512,7 +512,7 @@
           <article class="tarjeta group relative flex w-full flex-col overflow-hidden text-center sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
             <div class="relative aspect-[4/3] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img data-enfoque src="/images/archinon/ciudadela-por-fuera.webp" alt="Ciudadela de Siwans por fuera" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <img data-enfoque src="/images/mapa/ciudadela-por-fuera.webp" alt="Ciudadela de Siwans por fuera" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
               <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
             </div>
             <div class="flex flex-1 flex-col items-center px-5 pb-6 pt-4">
@@ -538,7 +538,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/siwans-2.webp" alt="Oasis de Siwans" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/siwans.webp" alt="Oasis de Siwans" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -553,7 +553,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/ciudadela-por-dentro.webp" alt="Ciudadela de Siwans por dentro" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/ciudadela-por-dentro.webp" alt="Ciudadela de Siwans por dentro" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>
@@ -568,7 +568,7 @@
             </header>
             <figure class="relative mt-8 aspect-[4/3] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
               <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/5 -translate-x-1/2 -translate-y-1/2 opacity-25" />
-              <img src="/images/archinon/ciudadela-por-fuera.webp" alt="Ciudadela de Siwans por fuera" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+              <img src="/images/mapa/ciudadela-por-fuera.webp" alt="Ciudadela de Siwans por fuera" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
             </figure>
           </div>
         </dialog>

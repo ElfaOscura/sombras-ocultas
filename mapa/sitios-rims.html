@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--@include ../src/partials/head.html-->
+    <title>Sitios de Rims | Sombras Ocultas</title>
+    <meta name="description" content="Sitios de interés de Rims: la ciudad de Fairens, con el río Rims y el Palacio Valeni, y la villa de Borteña." />
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!--@include ../src/partials/nav.html-->
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!--@include ../src/partials/header.html-->
+    <!-- Loading entre paginas -->
+    <!--@include partials/transicion.html-->
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           IMÁGENES de esta página (public/images/mapa/):
+             Fairens:  fairens.webp · rio-rims.webp · palacio-valeni.webp
+             Borteña:  bortena.webp · bortena-lago.webp · bortena-festival-barcos.webp
+           Mientras no existan, cada marco muestra el isotipo sobre fondo azul.
+           Texto adaptado de https://sites.google.com/view/sombras-ocultas/mapa/sitios-de-rims
+           ==================================================================== -->
+
+      <!-- ====================== CABECERA ====================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-10 pt-24 text-center md:pb-20 md:pt-20"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg pt-10 md:pt-0" aria-hidden="true">
+          <img src="/images/espectro.webp" alt="" draggable="false" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <a href="/sombras-ocultas/mapa/mapa.html" class="magic-link hover:text-white">Mapa</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <span class="text-azul-300" aria-current="page">Sitios de Rims</span>
+          </nav>
+
+          <div class="mt-6 flex flex-col items-center gap-5 md:flex-row md:justify-center md:gap-8">
+            <span data-cabecera-item class="relative flex size-24 shrink-0 items-center justify-center md:size-36">
+              <img src="/images/iconos/mapa.webp" alt="" draggable="false" class="relative size-3/4 object-contain drop-shadow-[0_0_14px_rgb(147_197_253/0.6)]" />
+            </span>
+            <div class="text-center md:text-left">
+              <h1 data-cabecera-item class="font-titulo titulo-plata text-4xl font-bold leading-tight md:text-6xl">Sitios de interés de Rims</h1>
+              <p data-cabecera-item class="subtitulo mt-4 text-xs md:text-sm">Mapa</p>
+            </div>
+          </div>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================== ÍNDICE RÁPIDO ====================== -->
+      <div class="mx-auto max-w-5xl px-4 pt-16">
+        <nav aria-label="En esta página" class="flex flex-wrap justify-center gap-2" data-reveal>
+          <a href="#fairens" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Ciudad de Fairens</a>
+          <a href="#bortena" class="rounded-full border border-plata-400/30 bg-noche-950/60 px-4 py-1.5 text-xs text-plata-300 transition hover:border-azul-300 hover:text-white">Ciudad de Borteña</a>
+        </nav>
+      </div>
+
+
+      <!-- ====================================================================
+           CIUDAD DE FAIRENS · panel oscuro · imagen + texto
+           ==================================================================== -->
+      <div id="fairens" class="mx-auto max-w-5xl scroll-mt-24 px-4 pb-6 pt-16">
+        <section aria-labelledby="titulo-fairens" class="panel px-6 py-12 md:px-12 md:py-14" data-reveal>
+          <span class="adorno -top-4" aria-hidden="true"></span>
+          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
+
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] md:gap-14">
+            <div class="order-2 text-center md:order-1 md:text-left">
+              <p class="subtitulo text-xs">Rims</p>
+              <h2 id="titulo-fairens" class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Ciudad de Fairens</h2>
+
+              <p class="mt-6 leading-relaxed text-plata-300">
+                La ciudad de Fairens está cerca de las costas, es una ciudad feudal, su economía se basa en la cría de ganado y
+                especies de equinos de calidad para la caballería real, competencias y trabajo pesado.
+              </p>
+              <p class="mt-4 leading-relaxed text-plata-300">
+                Su mercado central es el más grande de Rims debido a su cercanía al puerto, parte de la Caravana de Comerciantes.
+              </p>
+
+              <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-azul-400/40 bg-azul-600/10 px-4 py-1.5 text-xs text-azul-300">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14" aria-hidden="true"></iconify-icon>
+                <span>Carcassonne, Aude / Francia</span>
+              </p>
+            </div>
+
+            <figure class="relative order-1 mx-auto w-full max-w-md md:order-2 md:max-w-none">
+              <div class="relative aspect-[3/2] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/mapa/fairens.webp" alt="Ciudad feudal de Fairens, con sus murallas y torres" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+              <span class="esquina -right-1 -top-1 hidden -scale-x-100 sm:block" aria-hidden="true"></span>
+              <span class="esquina -bottom-1 -left-1 hidden -scale-y-100 sm:block" aria-hidden="true"></span>
+            </figure>
+          </div>
+        </section>
+      </div>
+
+      <!-- Fairens · río Rims y Palacio Valeni -->
+      <div class="mx-auto max-w-5xl px-4 pb-16 pt-10">
+        <div class="grid gap-8 md:grid-cols-2" data-reveal>
+          <figure class="tarjeta group overflow-hidden">
+            <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img data-enfoque src="/images/mapa/rio-rims.webp" alt="El río Rims y, al fondo, uno de los castillos de Fairens" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+            </div>
+            <figcaption class="px-6 pb-7 pt-5 text-center">
+              <p class="subtitulo text-[0.65rem] text-azul-300">Fairens</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Río Rims, al fondo uno de los castillos de Fairens</h3>
+            </figcaption>
+          </figure>
+
+          <figure class="tarjeta group overflow-hidden">
+            <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+              <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+              <img data-enfoque src="/images/mapa/palacio-valeni.webp" alt="Palacio Valeni" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+              <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+            </div>
+            <figcaption class="px-6 pb-7 pt-5 text-center">
+              <p class="subtitulo text-[0.65rem] text-azul-300">Fairens</p>
+              <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Palacio Valeni</h3>
+              <p class="mt-3 inline-flex items-center gap-2 rounded-full border border-azul-400/40 bg-azul-600/10 px-3 py-1 text-xs text-azul-300">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14" aria-hidden="true"></iconify-icon>
+                <span>Palacio de Linderhof, Alemania</span>
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+
+      <!-- ====================================================================
+           CIUDAD DE BORTEÑA · full width · degradado azul · texto + imagen
+           ==================================================================== -->
+      <section
+        id="bortena"
+        aria-labelledby="titulo-bortena"
+        class="relative w-full scroll-mt-24 border-y border-plata-400/25"
+        style="background: linear-gradient(180deg, var(--color-noche-950), var(--color-noche-700) 50%, var(--color-noche-950));"
+        data-reveal
+      >
+        <div class="mx-auto max-w-5xl px-4 py-16 md:py-24">
+          <div class="grid items-center gap-10 md:grid-cols-[minmax(0,6fr)_minmax(0,5fr)] md:gap-14">
+            <figure class="relative mx-auto w-full max-w-md md:max-w-none">
+              <div class="relative aspect-[3/2] overflow-hidden rounded-xl border border-plata-300/40 bg-linear-to-br from-noche-600 via-noche-800 to-noche-950 shadow-[0_0_40px_rgb(37_99_235/0.3)]">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/3 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/mapa/bortena.webp" alt="Villa de Borteña, de techos rojos y paredes de colores claros" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-0 rounded-xl ring-1 ring-inset ring-white/10"></div>
+              </div>
+            </figure>
+
+            <div class="text-center md:text-left">
+              <p class="subtitulo text-xs">Extremo norte de Rims</p>
+              <h2 id="titulo-bortena" class="font-titulo titulo-plata mt-3 text-4xl font-bold leading-tight md:text-5xl">Ciudad de Borteña</h2>
+
+              <p class="mt-6 leading-relaxed text-plata-300">Una ciudad pequeña al extremo norte de Rims.</p>
+              <p class="mt-4 leading-relaxed text-plata-300">
+                Es una hermosa villa de techos rojos, paredes de colores claros y soportes visibles de color negro y marrón.
+              </p>
+
+              <p class="mt-6 inline-flex items-center gap-2 rounded-full border border-azul-400/40 bg-azul-600/10 px-4 py-1.5 text-xs text-azul-300">
+                <iconify-icon icon="lucide:map-pin" width="14" height="14" aria-hidden="true"></iconify-icon>
+                <span>Nördlingen, Alemania</span>
+              </p>
+            </div>
+          </div>
+
+          <!-- Borteña · lago y festival de los barcos -->
+          <div class="mt-14 grid gap-8 md:grid-cols-2">
+            <figure class="tarjeta group overflow-hidden">
+              <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/mapa/bortena-lago.webp" alt="Borteña, a la orilla del lago" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <figcaption class="px-6 pb-7 pt-5 text-center">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Borteña</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Borteña, orilla al lago</h3>
+              </figcaption>
+            </figure>
+
+            <figure class="tarjeta group overflow-hidden">
+              <div class="relative aspect-[3/2] overflow-hidden bg-linear-to-br from-noche-600 via-noche-800 to-noche-950">
+                <img src="/images/isotipo.svg" alt="" draggable="false" class="absolute left-1/2 top-1/2 size-1/6 -translate-x-1/2 -translate-y-1/2 opacity-25" />
+                <img data-enfoque src="/images/mapa/bortena-festival-barcos.webp" alt="Borteña durante el festival de los barcos" loading="lazy" decoding="async" draggable="false" class="absolute inset-0 size-full object-cover transition duration-500 group-hover:scale-105" onerror="this.remove()" />
+                <div class="pointer-events-none absolute inset-x-0 bottom-0 h-1/3 bg-linear-to-t from-noche-950 to-transparent"></div>
+              </div>
+              <figcaption class="px-6 pb-7 pt-5 text-center">
+                <p class="subtitulo text-[0.65rem] text-azul-300">Borteña</p>
+                <h3 class="font-subtitulo mt-2 text-xl text-plata-100">Borteña en el festival de los barcos</h3>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- ====================== NAVEGACIÓN ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/ley/ley-archinon.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Ley de Archinón</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/mapa/mapa.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Volver</span>
+              <span class="font-subtitulo text-lg text-plata-100">Mapa</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <!--@include ../src/partials/footer.html-->
+
+    <script type="module" src="../src/js/main.js"></script>
+  </body>
+</html>
