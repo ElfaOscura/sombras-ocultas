@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <!--@include ../src/partials/head.html-->
+    <title>Facciones, Gremios y Poderes del Reino | Sombras Ocultas</title>
+    <meta name="description" content="Facciones, gremios y poderes del reino en Sombras Ocultas: estatus y denominaciones sociales, gremios y órdenes, estamentos de poder y casas nobiliarias." />
+  </head>
+
+  <body class="main-bg-image min-h-screen text-plata-200 antialiased">
+    <!-- Polvo gris -->
+    <div id="particulas" class="pointer-events-none fixed inset-0 z-90"></div>
+
+    <!-- Móvil: píldora fija con menú hamburguesa -->
+    <!--@include ../src/partials/nav.html-->
+    <!-- Escritorio: barra de navegación con desplegables -->
+    <!--@include ../src/partials/header.html-->
+
+    <main id="contenido" class="relative z-8">
+
+      <!-- ====================================================================
+           CÓMO EDITAR ESTA PÁGINA
+           · Cada facción es un <section class="panel"> con un icono principal junto al título.
+           · Cada ítem es una <article class="tarjeta"> con su propio icono (lucide).
+           · Enlaces a personajes: /sombras-ocultas/personajes/personajes.html#id-del-personaje
+             Ids disponibles: albino · raz-zagul · raid-razin · mugalid · zaki · deximir · arhestan · gahiji
+           · Para cambiar un icono, cambia el valor de icon="lucide:nombre" (https://lucide.dev/icons).
+           ==================================================================== -->
+
+      <!-- ====================== CABECERA ====================== -->
+      <header
+        data-cabecera
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
+      >
+        <div class="espectro-bg" aria-hidden="true">
+          <img src="/images/espectro.webp" alt="" draggable="false" class="size-full object-contain" />
+        </div>
+
+        <div class="relative z-10">
+          <nav data-cabecera-item aria-label="Ruta" class="subtitulo text-[0.65rem] text-plata-400">
+            <a href="/sombras-ocultas/" class="magic-link hover:text-white">Inicio</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <a href="/sombras-ocultas/personajes/personajes.html" class="magic-link hover:text-white">Personajes</a>
+            <span class="mx-2 text-plata-600" aria-hidden="true">›</span>
+            <span class="text-azul-300" aria-current="page">Facciones</span>
+          </nav>
+
+          <div class="mt-6 flex items-center justify-center gap-4 md:gap-6">
+            <iconify-icon data-cabecera-item icon="lucide:swords" width="64" height="64" class="shrink-0 text-azul-300 drop-shadow-[0_0_14px_rgb(96_165_250/0.6)] max-md:!size-12" aria-hidden="true"></iconify-icon>
+            <h1 data-cabecera-item class="font-titulo titulo-plata text-3xl font-bold leading-tight md:text-6xl">Facciones, Gremios y Poderes del Reino</h1>
+          </div>
+
+          <!-- Salto rápido a cada bloque -->
+          <nav data-cabecera-item aria-label="Secciones de la página" class="subtitulo mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-[0.65rem]">
+            <a href="#estatus" class="magic-link inline-flex items-center gap-2 text-plata-300 hover:text-white"><iconify-icon icon="lucide:tags" width="14" height="14" aria-hidden="true"></iconify-icon>Estatus</a>
+            <a href="#gremios" class="magic-link inline-flex items-center gap-2 text-plata-300 hover:text-white"><iconify-icon icon="lucide:users-round" width="14" height="14" aria-hidden="true"></iconify-icon>Gremios</a>
+            <a href="#poder" class="magic-link inline-flex items-center gap-2 text-plata-300 hover:text-white"><iconify-icon icon="lucide:landmark" width="14" height="14" aria-hidden="true"></iconify-icon>Poder</a>
+            <a href="#casas" class="magic-link inline-flex items-center gap-2 text-plata-300 hover:text-white"><iconify-icon icon="lucide:castle" width="14" height="14" aria-hidden="true"></iconify-icon>Casas nobiliarias</a>
+          </nav>
+        </div>
+      </header>
+      <!-- Adorno sobre el borde inferior (fuera del overflow-hidden) -->
+      <div class="relative z-10 h-0" aria-hidden="true">
+        <span class="adorno top-0 -translate-y-1/2"></span>
+      </div>
+
+
+      <!-- ====================================================================
+           1 · ESTATUS Y DENOMINACIONES SOCIALES
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 pb-10 pt-20">
+        <section id="estatus" aria-labelledby="titulo-estatus" class="panel scroll-mt-24 px-6 py-14 md:px-14" data-reveal>
+          <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
+
+          <header class="text-center">
+            <span class="mx-auto flex size-16 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3),0_0_0_5px_rgb(10_20_41/0.85),0_0_0_6px_rgb(168_179_199/0.28)]">
+              <iconify-icon icon="lucide:tags" width="30" height="30" aria-hidden="true"></iconify-icon>
+            </span>
+            <p class="subtitulo mt-5 text-xs">1</p>
+            <h2 id="titulo-estatus" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Estatus y denominaciones sociales</h2>
+            <p class="mx-auto mt-5 max-w-2xl leading-relaxed text-plata-300">Motes, estigmas y títulos con los que se etiqueta a las personas.</p>
+          </header>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+            <!-- Los Maculados -->
+            <article class="tarjeta group flex flex-col p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:badge-x" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">Los Maculados</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">
+                Familias consideradas traidoras o rebeldes por la corona. Entre ellas está la estirpe de Adison:
+                <a href="/sombras-ocultas/personajes/personajes.html#raid-razin" class="magic-link text-azul-300 hover:text-white">Ra’id-Razin</a>
+                y
+                <a href="/sombras-ocultas/personajes/personajes.html#mugalid" class="magic-link text-azul-300 hover:text-white">Mugalid</a>.
+              </p>
+            </article>
+
+            <!-- Los Crisol -->
+            <article class="tarjeta group flex flex-col p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:heart-crack" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">Los Crisol</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">Los huérfanos del reino.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           2 · GREMIOS, ÓRDENES Y COLECTIVOS
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section id="gremios" aria-labelledby="titulo-gremios" class="panel scroll-mt-24 px-6 py-14 md:px-14" data-reveal>
+          <span class="adorno -top-4" aria-hidden="true"></span>
+          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
+
+          <header class="text-center">
+            <span class="mx-auto flex size-16 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3),0_0_0_5px_rgb(10_20_41/0.85),0_0_0_6px_rgb(168_179_199/0.28)]">
+              <iconify-icon icon="lucide:users-round" width="30" height="30" aria-hidden="true"></iconify-icon>
+            </span>
+            <p class="subtitulo mt-5 text-xs">2</p>
+            <h2 id="titulo-gremios" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Gremios, órdenes y colectivos</h2>
+            <p class="mx-auto mt-5 max-w-2xl leading-relaxed text-plata-300">Grupos de personas organizadas bajo un rol o un líder.</p>
+          </header>
+
+          <div class="mt-12 flex flex-wrap justify-center gap-6">
+            <!-- Las Doncellas de “La Casa” -->
+            <article class="tarjeta group flex w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:shirt" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl leading-snug text-plata-100">Las Doncellas de “La Casa”</h3>
+              </div>
+              <p class="mt-5 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:crown" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span><strong class="font-semibold text-plata-100">Líder:</strong> <a href="/sombras-ocultas/personajes/personajes.html#albino" class="magic-link text-azul-300 hover:text-white">Albino</a></span>
+              </p>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-300">
+                Jóvenes rescatadas por Albino que trabajan en la confección de vestidos y actúan como informantes y guardianas. Se dividen en tres rangos: Mayores, Jóvenes y Pequeñas.
+              </p>
+            </article>
+
+            <!-- Las Flores de la Muerte -->
+            <article class="tarjeta group flex w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:flower-2" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl leading-snug text-plata-100">Las Flores de la Muerte</h3>
+              </div>
+              <p class="mt-5 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:home" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span>Casa de las Hortencias</span>
+              </p>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-300">
+                Guerreras y asesinas que mantienen el orden en el Valle de los Jardines.
+              </p>
+            </article>
+
+            <!-- Manada de las Dunas -->
+            <article class="tarjeta group flex w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:paw-print" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl leading-snug text-plata-100">Manada de las Dunas</h3>
+              </div>
+              <p class="mt-5 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:crown" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span><strong class="font-semibold text-plata-100">Líder:</strong> <a href="/sombras-ocultas/personajes/personajes.html#zaki" class="magic-link text-azul-300 hover:text-white">Zaki</a></span>
+              </p>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-300">
+                Grupo nómada de tigriads del sureste.
+              </p>
+            </article>
+
+            <!-- Los 7 Ladrones -->
+            <article class="tarjeta group flex w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:venetian-mask" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl leading-snug text-plata-100">Los 7 Ladrones</h3>
+              </div>
+              <p class="mt-5 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:crown" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span><strong class="font-semibold text-plata-100">Líder:</strong> <a href="/sombras-ocultas/personajes/personajes.html#deximir" class="magic-link text-azul-300 hover:text-white">Déximir</a></span>
+              </p>
+              <p class="mt-2 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:map-pin" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span><strong class="font-semibold text-plata-100">Base:</strong> ciudad de Goordes</span>
+              </p>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-300">
+                Grupo delictivo.
+              </p>
+            </article>
+
+            <!-- Resistencia del Este (Shiwans) -->
+            <article class="tarjeta group flex w-full flex-col p-6 sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:flag" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl leading-snug text-plata-100">Resistencia del Este (Shiwans)</h3>
+              </div>
+              <p class="mt-5 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:crown" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span><strong class="font-semibold text-plata-100">Líder:</strong> <a href="/sombras-ocultas/personajes/personajes.html#raz-zagul" class="magic-link text-azul-300 hover:text-white">Raz-zagul</a>, líder de la provincia</span>
+              </p>
+              <p class="mt-3 flex-1 text-sm leading-relaxed text-plata-300">
+                Colectivo rebelde asociado al linaje de
+                <a href="/sombras-ocultas/personajes/personajes.html#raid-razin" class="magic-link text-azul-300 hover:text-white">Ra’id-Razin</a>.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           3 · ESTAMENTOS DE PODER E INSTITUCIONES
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section id="poder" aria-labelledby="titulo-poder" class="panel scroll-mt-24 px-6 py-14 md:px-14" data-reveal>
+          <span class="esquina -left-3 -top-3" aria-hidden="true"></span>
+          <span class="esquina -right-3 -top-3 -scale-x-100" aria-hidden="true"></span>
+          <span class="esquina -bottom-3 -right-3 rotate-180" aria-hidden="true"></span>
+          <span class="esquina -bottom-3 -left-3 -scale-y-100" aria-hidden="true"></span>
+
+          <header class="text-center">
+            <span class="mx-auto flex size-16 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3),0_0_0_5px_rgb(10_20_41/0.85),0_0_0_6px_rgb(168_179_199/0.28)]">
+              <iconify-icon icon="lucide:landmark" width="30" height="30" aria-hidden="true"></iconify-icon>
+            </span>
+            <p class="subtitulo mt-5 text-xs">3</p>
+            <h2 id="titulo-poder" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Estamentos de poder e instituciones</h2>
+            <p class="mx-auto mt-5 max-w-2xl leading-relaxed text-plata-300">Los órganos y cuerpos que sostienen el gobierno.</p>
+          </header>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+            <!-- El Gran Consejo -->
+            <article class="tarjeta group flex flex-col p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:gavel" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">El Gran Consejo</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">Órgano político formado por clérigos y consejeros.</p>
+            </article>
+
+            <!-- La Guardia Real -->
+            <article class="tarjeta group flex flex-col p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:shield-check" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">La Guardia Real</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">Cuerpo militar de élite y escolta imperial.</p>
+            </article>
+
+            <!-- Las Casas del Valle de los Jardines -->
+            <article class="tarjeta group flex flex-col p-6 md:col-span-2">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:flower" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">Las Casas del Valle de los Jardines</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">Casas con nombre de flor que conforman el Valle. Entre ellas:</p>
+
+              <ul class="mt-5 grid gap-3 text-sm text-plata-300 sm:grid-cols-2">
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/20 bg-noche-900/50 px-4 py-3">
+                  <iconify-icon icon="lucide:flower" width="18" height="18" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>Casa Rosa
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/20 bg-noche-900/50 px-4 py-3">
+                  <iconify-icon icon="lucide:bird" width="18" height="18" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>Casa de los Colibríes
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/20 bg-noche-900/50 px-4 py-3">
+                  <iconify-icon icon="lucide:flower-2" width="18" height="18" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>Casa de los Tulipanes
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/20 bg-noche-900/50 px-4 py-3">
+                  <iconify-icon icon="lucide:sprout" width="18" height="18" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>Casa de las Hortencias
+                </li>
+                <li class="flex items-center gap-3 rounded-lg border border-plata-400/20 bg-noche-900/50 px-4 py-3 sm:col-span-2">
+                  <iconify-icon icon="lucide:ellipsis" width="18" height="18" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>Otras casas con nombre de flor
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================================================================
+           4 · CASAS NOBILIARIAS Y LEALTADES POR TERRITORIO
+           ==================================================================== -->
+      <div class="mx-auto max-w-5xl px-4 py-10">
+        <section id="casas" aria-labelledby="titulo-casas" class="panel scroll-mt-24 px-6 py-14 md:px-14" data-reveal>
+          <span class="adorno -top-4" aria-hidden="true"></span>
+          <span class="adorno -bottom-4 rotate-180" aria-hidden="true"></span>
+
+          <header class="text-center">
+            <span class="mx-auto flex size-16 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3),0_0_0_5px_rgb(10_20_41/0.85),0_0_0_6px_rgb(168_179_199/0.28)]">
+              <iconify-icon icon="lucide:castle" width="30" height="30" aria-hidden="true"></iconify-icon>
+            </span>
+            <p class="subtitulo mt-5 text-xs">4</p>
+            <h2 id="titulo-casas" class="font-titulo titulo-plata mt-2 text-3xl font-bold md:text-4xl">Casas nobiliarias y lealtades por territorio</h2>
+          </header>
+
+          <div class="mt-12 grid gap-6 md:grid-cols-2">
+            <!-- Casa Valeni (Rims) -->
+            <article class="tarjeta group flex flex-col p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:crown" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">Casa Valeni (Rims)</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">
+                Familia noble de criadores de caballos, descendiente de
+                <a href="/sombras-ocultas/personajes/personajes.html#albino" class="magic-link text-azul-300 hover:text-white">Albino</a>.
+                Está emparentada por sangre con la familia real de Rims, ya que Albino fue hermano de Rims, el primer rey.
+              </p>
+            </article>
+
+            <!-- Reino de Egosth -->
+            <article class="tarjeta group flex flex-col p-6">
+              <div class="flex items-center gap-4">
+                <span class="flex size-14 shrink-0 items-center justify-center rounded-full border border-plata-300/50 text-azul-300 shadow-[inset_0_0_14px_rgb(59_130_246/0.3)] transition duration-300 group-hover:border-azul-300 group-hover:text-white">
+                  <iconify-icon icon="lucide:handshake" width="26" height="26" aria-hidden="true"></iconify-icon>
+                </span>
+                <h3 class="font-subtitulo text-xl text-plata-100">Reino de Egosth</h3>
+              </div>
+              <p class="mt-5 text-sm leading-relaxed text-plata-300">Aliado de Archinón.</p>
+              <p class="mt-3 flex items-center gap-2 text-sm text-plata-300">
+                <iconify-icon icon="lucide:crown" width="16" height="16" class="shrink-0 text-azul-300" aria-hidden="true"></iconify-icon>
+                <span>
+                  <strong class="font-semibold text-plata-100">Gobernantes:</strong>
+                  <a href="/sombras-ocultas/personajes/personajes.html#arhestan" class="magic-link text-azul-300 hover:text-white">Rey Arhestan</a>
+                  y
+                  <a href="/sombras-ocultas/personajes/personajes.html#gahiji" class="magic-link text-azul-300 hover:text-white">Príncipe Gahiji</a>
+                </span>
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+
+
+      <!-- ====================== CIERRE + NAVEGACIÓN ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-16">
+        <p class="subtitulo mb-8 text-center text-xs text-azul-300">Uduné: Donde las nieblas guardan la verdad del corazón.</p>
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/personajes/personajes.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Volver</span>
+              <span class="font-subtitulo text-lg text-plata-100">Personajes</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/personajes/arboles-genealogicos.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+              <span class="font-subtitulo text-lg text-plata-100">Árboles genealógicos</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+          </a>
+        </nav>
+      </div>
+
+    </main>
+
+    <!--@include ../src/partials/footer.html-->
+
+    <script type="module" src="../src/js/main.js"></script>
+  </body>
+</html>
