@@ -244,6 +244,25 @@
   </div>
 </header>
 
+      <!-- Loading entre paginas -->
+    <!-- Vista de carga / transición entre páginas. -->
+<div
+  id="transicion-pagina"
+  class="transicion-pagina"
+  role="status"
+  aria-live="polite"
+  style="position:fixed;inset:0;z-index:200;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#050a17"
+>
+  <div class="transicion-sello" data-transicion-logo aria-hidden="true">
+    <span class="transicion-anillo"></span>
+    <span class="transicion-anillo transicion-anillo-inverso"></span>
+    <img src="/sombras-ocultas/images/isotipo.svg" alt="" class="transicion-isotipo" />
+  </div>
+  <p class="font-titulo titulo-plata mt-8 text-2xl font-bold md:text-3xl" aria-hidden="true">Sombras Ocultas</p>
+  <span class="transicion-barra" aria-hidden="true"></span>
+  <span class="sr-only">Cargando…</span>
+</div>
+<noscript><style>#transicion-pagina{display:none!important}</style></noscript>
 
     <main id="contenido" class="relative z-8">
 
@@ -254,12 +273,12 @@
            ==================================================================== -->
       <header
         data-cabecera
-        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-20 pt-24 text-center md:pb-28 md:pt-28"
+        class="relative overflow-hidden border-b border-plata-400/25 px-4 pb-10 pt-24 text-center md:pb-20 md:pt-20"
         style="background: radial-gradient(ellipse 60% 80% at 50% 40%, rgb(37 99 235 / 0.25), transparent 70%), linear-gradient(180deg, rgb(5 10 23 / 0.9), rgb(0 0 0 / 0.8));"
       >
         <img data-cabecera-fondo src="/images/culto/cabecera.webp" alt="" class="absolute inset-0 size-full object-cover opacity-40" onerror="this.remove()" />
         <div class="absolute inset-0 bg-linear-to-b from-noche-950/70 via-noche-950/40 to-noche-950/90"></div>
-        <div class="espectro-bg" aria-hidden="true">
+        <div class="espectro-bg pt-10" aria-hidden="true">
           <img src="/sombras-ocultas/images/espectro.webp" alt="" class="size-full object-contain" />
         </div>
 
@@ -974,6 +993,12 @@
     <a href="https://naidiart.com/" class="magic-link text-plata-300 hover:text-white">Naidi_art</a>
     · © <span data-anio>2026</span>
   </p>
+  <nav aria-label="Enlaces del pie de página" class="mt-3">
+    <a href="/sombras-ocultas/creditos.html" class="boton px-5 py-1.5 text-xs">
+      <iconify-icon icon="lucide:heart-handshake" width="14" height="14" aria-hidden="true"></iconify-icon>
+      Créditos
+    </a>
+  </nav>
 </footer>
 
 <!-- Botón volver arriba -->
