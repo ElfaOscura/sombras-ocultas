@@ -392,21 +392,25 @@
       </section>
 
 
-      <!-- ====================================================================
-           CIERRE (full width · volver al sistema de creencias)
-           ==================================================================== -->
-      <section class="relative w-full border-b border-plata-400/25 bg-noche-950" data-reveal>
-        <div class="mx-auto max-w-3xl px-4 py-6 text-center md:py-6">
-          <iconify-icon icon="lucide:sparkles" width="30" height="30" class="text-azul-400/70"></iconify-icon>
-          <p class="font-subtitulo titulo-plata mt-5 text-2xl leading-snug md:text-3xl">
-            Los dioses encendieron el mundo; nos corresponde a nosotros decidir si ardemos en su gracia o nos perdemos en su niebla.
-          </p>
-          <div class="mt-10 flex flex-wrap justify-center gap-4">
-            <a href="sistema-culto.html" class="boton"><iconify-icon icon="lucide:arrow-left" width="16" height="16"></iconify-icon>Volver al Sistema de creencias de Gedu</a>
-            <a href="historia-gedua.html" class="boton"><iconify-icon icon="lucide:scroll-text" width="16" height="16"></iconify-icon>Historia del Gedua</a>
-          </div>
-        </div>
-      </section>
+      <!-- ====================== CIERRE + NAVEGACIÓN ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-12">
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/culto/historia-gedua.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Historia del Gedua</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/culto/sistema-culto.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+              <span class="font-subtitulo text-lg text-plata-100">Sistema de culto</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+          </a>
+        </nav>
+      </div>
 
     </main>
 

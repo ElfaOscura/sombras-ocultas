@@ -711,26 +711,25 @@
       </div>
 
 
-      <!-- ====================================================================
-           9 · CIERRE (full width · llamada a la acción)
-           ==================================================================== -->
-      <section
-        class="relative w-full overflow-hidden border-y border-plata-400/25"
-        style="background: radial-gradient(ellipse 70% 90% at 50% 50%, rgb(31 58 110 / 0.6), var(--color-noche-950));"
-        data-reveal
-      >
-        <img src="/images/culto/cabecera.webp" alt="" class="absolute inset-0 size-full object-cover" onerror="this.remove()" />
-        <div class="absolute inset-0 bg-linear-to-b from-noche-950/80 via-noche-950/60 to-noche-950/90"></div>
-
-        <div class="relative mx-auto max-w-3xl px-4 py-24 text-center md:py-32">
-          <p class="subtitulo text-xs">Continúa explorando</p>
-          <h2 class="font-titulo titulo-plata mt-3 text-3xl font-bold leading-tight md:text-5xl">Uduné: donde las nieblas guardan la verdad del corazón</h2>
-          <div class="mt-10 flex flex-wrap justify-center gap-4">
-            <a href="historia-gedua.html" class="boton"><iconify-icon icon="lucide:scroll-text" width="16" height="16"></iconify-icon>Historia del Gedua</a>
-            <a href="dioses.html" class="boton">Dioses<iconify-icon icon="lucide:arrow-right" width="16" height="16"></iconify-icon></a>
-          </div>
-        </div>
-      </section>
+            <!-- ====================== CIERRE + NAVEGACIÓN ====================== -->
+      <div class="mx-auto max-w-5xl px-4 py-12">
+        <nav aria-label="Páginas relacionadas" class="grid gap-4 sm:grid-cols-2" data-reveal>
+          <a href="/sombras-ocultas/culto/historia-gedua.html" class="tarjeta group flex items-center gap-4 px-6 py-5">
+            <iconify-icon icon="lucide:arrow-left" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:-translate-x-1" aria-hidden="true"></iconify-icon>
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Anterior</span>
+              <span class="font-subtitulo text-lg text-plata-100">Historia del Gedua</span>
+            </span>
+          </a>
+          <a href="/sombras-ocultas/culto/dioses.html" class="tarjeta group flex items-center justify-end gap-4 px-6 py-5 text-right">
+            <span>
+              <span class="subtitulo block text-[0.65rem] text-plata-400">Siguiente</span>
+              <span class="font-subtitulo text-lg text-plata-100">Dioses</span>
+            </span>
+            <iconify-icon icon="lucide:arrow-right" width="22" height="22" class="shrink-0 text-azul-300 transition duration-300 group-hover:translate-x-1" aria-hidden="true"></iconify-icon>
+          </a>
+        </nav>
+      </div>
 
     </main>
 
